@@ -7,8 +7,8 @@ padding: 0;
 
 background-image:
 linear-gradient(
-    rgba(20,10,5,0.65),
-    rgba(20,10,5,0.65)
+rgba(20,10,5,0.65),
+rgba(20,10,5,0.65)
 ),
 url("https://snifflabmk-lgtm.github.io/snifflab-catalog/Samo%20pozadina.png");
 
@@ -288,37 +288,7 @@ margin-top: 15px;
 
 }
 
-
-
-.perfume-info p {
-
-color: #e8e2d8;
-
-margin: 8px 0 15px;
-
-}
-
-
-
-.perfume-info button {
-
-background: #d4af37;
-
-color: #111;
-
-border: none;
-
-padding: 10px 25px;
-
-border-radius: 25px;
-
-cursor: pointer;
-
-font-weight: bold;
-
-}
-
-
+/* CONTINUATION */
 
 /* PERFUME DETAILS PAGE */
 
@@ -363,18 +333,21 @@ justify-content: center;
 
 gap: 50px;
 
+overflow: hidden;
+
 }
+
 
 
 .details-box img {
 
-width: 300px;
+width: 260px;
 
 height: 360px;
 
 object-fit: contain;
 
-transform: scale(1.5);
+transform: none;
 
 flex-shrink: 0;
 
@@ -386,7 +359,15 @@ flex-shrink: 0;
 
 width: 380px;
 
-overflow-wrap: break-word;
+height: 100%;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+overflow: hidden;
 
 }
 
@@ -399,6 +380,8 @@ color: #d4af37;
 font-size: 38px;
 
 margin-bottom: 15px;
+
+line-height: 1.2;
 
 }
 
@@ -414,7 +397,14 @@ font-size: 16px;
 
 
 
-/* BACK BUTTON */
+.prices h2,
+.extra-info h2 {
+
+color: #d4af37;
+
+}
+
+
 
 .details-info button {
 
@@ -435,6 +425,8 @@ font-weight: bold;
 margin-top: 20px;
 
 transition: 0.3s;
+
+align-self: flex-start;
 
 }
 
