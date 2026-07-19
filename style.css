@@ -27,13 +27,15 @@ body {
 }
 
 
+
 /* HEADER */
+
 
 header {
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 70px 20px 40px;
 
 }
 
@@ -42,33 +44,53 @@ header h1 {
 
     color: #d4af37;
 
-    font-size: 50px;
+    font-size: 70px;
 
-    letter-spacing: 5px;
+    letter-spacing: 8px;
 
     margin: 0;
 
+    text-transform: uppercase;
+
 }
+
+
+header h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 120px;
+
+    height: 2px;
+
+    background: #d4af37;
+
+    margin: 25px auto;
+
+}
+
 
 
 header p {
 
     color: #e8e2d8;
 
-    font-size: 18px;
+    font-size: 20px;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 
 }
 
 
 
-/* HERO SECTION */
+/* HERO */
 
 
 .hero {
 
-    min-height: 80vh;
+    min-height: 70vh;
 
     display: flex;
 
@@ -86,7 +108,7 @@ header p {
 
 .hero-content {
 
-    max-width: 800px;
+    max-width: 850px;
 
 }
 
@@ -100,7 +122,7 @@ header p {
 
     text-transform: uppercase;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
     margin-bottom: 25px;
 
@@ -110,7 +132,7 @@ header p {
 
 .hero p {
 
-    font-size: 20px;
+    font-size: 22px;
 
     line-height: 1.8;
 
@@ -130,9 +152,9 @@ header p {
 
     border: none;
 
-    padding: 16px 40px;
+    padding: 18px 45px;
 
-    font-size: 16px;
+    font-size: 17px;
 
     font-weight: bold;
 
@@ -150,6 +172,6 @@ header p {
 
     background: #f2d675;
 
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 
 }
