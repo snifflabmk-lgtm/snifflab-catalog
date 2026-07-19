@@ -1,77 +1,47 @@
-/* CATALOG DESIGN */
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniff Lab | Колекција</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-.catalog-header {
-    text-align: center;
-    padding: 30px;
-}
+<body>
 
-.catalog-header .logo {
-    width: 180px;
-}
-
-
-.catalog-section {
-    text-align: center;
-    padding: 20px;
-}
+<header class="catalog-header">
+    <img src="logo.png" class="logo" alt="Sniff Lab">
+</header>
 
 
-.catalog-section h1 {
-    font-size: 48px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
+<section class="catalog-section">
+
+    <h1>Види ја колекцијата</h1>
+    <p>Избери го твојот совршен мирис</p>
 
 
-.catalog-section p {
-    font-size: 18px;
-    color: #c9a45c;
-    margin-bottom: 40px;
-}
+    <div class="perfume-grid">
+
+        <div class="perfume-card">
+
+            <img src="afnan-9pm.webp" alt="Afnan 9PM">
+
+            <div class="perfume-info">
+                <h2>Afnan 9PM</h2>
+                <p>Машки парфем</p>
+
+                <button>
+                    Детали
+                </button>
+            </div>
+
+        </div>
+
+    </div>
 
 
-.perfume-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: auto;
-}
+</section>
 
 
-.perfume-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201,164,92,0.4);
-    border-radius: 20px;
-    padding: 20px;
-    max-width: 250px;
-    margin: auto;
-}
-
-
-.perfume-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: contain;
-}
-
-
-.perfume-info h2 {
-    font-size: 22px;
-    margin-top: 15px;
-}
-
-
-.perfume-info p {
-    margin: 5px 0 15px;
-    color: #ddd;
-}
-
-
-.perfume-info button {
-    background: #c9a45c;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    cursor: pointer;
-}
+</body>
+</html>
