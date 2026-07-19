@@ -34,7 +34,6 @@ body {
 }
 
 
-
 /* HEADER */
 
 header {
@@ -42,7 +41,6 @@ header {
     text-align: center;
     padding: 35px 20px 20px;
 }
-
 
 
 header h1 {
@@ -57,7 +55,6 @@ header h1 {
 
     text-transform: uppercase;
 }
-
 
 
 header h1::after {
@@ -76,7 +73,6 @@ header h1::after {
 }
 
 
-
 header p {
 
     color: #e8e2d8;
@@ -85,7 +81,6 @@ header p {
 
     letter-spacing: 3px;
 }
-
 
 
 
@@ -107,12 +102,10 @@ header p {
 }
 
 
-
 .hero-content {
 
     max-width: 850px;
 }
-
 
 
 .hero h2 {
@@ -129,7 +122,6 @@ header p {
 }
 
 
-
 .hero p {
 
     font-size: 21px;
@@ -140,7 +132,6 @@ header p {
 
     margin-bottom: 35px;
 }
-
 
 
 .hero button {
@@ -165,13 +156,11 @@ header p {
 }
 
 
-
 .hero button:hover {
 
     background: #f2d675;
 
     transform: translateY(-4px);
-
 }
 
 
@@ -184,7 +173,6 @@ header p {
     text-align: center;
 
     padding: 30px;
-
 }
 
 
@@ -194,7 +182,6 @@ header p {
     text-align: center;
 
     padding: 20px;
-
 }
 
 
@@ -219,7 +206,6 @@ header p {
     color: #e8e2d8;
 
     margin-bottom: 50px;
-
 }
 
 
@@ -235,7 +221,6 @@ header p {
     max-width: 1100px;
 
     margin: auto;
-
 }
 
 
@@ -342,7 +327,7 @@ header p {
 
 .details-box {
 
-    width: 650px;
+    width: 750px;
 
     background: rgba(0,0,0,0.55);
 
@@ -356,7 +341,7 @@ header p {
 
     align-items: center;
 
-    gap: 40px;
+    gap: 50px;
 
 }
 
@@ -364,9 +349,9 @@ header p {
 
 .details-box img {
 
-    width: 220px;
+    width: 300px;
 
-    height: 260px;
+    height: 360px;
 
     object-fit: contain;
 
@@ -379,18 +364,6 @@ header p {
     color: #d4af37;
 
     font-size: 38px;
-
-    margin-bottom: 15px;
-
-}
-
-
-
-.details-info h3 {
-
-    color: #ffffff;
-
-    font-size: 20px;
 
     margin-bottom: 15px;
 
