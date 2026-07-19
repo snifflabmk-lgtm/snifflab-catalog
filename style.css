@@ -346,17 +346,12 @@ header p {
 }
 
 
-
 .details-box img {
-
     width: 300px;
-
     height: 360px;
-
     object-fit: contain;
-
+    transform: scale(1.5);
 }
-
 
 
 .details-info h1 {
