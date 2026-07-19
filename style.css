@@ -55,13 +55,14 @@ header h1 {
 }
 
 
+
 header h1::after {
 
     content: "";
 
     display: block;
 
-    width: 120px;
+    width: 320px;
 
     height: 2px;
 
