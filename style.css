@@ -28,6 +28,23 @@ body {
 
 
 
+/* LOGO */
+
+
+.logo {
+
+    width: 180px;
+
+    height: auto;
+
+    margin-bottom: 15px;
+
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+
+}
+
+
+
 /* HEADER */
 
 
@@ -35,7 +52,7 @@ header {
 
     text-align: center;
 
-    padding: 70px 20px 40px;
+    padding: 35px 20px 20px;
 
 }
 
@@ -44,7 +61,7 @@ header h1 {
 
     color: #d4af37;
 
-    font-size: 70px;
+    font-size: 65px;
 
     letter-spacing: 8px;
 
@@ -68,7 +85,7 @@ header h1::after {
 
     background: #d4af37;
 
-    margin: 25px auto;
+    margin: 20px auto;
 
 }
 
@@ -78,7 +95,7 @@ header p {
 
     color: #e8e2d8;
 
-    font-size: 20px;
+    font-size: 18px;
 
     letter-spacing: 3px;
 
@@ -91,7 +108,7 @@ header p {
 
 .hero {
 
-    min-height: 70vh;
+    min-height: 55vh;
 
     display: flex;
 
@@ -101,7 +118,7 @@ header p {
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 20px;
 
 }
 
@@ -117,7 +134,7 @@ header p {
 
 .hero h2 {
 
-    font-size: 60px;
+    font-size: 55px;
 
     color: #d4af37;
 
@@ -125,7 +142,7 @@ header p {
 
     letter-spacing: 5px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
 }
 
@@ -133,13 +150,13 @@ header p {
 
 .hero p {
 
-    font-size: 22px;
+    font-size: 21px;
 
     line-height: 1.8;
 
     color: #e8e2d8;
 
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 
 }
 
