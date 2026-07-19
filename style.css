@@ -1,16 +1,18 @@
 /* Sniff Lab Styles */
 
+
 body {
 
     margin: 0;
 
     padding: 0;
 
-    background-image: linear-gradient(
+    background-image:
+    linear-gradient(
         rgba(20,10,5,0.65),
         rgba(20,10,5,0.65)
     ),
-    url("Samo%20pozadina.png");
+    url("https://snifflabmk-lgtm.github.io/snifflab-catalog/Samo%20pozadina.png");
 
     background-size: cover;
 
@@ -60,7 +62,9 @@ header p {
 }
 
 
-/* HERO */
+
+/* HERO SECTION */
+
 
 .hero {
 
@@ -79,11 +83,13 @@ header p {
 }
 
 
+
 .hero-content {
 
     max-width: 800px;
 
 }
+
 
 
 .hero h2 {
@@ -101,6 +107,7 @@ header p {
 }
 
 
+
 .hero p {
 
     font-size: 20px;
@@ -112,6 +119,7 @@ header p {
     margin-bottom: 40px;
 
 }
+
 
 
 .hero button {
@@ -135,6 +143,7 @@ header p {
     transition: 0.3s;
 
 }
+
 
 
 .hero button:hover {
