@@ -1,77 +1,136 @@
 /* Sniff Lab Styles */
 
+body {
 
-/* =========================
-   HERO SECTION
-========================= */
+    margin: 0;
 
-.hero{
-    min-height:90vh;
+    padding: 0;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+    background: #1b100c;
 
-    padding:80px 20px;
-}
+    color: #ffffff;
 
-.hero-content{
-    max-width:800px;
-}
-
-.hero h2{
-
-    font-size:60px;
-
-    color:#d4af37;
-
-    text-transform:uppercase;
-
-    letter-spacing:4px;
-
-    margin-bottom:25px;
+    font-family: Georgia, serif;
 
 }
 
-.hero p{
 
-    font-size:20px;
+/* HEADER */
 
-    line-height:1.8;
+header {
 
-    color:#e8e2d8;
+    text-align: center;
 
-    margin-bottom:40px;
-
-}
-
-.hero button{
-
-    background:#d4af37;
-
-    color:#111;
-
-    border:none;
-
-    padding:16px 40px;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-    transition:0.3s;
+    padding: 40px 20px;
 
 }
 
-.hero button:hover{
 
-    background:#f2d675;
+header h1 {
 
-    transform:translateY(-3px);
+    color: #d4af37;
+
+    font-size: 50px;
+
+    letter-spacing: 5px;
+
+    margin: 0;
+
+}
+
+
+header p {
+
+    color: #e8e2d8;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* HERO SECTION */
+
+.hero {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+}
+
+
+.hero-content {
+
+    max-width: 800px;
+
+}
+
+
+.hero h2 {
+
+    font-size: 60px;
+
+    color: #d4af37;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero p {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #e8e2d8;
+
+    margin-bottom: 40px;
+
+}
+
+
+.hero button {
+
+    background: #d4af37;
+
+    color: #111;
+
+    border: none;
+
+    padding: 16px 40px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.hero button:hover {
+
+    background: #f2d675;
+
+    transform: translateY(-3px);
 
 }
