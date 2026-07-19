@@ -343,7 +343,7 @@ padding: 30px;
 
 width: 850px;
 
-min-height: 430px;
+height: 520px;
 
 box-sizing: border-box;
 
@@ -364,7 +364,6 @@ justify-content: center;
 gap: 50px;
 
 }
-
 
 
 .details-box img {
