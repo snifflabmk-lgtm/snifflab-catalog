@@ -2,22 +2,23 @@
 
 body {
 
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 
-    background-image:
-    linear-gradient(
-        rgba(20,10,5,0.65),
-        rgba(20,10,5,0.65)
-    ),
-    url("https://snifflabmk-lgtm.github.io/snifflab-catalog/Samo%20pozadina.png");
+background-image:
+linear-gradient(
+    rgba(20,10,5,0.65),
+    rgba(20,10,5,0.65)
+),
+url("https://snifflabmk-lgtm.github.io/snifflab-catalog/Samo%20pozadina.png");
 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
 
-    color: #ffffff;
-    font-family: Georgia, serif;
+color: #ffffff;
+font-family: Georgia, serif;
+
 }
 
 
@@ -25,12 +26,13 @@ body {
 
 .logo {
 
-    width: 220px;
-    height: auto;
+width: 220px;
+height: auto;
 
-    margin-bottom: 15px;
+margin-bottom: 15px;
 
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
+
 }
 
 
@@ -38,48 +40,52 @@ body {
 
 header {
 
-    text-align: center;
-    padding: 35px 20px 20px;
+text-align: center;
+padding: 35px 20px 20px;
+
 }
 
 
 header h1 {
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 65px;
+font-size: 65px;
 
-    letter-spacing: 8px;
+letter-spacing: 8px;
 
-    margin: 0;
+margin: 0;
 
-    text-transform: uppercase;
+text-transform: uppercase;
+
 }
 
 
 header h1::after {
 
-    content: "";
+content: "";
 
-    display: block;
+display: block;
 
-    width: 320px;
+width: 320px;
 
-    height: 2px;
+height: 2px;
 
-    background: #d4af37;
+background: #d4af37;
 
-    margin: 20px auto;
+margin: 20px auto;
+
 }
 
 
 header p {
 
-    color: #e8e2d8;
+color: #e8e2d8;
 
-    font-size: 18px;
+font-size: 18px;
 
-    letter-spacing: 3px;
+letter-spacing: 3px;
+
 }
 
 
@@ -88,81 +94,86 @@ header p {
 
 .hero {
 
-    min-height: 55vh;
+min-height: 55vh;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    text-align: center;
+text-align: center;
 
-    padding: 20px;
+padding: 20px;
+
 }
 
 
 .hero-content {
 
-    max-width: 850px;
+max-width: 850px;
+
 }
 
 
 .hero h2 {
 
-    font-size: 55px;
+font-size: 55px;
 
-    color: #d4af37;
+color: #d4af37;
 
-    text-transform: uppercase;
+text-transform: uppercase;
 
-    letter-spacing: 5px;
+letter-spacing: 5px;
 
-    margin-bottom: 20px;
+margin-bottom: 20px;
+
 }
 
 
 .hero p {
 
-    font-size: 21px;
+font-size: 21px;
 
-    line-height: 1.8;
+line-height: 1.8;
 
-    color: #e8e2d8;
+color: #e8e2d8;
 
-    margin-bottom: 35px;
+margin-bottom: 35px;
+
 }
 
 
 .hero button {
 
-    background: #d4af37;
+background: #d4af37;
 
-    color: #111;
+color: #111;
 
-    border: none;
+border: none;
 
-    padding: 18px 45px;
+padding: 18px 45px;
 
-    font-size: 17px;
+font-size: 17px;
 
-    font-weight: bold;
+font-weight: bold;
 
-    border-radius: 50px;
+border-radius: 50px;
 
-    cursor: pointer;
+cursor: pointer;
 
-    transition: 0.3s;
+transition: 0.3s;
+
 }
 
 
 .hero button:hover {
 
-    background: #f2d675;
+background: #f2d675;
 
-    transform: translateY(-4px);
+transform: translateY(-4px);
+
 }
-
 
 
 
@@ -170,83 +181,86 @@ header p {
 
 .catalog-header {
 
-    text-align: center;
+text-align: center;
 
-    padding: 30px;
+padding: 30px;
+
 }
-
 
 
 .catalog-section {
 
-    text-align: center;
+text-align: center;
 
-    padding: 20px;
+padding: 20px;
+
 }
-
 
 
 .catalog-section h1 {
 
-    font-size: 48px;
+font-size: 48px;
 
-    color: #d4af37;
+color: #d4af37;
 
-    letter-spacing: 3px;
+letter-spacing: 3px;
 
-    margin-bottom: 10px;
+margin-bottom: 10px;
+
 }
-
 
 
 .catalog-section p {
 
-    font-size: 20px;
+font-size: 20px;
 
-    color: #e8e2d8;
+color: #e8e2d8;
 
-    margin-bottom: 50px;
+margin-bottom: 50px;
+
 }
 
 
 
 .perfume-grid {
 
-    display: grid;
+display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-    gap: 30px;
+gap: 30px;
 
-    max-width: 1100px;
+max-width: 1100px;
 
-    margin: auto;
+margin: auto;
+
 }
 
 
 
 .perfume-card {
 
-    background: rgba(0,0,0,0.45);
+background: rgba(0,0,0,0.45);
 
-    border: 1px solid rgba(212,175,55,0.5);
+border: 1px solid rgba(212,175,55,0.5);
 
-    border-radius: 20px;
+border-radius: 20px;
 
-    padding: 20px;
+padding: 20px;
 
-    width: 220px;
+width: 220px;
 
-    margin: auto;
+margin: auto;
 
-    transition: 0.3s;
+transition: 0.3s;
+
 }
 
 
 
 .perfume-card:hover {
 
-    transform: translateY(-8px);
+transform: translateY(-8px);
 
 }
 
@@ -254,11 +268,11 @@ header p {
 
 .perfume-card img {
 
-    width: 100%;
+width: 100%;
 
-    height: 240px;
+height: 240px;
 
-    object-fit: contain;
+object-fit: contain;
 
 }
 
@@ -266,11 +280,11 @@ header p {
 
 .perfume-info h2 {
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 22px;
+font-size: 22px;
 
-    margin-top: 15px;
+margin-top: 15px;
 
 }
 
@@ -278,9 +292,9 @@ header p {
 
 .perfume-info p {
 
-    color: #e8e2d8;
+color: #e8e2d8;
 
-    margin: 8px 0 15px;
+margin: 8px 0 15px;
 
 }
 
@@ -288,38 +302,38 @@ header p {
 
 .perfume-info button {
 
-    background: #d4af37;
+background: #d4af37;
 
-    color: #111;
+color: #111;
 
-    border: none;
+border: none;
 
-    padding: 10px 25px;
+padding: 10px 25px;
 
-    border-radius: 25px;
+border-radius: 25px;
 
-    cursor: pointer;
+cursor: pointer;
 
-    font-weight: bold;
+font-weight: bold;
 
 }
 
 
 
-
 /* PERFUME DETAILS PAGE */
+
 
 .perfume-details {
 
-    min-height: 80vh;
+min-height: 80vh;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    padding: 30px;
+padding: 30px;
 
 }
 
@@ -327,40 +341,65 @@ header p {
 
 .details-box {
 
-    width: 750px;
+width: 850px;
 
-    background: rgba(0,0,0,0.55);
+min-height: 430px;
 
-    border: 1px solid rgba(212,175,55,0.5);
+box-sizing: border-box;
 
-    border-radius: 25px;
+background: rgba(0,0,0,0.55);
 
-    padding: 35px;
+border: 1px solid rgba(212,175,55,0.5);
 
-    display: flex;
+border-radius: 25px;
 
-    align-items: center;
+padding: 35px;
 
-    gap: 50px;
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 50px;
 
 }
+
 
 
 .details-box img {
-    width: 300px;
-    height: 360px;
-    object-fit: contain;
-    transform: scale(1.5);
+
+width: 300px;
+
+height: 360px;
+
+object-fit: contain;
+
+transform: scale(1.5);
+
+flex-shrink: 0;
+
 }
+
+
+
+.details-info {
+
+width: 380px;
+
+overflow-wrap: break-word;
+
+}
+
 
 
 .details-info h1 {
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 38px;
+font-size: 38px;
 
-    margin-bottom: 15px;
+margin-bottom: 15px;
 
 }
 
@@ -368,8 +407,44 @@ header p {
 
 .details-info p {
 
-    color: #e8e2d8;
+color: #e8e2d8;
 
-    font-size: 16px;
+font-size: 16px;
+
+}
+
+
+
+/* BACK BUTTON */
+
+.details-info button {
+
+background: #d4af37;
+
+color: #111;
+
+border: none;
+
+padding: 10px 25px;
+
+border-radius: 25px;
+
+cursor: pointer;
+
+font-weight: bold;
+
+margin-top: 20px;
+
+transition: 0.3s;
+
+}
+
+
+
+.details-info button:hover {
+
+background: #f2d675;
+
+transform: translateY(-3px);
 
 }
