@@ -34,6 +34,7 @@ body {
 }
 
 
+
 /* HEADER */
 
 header {
@@ -41,6 +42,7 @@ header {
     text-align: center;
     padding: 35px 20px 20px;
 }
+
 
 
 header h1 {
@@ -55,6 +57,7 @@ header h1 {
 
     text-transform: uppercase;
 }
+
 
 
 header h1::after {
@@ -73,6 +76,7 @@ header h1::after {
 }
 
 
+
 header p {
 
     color: #e8e2d8;
@@ -81,6 +85,7 @@ header p {
 
     letter-spacing: 3px;
 }
+
 
 
 
@@ -102,10 +107,12 @@ header p {
 }
 
 
+
 .hero-content {
 
     max-width: 850px;
 }
+
 
 
 .hero h2 {
@@ -120,6 +127,7 @@ header p {
 
     margin-bottom: 20px;
 }
+
 
 
 .hero p {
@@ -163,15 +171,13 @@ header p {
     background: #f2d675;
 
     transform: translateY(-4px);
+
 }
 
 
 
 
-/* ========================= */
 /* CATALOG */
-/* ========================= */
-
 
 .catalog-header {
 
@@ -202,7 +208,6 @@ header p {
     letter-spacing: 3px;
 
     margin-bottom: 10px;
-
 }
 
 
@@ -250,7 +255,6 @@ header p {
     margin: auto;
 
     transition: 0.3s;
-
 }
 
 
@@ -312,5 +316,92 @@ header p {
     cursor: pointer;
 
     font-weight: bold;
+
+}
+
+
+
+
+/* PERFUME DETAILS PAGE */
+
+.perfume-details {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+
+.details-box {
+
+    width: 650px;
+
+    background: rgba(0,0,0,0.55);
+
+    border: 1px solid rgba(212,175,55,0.5);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+
+.details-box img {
+
+    width: 220px;
+
+    height: 260px;
+
+    object-fit: contain;
+
+}
+
+
+
+.details-info h1 {
+
+    color: #d4af37;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.details-info h3 {
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.details-info p {
+
+    color: #e8e2d8;
+
+    font-size: 16px;
 
 }
