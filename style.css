@@ -169,3 +169,142 @@ body {
     font-size: 17px;
   }
 }
+/* Каталог */
+
+.catalog-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(12, 8, 6, 0.94), rgba(12, 8, 6, 0.98)),
+    url("Samo pozadina.png") center / cover fixed;
+}
+
+.catalog-header {
+  width: 100%;
+  padding: 22px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: rgba(9, 6, 4, 0.92);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.navigation .active {
+  color: #d4af37;
+}
+
+.catalog-main {
+  width: min(1200px, 88%);
+  min-height: 75vh;
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.catalog-intro {
+  max-width: 720px;
+  margin-bottom: 60px;
+}
+
+.catalog-intro h1 {
+  margin-bottom: 20px;
+  color: #fffaf0;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+}
+
+.catalog-intro > p:last-child {
+  color: #bfb19f;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.product-card {
+  overflow: hidden;
+  background: linear-gradient(145deg, #211710, #130d09);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  border-color: #d4af37;
+}
+
+.product-placeholder {
+  min-height: 330px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #d4af37;
+  background:
+    radial-gradient(circle, rgba(212, 175, 55, 0.14), transparent 60%),
+    #0d0906;
+
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.product-info {
+  padding: 26px;
+}
+
+.product-brand {
+  margin-bottom: 9px;
+  color: #d4af37;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.product-info h2 {
+  margin-bottom: 13px;
+  color: #fffaf0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.product-info > p:last-child {
+  color: #a99c8c;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog-header {
+    padding: 18px 5%;
+  }
+
+  .catalog-main {
+    width: 90%;
+    padding: 65px 0;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-placeholder {
+    min-height: 280px;
+  }
+}
