@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: #f6eedf;
+  background-color: #100b08;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  padding: 24px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 7, 5, 0.9),
+    transparent
+  );
+}
+
+.brand img {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+
+.navigation {
+  display: flex;
+  gap: 32px;
+}
+
+.navigation a {
+  color: #f6eedf;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #d4af37;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 150px 7% 80px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 8, 6, 0.96) 0%,
+      rgba(22, 14, 10, 0.82) 45%,
+      rgba(12, 8, 6, 0.45) 100%
+    ),
+    url("Samo pozadina.png") center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: #d4af37;
+  font-size: 15px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+  color: #fffaf0;
+  font-size: clamp(64px, 10vw, 125px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -3px;
+}
+
+.hero-text {
+  max-width: 580px;
+  margin-bottom: 38px;
+  color: #d9cdbd;
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 15px 28px;
+
+  color: #17100b;
+  background-color: #d4af37;
+  border: 1px solid #d4af37;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  color: #d4af37;
+  background-color: transparent;
+}
+
+.footer {
+  padding: 22px;
+  color: #a89a87;
+  background-color: #090604;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 18px 5%;
+  }
+
+  .brand img {
+    width: 82px;
+  }
+
+  .navigation {
+    gap: 18px;
+  }
+
+  .navigation a {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 130px 6% 60px;
+    background-position: 60% center;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+}
