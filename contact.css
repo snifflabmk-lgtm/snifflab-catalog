@@ -1,0 +1,400 @@
+.contact-main {
+  width: min(1080px, 90%);
+  margin: 0 auto;
+  padding: 75px 0 95px;
+}
+
+/* Почетен дел */
+
+.contact-hero {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.contact-eyebrow,
+.section-label {
+  margin-bottom: 14px;
+
+  color: #e1b94d;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+.contact-hero h1 {
+  margin-bottom: 22px;
+
+  color: #f0c34f;
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 1;
+}
+
+.contact-hero > p:last-child {
+  color: #f3e7d8;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Главен контакт */
+
+.contact-content {
+  margin-bottom: 55px;
+  padding: 48px;
+
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  align-items: center;
+  gap: 55px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(30, 8, 7, 0.95),
+      rgba(55, 17, 14, 0.88)
+    );
+
+  border: 1px solid rgba(225, 185, 77, 0.5);
+  border-radius: 18px;
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.34),
+    inset 0 0 40px rgba(225, 185, 77, 0.025);
+}
+
+.contact-card h2 {
+  max-width: 620px;
+  margin-bottom: 20px;
+
+  color: #f0c34f;
+  font-size: clamp(31px, 4vw, 45px);
+  line-height: 1.15;
+}
+
+.contact-card > p:not(.section-label) {
+  margin-bottom: 28px;
+
+  color: #dfcebd;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* Е-пошта */
+
+.email-contact {
+  max-width: 520px;
+  padding: 17px 19px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: #f4e8d8;
+  background-color: rgba(15, 5, 4, 0.65);
+  border: 1px solid rgba(225, 185, 77, 0.4);
+  border-radius: 11px;
+
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.email-contact:hover {
+  background-color: rgba(32, 9, 7, 0.85);
+  border-color: #e1b94d;
+  transform: translateY(-2px);
+}
+
+.email-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #21100c;
+  background-color: #e1b94d;
+  border-radius: 50%;
+
+  font-size: 23px;
+}
+
+.email-contact small,
+.email-contact strong {
+  display: block;
+}
+
+.email-contact small {
+  margin-bottom: 5px;
+  color: #bda891;
+  font-size: 12px;
+}
+
+.email-contact strong {
+  color: #f0c34f;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+/* Социјални икони */
+
+.social-area {
+  margin-top: 30px;
+}
+
+.social-area > p {
+  margin-bottom: 13px;
+
+  color: #dcc9b5;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.social-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e1b94d;
+  background-color: rgba(14, 5, 4, 0.72);
+  border: 1px solid rgba(225, 185, 77, 0.45);
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.social-icon:hover {
+  color: #1b0b08;
+  background-color: #e1b94d;
+  border-color: #f1d16e;
+  transform: translateY(-4px);
+}
+
+.social-icon svg {
+  width: 25px;
+  height: 25px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.social-icon .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Лого без рамка */
+
+.contact-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.contact-logo img {
+  display: block;
+  width: min(290px, 100%);
+  height: auto;
+
+  filter: drop-shadow(0 17px 27px rgba(0, 0, 0, 0.45));
+}
+
+.contact-logo p {
+  margin-top: 10px;
+
+  color: #d8bd77;
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+/* Помош */
+
+.contact-help {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.contact-help article {
+  min-height: 215px;
+  padding: 29px 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(43, 12, 10, 0.92),
+      rgba(17, 5, 4, 0.92)
+    );
+
+  border: 1px solid rgba(225, 185, 77, 0.38);
+  border-radius: 14px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.contact-help article:hover {
+  border-color: #e1b94d;
+  transform: translateY(-5px);
+}
+
+.contact-help article > span {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(225, 185, 77, 0.09);
+  border: 1px solid rgba(225, 185, 77, 0.32);
+  border-radius: 50%;
+
+  font-size: 23px;
+}
+
+.contact-help h2 {
+  margin-bottom: 12px;
+
+  color: #f0c34f;
+  font-size: 21px;
+}
+
+.contact-help p {
+  color: #d8c5b2;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Икони во footer */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-socials a {
+  width: 30px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e1b94d;
+  border: 1px solid rgba(225, 185, 77, 0.4);
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.footer-socials a:hover {
+  color: #1a0907;
+  background-color: #e1b94d;
+}
+
+/* Таблет */
+
+@media (max-width: 850px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .contact-logo img {
+    width: min(250px, 75%);
+  }
+}
+
+/* Телефон */
+
+@media (max-width: 650px) {
+  .contact-main {
+    width: min(92%, 560px);
+    padding: 52px 0 70px;
+  }
+
+  .contact-content {
+    padding: 30px 20px;
+  }
+
+  .contact-card > p:not(.section-label) {
+    font-size: 15px;
+  }
+
+  .email-contact {
+    padding: 15px 13px;
+  }
+
+  .email-icon {
+    width: 41px;
+    height: 41px;
+    flex-basis: 41px;
+  }
+
+  .email-contact strong {
+    font-size: 13px;
+  }
+
+  .social-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .contact-help {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-help article {
+    min-height: auto;
+    padding: 24px 20px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+}
