@@ -135,6 +135,7 @@
 
 .email-contact small {
   margin-bottom: 5px;
+
   color: #bda891;
   font-size: 12px;
 }
@@ -145,7 +146,7 @@
   overflow-wrap: anywhere;
 }
 
-/* Социјални икони */
+/* Социјални мрежи */
 
 .social-area {
   margin-top: 30px;
@@ -218,6 +219,9 @@
   align-items: center;
   justify-content: center;
 
+  background: transparent;
+  border: none;
+
   text-align: center;
 }
 
@@ -238,7 +242,7 @@
   letter-spacing: 2px;
 }
 
-/* Помош */
+/* Картички за помош */
 
 .contact-help {
   display: grid;
@@ -302,38 +306,126 @@
   line-height: 1.65;
 }
 
-/* Икони во footer */
+/* Нов луксузен footer */
 
-.footer-socials {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.contact-footer {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(13, 4, 3, 0.98),
+      rgba(36, 10, 8, 0.98)
+    );
+
+  border-top: 1px solid rgba(225, 185, 77, 0.38);
 }
 
-.footer-socials a {
-  width: 30px;
-  height: 30px;
+.contact-footer-inner {
+  width: min(1080px, 90%);
+  min-height: 150px;
+  margin: 0 auto;
+  padding: 25px 0;
 
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-brand img {
+  display: block;
+  width: 82px;
+  height: auto;
+}
+
+.footer-brand p {
+  color: #d7b866;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.footer-contact {
+  text-align: center;
+}
+
+.footer-contact p {
+  margin-bottom: 9px;
+
+  color: #cdb9a5;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.footer-contact a {
+  color: #e1b94d;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Вистински Instagram и TikTok икони */
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 13px;
+}
+
+.footer-social-icons a {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
 
   color: #e1b94d;
-  border: 1px solid rgba(225, 185, 77, 0.4);
+  background-color: rgba(225, 185, 77, 0.04);
+  border: 1px solid rgba(225, 185, 77, 0.48);
   border-radius: 50%;
 
-  font-family: Arial, sans-serif;
-  font-size: 17px;
   text-decoration: none;
 
   transition:
     color 0.25s ease,
-    background-color 0.25s ease;
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.footer-socials a:hover {
-  color: #1a0907;
+.footer-social-icons a:hover {
+  color: #1b0a07;
   background-color: #e1b94d;
+  border-color: #f0ce68;
+  transform: translateY(-4px);
+}
+
+.footer-social-icons svg {
+  width: 23px;
+  height: 23px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-social-icons .footer-icon-fill {
+  fill: currentColor;
+  stroke: none;
 }
 
 /* Таблет */
@@ -346,6 +438,18 @@
 
   .contact-logo img {
     width: min(250px, 75%);
+  }
+
+  .contact-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-social-icons {
+    justify-content: center;
   }
 }
 
@@ -394,7 +498,17 @@
     padding: 24px 20px;
   }
 
-  .footer-socials {
-    justify-content: center;
+  .contact-footer-inner {
+    width: 92%;
+    min-height: auto;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-brand img {
+    width: 95px;
   }
 }
