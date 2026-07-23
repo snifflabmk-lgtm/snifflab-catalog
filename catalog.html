@@ -2,7 +2,11 @@
 <html lang="mk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Каталог | Sniff Lab</title>
 
@@ -12,7 +16,7 @@
   >
 
   <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="components.css?v=1">
+  <link rel="stylesheet" href="components.css?v=3">
 </head>
 
 <body class="catalog-page">
@@ -43,12 +47,29 @@
       <img src="logo.png" alt="Sniff Lab лого">
     </a>
 
-    <nav class="navigation" aria-label="Главна навигација">
-      <a href="index.html">Почетна</a>
-      <a href="catalog.html" class="active">Каталог</a>
-      <a href="about.html">За нас</a>
-      <a href="delivery.html">Испорака</a>
-      <a href="contact.html">Контакт</a>
+    <nav
+      class="navigation"
+      aria-label="Главна навигација"
+    >
+      <a href="index.html">
+        Почетна
+      </a>
+
+      <a href="catalog.html" class="active">
+        Каталог
+      </a>
+
+      <a href="about.html">
+        За нас
+      </a>
+
+      <a href="delivery.html">
+        Испорака
+      </a>
+
+      <a href="contact.html">
+        Контакт
+      </a>
 
       <button
         type="button"
@@ -67,29 +88,37 @@
     </nav>
   </header>
 
-  <div id="header-search-panel" class="header-search-panel">
-    <div class="header-search-inner">
-      <label for="product-search">Пребарај парфем</label>
+  <main class="collection-main">
+    <section class="collection-heading">
+      <p class="eyebrow">
+        Sniff Lab
+      </p>
 
+      <h1>
+        Види ја колекцијата
+      </h1>
+
+      <p>
+        Избери го твојот совршен мирис
+      </p>
+    </section>
+
+    <section
+      class="catalog-tools"
+      aria-label="Филтри"
+    >
       <input
         type="search"
         id="product-search"
-        placeholder="Напиши име"
-        autocomplete="off"
+        hidden
+        tabindex="-1"
+        aria-hidden="true"
       >
-    </div>
-  </div>
 
-  <main class="collection-main">
-    <section class="collection-heading">
-      <p class="eyebrow">Sniff Lab</p>
-      <h1>Види ја колекцијата</h1>
-      <p>Избери го твојот совршен мирис</p>
-    </section>
-
-    <section class="catalog-tools" aria-label="Филтри">
       <div class="filter-wrapper">
-        <p>Категории</p>
+        <p>
+          Категории
+        </p>
 
         <div class="filter-buttons">
           <button
@@ -127,7 +156,10 @@
       </div>
     </section>
 
-    <p id="results-message" class="results-message">
+    <p
+      id="results-message"
+      class="results-message"
+    >
       Се вчитуваат парфемите...
     </p>
 
@@ -139,7 +171,9 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Sniff Lab. Сите права се задржани.</p>
+    <p>
+      &copy; 2026 Sniff Lab. Сите права се задржани.
+    </p>
 
     <a href="mailto:sniff.lab.mk@gmail.com">
       sniff.lab.mk@gmail.com
@@ -147,7 +181,7 @@
   </footer>
 
   <script src="products.js?v=1"></script>
-  <script src="site.js?v=1"></script>
+  <script src="site.js?v=3"></script>
   <script src="catalog.js?v=1"></script>
 </body>
 </html>
