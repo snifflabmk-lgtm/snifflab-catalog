@@ -21,37 +21,130 @@
   color: #e1b94d;
 }
 
-/* Паѓачко пребарување */
+/* Search прозорец */
 
 .header-search-panel {
-  max-height: 0;
-  overflow: hidden;
+  position: fixed;
+  top: 55px;
+  left: 50%;
+  z-index: 2000;
 
-  background-color: rgba(14, 5, 4, 0.96);
-  border-bottom: 0 solid rgba(225, 185, 77, 0.45);
+  width: min(620px, calc(100% - 32px));
+  padding: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(38, 12, 10, 0.99),
+      rgba(17, 6, 5, 0.99)
+    );
+
+  border: 1px solid rgba(225, 185, 77, 0.7);
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.65),
+    inset 0 0 25px rgba(225, 185, 77, 0.04);
 
   opacity: 0;
-  transform: translateY(-10px);
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, -18px);
 
   transition:
-    max-height 0.35s ease,
-    opacity 0.3s ease,
-    transform 0.3s ease,
-    border-width 0.3s ease;
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
 }
 
 .header-search-panel.search-open {
-  max-height: 130px;
-  border-bottom-width: 1px;
-
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translate(-50%, 0);
 }
+
+.header-search-form {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  min-height: 54px;
+  padding: 0 13px;
+
+  background-color: #140706;
+  border: 1px solid rgba(225, 185, 77, 0.48);
+  border-radius: 8px;
+}
+
+.header-search-form > span {
+  font-size: 17px;
+}
+
+.header-search-form input {
+  width: 100%;
+  height: 50px;
+  padding: 0 6px;
+
+  color: #fff8eb;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.header-search-form input::placeholder {
+  color: #bba895;
+  opacity: 1;
+}
+
+.header-search-form input:focus {
+  color: #fff8eb;
+}
+
+.header-search-form button {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e8c45b;
+  background-color: rgba(225, 185, 77, 0.08);
+  border: 1px solid rgba(225, 185, 77, 0.3);
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.header-search-form button:hover {
+  color: #160806;
+  background-color: #e1b94d;
+  border-color: #e1b94d;
+}
+
+/* Поддршка за старата Search структура */
 
 .header-search-inner {
   width: min(700px, 90%);
   margin: 0 auto;
-  padding: 20px 0 24px;
+  padding: 18px 0;
 }
 
 .header-search-inner label {
@@ -76,31 +169,17 @@
 
   font-family: Arial, sans-serif;
   font-size: 16px;
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.35),
-    inset 0 0 18px rgba(220, 183, 71, 0.04);
-
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
 .header-search-inner input::placeholder {
   color: #bba895;
 }
 
-.header-search-inner input:focus {
-  border-color: #f0ce68;
-  box-shadow:
-    0 0 0 3px rgba(240, 206, 104, 0.15),
-    0 15px 35px rgba(0, 0, 0, 0.45);
-}
-
 /* Нежна промена на горната порака */
 
 .announcement-message {
   opacity: 1;
+
   transition:
     opacity 0.18s ease,
     transform 0.18s ease;
@@ -110,6 +189,8 @@
   opacity: 0;
   transform: translateY(-4px);
 }
+
+/* Телефон */
 
 @media (max-width: 950px) {
   .nav-search-button {
@@ -123,16 +204,26 @@
     font-size: 12px;
   }
 
-  .header-search-panel.search-open {
-    max-height: 115px;
+  .header-search-panel {
+    top: 48px;
+    width: calc(100% - 24px);
+    padding: 9px;
   }
 
-  .header-search-inner {
-    padding: 15px 0 20px;
+  .header-search-form {
+    min-height: 49px;
+    padding: 0 9px;
+    gap: 7px;
   }
 
-  .header-search-inner input {
-    height: 47px;
+  .header-search-form input {
+    height: 45px;
     font-size: 15px;
+  }
+
+  .header-search-form button {
+    width: 34px;
+    height: 34px;
+    font-size: 22px;
   }
 }
