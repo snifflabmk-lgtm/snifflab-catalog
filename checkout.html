@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Нарачка | Sniff Lab</title>
+
+  <meta
+    name="description"
+    content="Внесете ги податоците за достава и потврдете ја вашата Sniff Lab нарачка."
+  >
+
+  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="components.css?v=1">
+</head>
+
+<body>
+  <div class="announcement-bar">
+    <button
+      class="announcement-arrow"
+      type="button"
+      aria-label="Претходна информација"
+    >
+      ‹
+    </button>
+
+    <p class="announcement-message">
+      ✨ 100% оригинални парфеми — тестирај пред да купиш цело шише
+    </p>
+
+    <button
+      class="announcement-arrow"
+      type="button"
+      aria-label="Следна информација"
+    >
+      ›
+    </button>
+  </div>
+
+  <header class="catalog-header">
+    <a href="index.html" class="brand">
+      <img src="logo.png" alt="Sniff Lab лого">
+    </a>
+
+    <nav class="navigation" aria-label="Главна навигација">
+      <a href="index.html">Почетна</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">За нас</a>
+      <a href="delivery.html">Испорака</a>
+      <a href="contact.html">Контакт</a>
+
+      <a href="catalog.html?search=open">
+        🔍 Search
+      </a>
+
+      <a href="cart.html" class="cart-link">
+        🛒 Кошничка
+        <span class="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="checkout-main">
+    <section class="checkout-heading">
+      <p class="eyebrow">Sniff Lab</p>
+      <h1>Заврши ја нарачката</h1>
+      <p>
+        Внеси ги податоците за испорака и провери ја
+        нарачката пред испраќање.
+      </p>
+    </section>
+
+    <div id="checkout-content" class="checkout-layout">
+      <section class="checkout-form-card">
+        <h2>Податоци за купувачот</h2>
+
+        <form id="checkout-form">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="first-name">Име *</label>
+
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                autocomplete="given-name"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="last-name">Презиме *</label>
+
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                autocomplete="family-name"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Телефон *</label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                placeholder="07X XXX XXX"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="email">Е-пошта *</label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="ime@email.com"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="city">Град / населено место *</label>
+
+              <input
+                type="text"
+                id="city"
+                name="city"
+                autocomplete="address-level2"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="address">Адреса *</label>
+
+              <input
+                type="text"
+                id="address"
+                name="address"
+                autocomplete="street-address"
+                required
+              >
+            </div>
+
+            <div class="form-field full-field">
+              <label for="note">
+                Белешка за нарачката
+                <span>(опционално)</span>
+              </label>
+
+              <textarea
+                id="note"
+                name="note"
+                rows="4"
+                placeholder="Дополнителна информација за доставата или нарачката..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="checkout-options">
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                name="marketingConsent"
+                value="yes"
+              >
+
+              <span>
+                Сакам да добивам новости, понуди и попусти
+                од Sniff Lab по е-пошта.
+              </span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                name="termsAccepted"
+                required
+              >
+
+              <span>
+                Ги потврдувам податоците и се согласувам
+                да бидам контактиран/а во врска со нарачката. *
+              </span>
+            </label>
+          </div>
+
+          <div class="payment-information">
+            <strong>Начин на плаќање</strong>
+            <p>Плаќање при достава</p>
+          </div>
+
+          <div class="delivery-information">
+            <strong>Достава</strong>
+
+            <p>
+              За нарачки под 2.000 денари, цената за
+              достава се пресметува според тарифата на
+              ЕЛС Еко Логистик и ќе биде потврдена пред
+              испраќањето.
+            </p>
+          </div>
+
+          <button type="submit" class="primary-button order-button">
+            Потврди ја нарачката
+          </button>
+
+          <p
+            id="checkout-message"
+            class="checkout-message"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+
+      <aside class="checkout-summary-card">
+        <h2>Твојата нарачка</h2>
+
+        <div id="order-items" class="order-items"></div>
+
+        <div id="order-total" class="order-total"></div>
+
+        <a href="cart.html" class="edit-cart-link">
+          ← Назад кон кошничката
+        </a>
+      </aside>
+    </div>
+
+    <section id="empty-checkout" class="empty-cart" hidden>
+      <h2>Нема производи за нарачка</h2>
+
+      <p>
+        Прво додај парфем во кошничката.
+      </p>
+
+      <a href="catalog.html" class="primary-button">
+        Разгледај го каталогот
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sniff Lab. Сите права се задржани.</p>
+
+    <a href="mailto:sniff.lab.mk@gmail.com">
+      sniff.lab.mk@gmail.com
+    </a>
+  </footer>
+
+  <script src="site.js?v=1"></script>
+  <script src="checkout.js?v=1"></script>
+</body>
+</html>
