@@ -319,7 +319,19 @@
 }
 
 .about-logo-card {
-  display: none;
+  display: flex;
+  min-height: auto;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.about-logo-card img {
+  width: min(290px, 100%);
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.45));
 }
 .about-story {
   padding: 25px 0;
