@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const WEB_APP_URL =
+    "https://script.google.com/macros/s/AKfycbzzphhEJsh5WzE8bSkbyeny4rJVqNrqdK7TvDBBrYpr8FBKAebTU-ydNsFDFCWdOUgG/exec";
+
   const checkoutForm = document.querySelector("#checkout-form");
   const orderItemsContainer = document.querySelector("#order-items");
   const orderTotalContainer = document.querySelector("#order-total");
@@ -84,35 +87,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(checkoutForm);
 
     return {
-      orderId: `SL-${Date.now()}`,
-      createdAt: new Date().toISOString(),
+      firstName: formData.get("firstName").trim(),
+      lastName: formData.get("lastName").trim(),
+      phone: formData.get("phone").trim(),
+      email: formData.get("email").trim(),
+      city: formData.get("city").trim(),
+      address: formData.get("address").trim(),
+      note: (formData.get("note") || "").trim(),
 
-      customer: {
-        firstName: formData.get("firstName"),
-        lastName: formData.get("lastName"),
-        phone: formData.get("phone"),
-        email: formData.get("email"),
-        city: formData.get("city"),
-        address: formData.get("address"),
-        note: formData.get("note") || ""
-      },
-
-      marketingConsent:
+      newsletter:
         formData.get("marketingConsent") === "yes",
 
       paymentMethod: "Плаќање при достава",
       deliveryService: "ЕЛС Еко Логистик",
 
-      items: cart,
+      items: cart.map((item) => ({
+        name: item.name,
+        size: `${item.size} ml`,
+        price: Number(item.price),
+        quantity: Number(item.quantity),
+        image: item.image
+      })),
 
-      subtotal: calculateSubtotal(cart),
-
-      freeDelivery:
-        calculateSubtotal(cart) >= 2000,
-
-      mysterySample:
-        calculateSubtotal(cart) >= 1500
+      subtotal: calculateSubtotal(cart)
     };
+  }
+
+  function showMessage(message, type) {
+    checkoutMessage.textContent = message;
+    checkoutMessage.classList.add("visible-message");
+
+    checkoutMessage.classList.toggle(
+      "success-message",
+      type === "success"
+    );
+
+    checkoutMessage.classList.toggle(
+      "error-message",
+      type === "error"
+    );
   }
 
   const cart = getCart();
@@ -128,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderOrderSummary(cart);
 
-  checkoutForm.addEventListener("submit", (event) => {
+  checkoutForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     if (!checkoutForm.checkValidity()) {
@@ -136,16 +149,72 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const orderData = createOrderData(cart);
+    const currentCart = getCart();
+
+    if (currentCart.length === 0) {
+      showMessage(
+        "Вашата кошничка е празна.",
+        "error"
+      );
+      return;
+    }
+
+    const submitButton =
+      checkoutForm.querySelector('button[type="submit"]');
+
+    const originalButtonText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "СЕ ИСПРАЌА...";
+
+    showMessage(
+      "Ве молиме почекајте додека ја испраќаме нарачката.",
+      "loading"
+    );
+
+    const orderData = createOrderData(currentCart);
 
     localStorage.setItem(
       "sniffLabPendingOrder",
       JSON.stringify(orderData)
     );
 
-    checkoutMessage.textContent =
-      "Формата е подготвена. Следно ќе го поврземе испраќањето на нарачката со е-пошта.";
+    try {
+      await fetch(WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(orderData)
+      });
 
-    checkoutMessage.classList.add("visible-message");
+      localStorage.removeItem("sniffLabCart");
+      localStorage.removeItem("sniffLabPendingOrder");
+
+      checkoutForm.reset();
+
+      showMessage(
+        "✅ Вашата нарачка е успешно испратена! Ќе добиете потврда на е-пошта.",
+        "success"
+      );
+
+      submitButton.textContent = "НАРАЧКАТА Е ИСПРАТЕНА";
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 5000);
+
+    } catch (error) {
+      console.error(error);
+
+      showMessage(
+        "❌ Нарачката не беше испратена. Проверете ја интернет-врската и обидете се повторно.",
+        "error"
+      );
+
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
   });
 });
