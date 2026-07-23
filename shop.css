@@ -1,0 +1,219 @@
+/* Дел за купување */
+
+.purchase-section {
+  margin: 30px 0 25px;
+  padding: 25px;
+
+  background-color: rgba(10, 4, 3, 0.5);
+  border: 1px solid rgba(225, 185, 77, 0.38);
+  border-radius: 12px;
+
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.18);
+}
+
+.purchase-section h2 {
+  margin-bottom: 16px;
+
+  color: #f0c34f;
+  font-size: 24px;
+}
+
+/* Избор на милилитража */
+
+.size-options {
+  margin-bottom: 22px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.size-option {
+  cursor: pointer;
+}
+
+.size-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.size-option span {
+  min-height: 48px;
+  padding: 10px 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f0dfcc;
+  background-color: rgba(29, 10, 8, 0.85);
+  border: 1px solid rgba(225, 185, 77, 0.42);
+  border-radius: 7px;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.size-option:hover span {
+  border-color: #edca65;
+  transform: translateY(-2px);
+}
+
+.size-option input:checked + span {
+  color: #24100c;
+  background-color: #e1b94d;
+  border-color: #f4d578;
+
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Цена */
+
+.selected-price {
+  margin-bottom: 20px;
+  padding: 15px 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background-color: rgba(31, 11, 9, 0.78);
+  border-left: 3px solid #e1b94d;
+  border-radius: 5px;
+
+  font-family: Arial, sans-serif;
+}
+
+.selected-price span {
+  color: #d7c2ac;
+  font-size: 14px;
+}
+
+.selected-price strong {
+  color: #f0c34f;
+  font-size: 21px;
+}
+
+/* Количина */
+
+.quantity-wrapper {
+  margin-bottom: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-wrapper label {
+  color: #f0dfcc;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.quantity-wrapper select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+
+  color: #fff8eb;
+  background-color: #160806;
+  border: 1px solid #dcb747;
+  border-radius: 6px;
+  outline: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+
+  color-scheme: dark;
+}
+
+.quantity-wrapper select:focus {
+  border-color: #f0ce68;
+  box-shadow: 0 0 0 3px rgba(240, 206, 104, 0.14);
+}
+
+.quantity-wrapper option {
+  color: #fff8eb;
+  background-color: #160806;
+}
+
+/* Кошничка */
+
+.add-to-cart-button {
+  width: 100%;
+  min-height: 50px;
+  margin-bottom: 12px;
+
+  font-size: 14px;
+}
+
+.cart-feedback {
+  min-height: 22px;
+
+  color: #f0c34f;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Вчитување и грешка */
+
+.product-loading,
+.product-error {
+  padding: 70px 25px;
+
+  color: #f0dfcc;
+  background-color: rgba(24, 9, 8, 0.78);
+  border: 1px solid rgba(230, 192, 91, 0.55);
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.product-error h1 {
+  margin-bottom: 12px;
+  color: #f0c34f;
+}
+
+.product-error p {
+  margin-bottom: 25px;
+  font-family: Arial, sans-serif;
+}
+
+/* Телефон */
+
+@media (max-width: 700px) {
+  .purchase-section {
+    padding: 20px 16px;
+  }
+
+  .size-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .size-option span {
+    min-height: 45px;
+  }
+
+  .selected-price strong {
+    font-size: 18px;
+  }
+
+  .quantity-wrapper {
+    grid-template-columns: 1fr 90px;
+  }
+}
