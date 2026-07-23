@@ -20,22 +20,79 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* Навигација */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+/* Информативна лента */
+
+.announcement-bar {
+  min-height: 42px;
+  padding: 8px 5%;
+
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+
+  color: #e8bd43;
+  background-color: #050505;
+  border-bottom: 1px solid rgba(232, 189, 67, 0.4);
+
+  font-family: Arial, sans-serif;
+}
+
+.announcement-message {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.announcement-arrow {
+  width: 34px;
+  height: 28px;
+
+  color: #e8bd43;
+  background: transparent;
+  border: none;
+
+  font-size: 25px;
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.announcement-arrow:hover {
+  color: #fff2bf;
+  transform: scale(1.15);
+}
+
+/* Заглавие */
 
 .header,
 .catalog-header,
 .details-header {
   width: 100%;
-  min-height: 90px;
-  padding: 15px 7%;
+  min-height: 105px;
+  padding: 13px 6%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 25px;
 
-  background-color: rgba(20, 7, 6, 0.72);
+  background-color: rgba(20, 7, 6, 0.82);
   border-bottom: 1px solid rgba(220, 178, 67, 0.35);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(7px);
 }
 
 .header {
@@ -46,13 +103,17 @@ body {
 
   background: linear-gradient(
     to bottom,
-    rgba(18, 6, 5, 0.9),
-    rgba(18, 6, 5, 0.25),
+    rgba(18, 6, 5, 0.92),
+    rgba(18, 6, 5, 0.35),
     transparent
   );
 
   border-bottom: none;
   backdrop-filter: none;
+}
+
+.brand {
+  flex-shrink: 0;
 }
 
 .brand img {
@@ -64,18 +125,20 @@ body {
 .navigation {
   display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: flex-end;
+  gap: 23px;
 }
 
 .navigation a {
   position: relative;
-  padding: 8px 0;
+  padding: 9px 0;
 
   color: #fff8eb;
   font-family: Arial, sans-serif;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 0.7px;
   text-decoration: none;
+  white-space: nowrap;
 
   transition: color 0.3s ease;
 }
@@ -96,11 +159,34 @@ body {
   background-color: #e1b94d;
 }
 
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cart-count {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #26100d;
+  background-color: #e1b94d;
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
 /* Почетна страница */
 
 .hero {
   min-height: 100vh;
-  padding: 150px 7% 80px;
+  padding: 165px 7% 80px;
 
   display: flex;
   align-items: center;
@@ -108,7 +194,7 @@ body {
   background: linear-gradient(
     90deg,
     rgba(22, 7, 6, 0.7),
-    rgba(22, 7, 6, 0.2)
+    rgba(22, 7, 6, 0.18)
   );
 }
 
@@ -145,9 +231,12 @@ body {
   line-height: 1.8;
 }
 
+/* Копчиња */
+
 .hero-button,
 .details-button,
-.back-button {
+.back-button,
+.primary-button {
   display: inline-block;
   padding: 12px 24px;
 
@@ -160,8 +249,10 @@ body {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
 
   transition:
     color 0.3s ease,
@@ -171,19 +262,20 @@ body {
 
 .hero-button:hover,
 .details-button:hover,
-.back-button:hover {
+.back-button:hover,
+.primary-button:hover {
   color: #edca65;
-  background-color: rgba(25, 8, 7, 0.8);
+  background-color: rgba(25, 8, 7, 0.85);
   transform: translateY(-2px);
 }
 
 /* Каталог */
 
 .collection-main {
-  width: min(1100px, 90%);
-  min-height: calc(100vh - 160px);
+  width: min(1050px, 92%);
+  min-height: calc(100vh - 200px);
   margin: 0 auto;
-  padding: 65px 0 90px;
+  padding: 60px 0 90px;
 }
 
 .collection-heading {
@@ -195,7 +287,7 @@ body {
   margin-bottom: 10px;
 
   color: #f0c34f;
-  font-size: clamp(38px, 6vw, 64px);
+  font-size: clamp(38px, 6vw, 62px);
   font-weight: 700;
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
 }
@@ -207,18 +299,127 @@ body {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.collection-grid {
+/* Пребарување и филтри */
+
+.catalog-tools {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  padding: 24px;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 270px));
-  justify-content: center;
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 22px;
+
+  background-color: rgba(24, 9, 8, 0.72);
+  border: 1px solid rgba(230, 192, 91, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 16px 38px rgba(10, 2, 2, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.search-wrapper label,
+.filter-wrapper > p {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #f0c34f;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.search-wrapper input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+
+  color: #fff8eb;
+  background-color: rgba(10, 4, 3, 0.72);
+  border: 1px solid rgba(230, 192, 91, 0.45);
+  border-radius: 6px;
+  outline: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.search-wrapper input::placeholder {
+  color: #bca995;
+}
+
+.search-wrapper input:focus {
+  border-color: #f0c34f;
+  box-shadow: 0 0 0 3px rgba(240, 195, 79, 0.15);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 10px 16px;
+
+  color: #f2dfcc;
+  background-color: rgba(14, 5, 4, 0.7);
+  border: 1px solid rgba(230, 192, 91, 0.35);
+  border-radius: 30px;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.filter-button:hover,
+.filter-button.active-filter {
+  color: #24100c;
+  background-color: #e1b94d;
+  border-color: #f0cf70;
+}
+
+.results-message {
+  max-width: 760px;
+  margin: 0 auto 22px;
+
+  color: #e4d3c0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* Мрежа: точно два парфеми во ред */
+
+.collection-grid {
+  max-width: 760px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .collection-card {
+  min-width: 0;
   overflow: hidden;
 
-  background-color: rgba(24, 9, 8, 0.76);
-  border: 1px solid rgba(230, 192, 91, 0.7);
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(24, 9, 8, 0.8);
+  border: 1px solid rgba(230, 192, 91, 0.65);
   border-radius: 12px;
   box-shadow: 0 18px 45px rgba(10, 2, 2, 0.5);
   backdrop-filter: blur(5px);
@@ -238,8 +439,8 @@ body {
 }
 
 .collection-image {
-  height: 300px;
-  padding: 25px 20px 12px;
+  height: 330px;
+  padding: 28px 20px 15px;
 
   display: flex;
   align-items: center;
@@ -248,16 +449,17 @@ body {
   background: radial-gradient(
     circle,
     rgba(230, 192, 91, 0.13),
-    rgba(18, 6, 5, 0.2) 68%
+    rgba(18, 6, 5, 0.25) 68%
   );
 }
 
 .collection-image img {
   display: block;
   width: auto;
-  max-width: 85%;
-  height: 255px;
+  max-width: 88%;
+  height: 280px;
   object-fit: contain;
+
   filter: drop-shadow(0 16px 14px rgba(0, 0, 0, 0.55));
 
   transition: transform 0.35s ease;
@@ -268,21 +470,65 @@ body {
 }
 
 .collection-info {
-  padding: 20px 20px 25px;
+  flex: 1;
+  padding: 20px 18px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   border-top: 1px solid rgba(230, 192, 91, 0.2);
+}
+
+.product-category {
+  margin-bottom: 8px;
+
+  color: #d6aa3c;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .collection-info h2 {
   margin-bottom: 8px;
   color: #f0c34f;
-  font-size: 25px;
+  font-size: 24px;
+  line-height: 1.2;
 }
 
 .collection-info p {
   margin-bottom: 18px;
+
   color: #fff8eb;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
+}
+
+.collection-info .details-button {
+  margin-top: auto;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  padding: 55px 25px;
+
+  background-color: rgba(24, 9, 8, 0.75);
+  border: 1px solid rgba(230, 192, 91, 0.45);
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.no-results h2 {
+  margin-bottom: 10px;
+  color: #f0c34f;
+}
+
+.no-results p {
+  color: #e0cdb9;
+  font-family: Arial, sans-serif;
 }
 
 /* Детална страница */
@@ -302,7 +548,7 @@ body {
   align-items: center;
   gap: 55px;
 
-  background-color: rgba(24, 9, 8, 0.76);
+  background-color: rgba(24, 9, 8, 0.78);
   border: 1px solid rgba(230, 192, 91, 0.65);
   border-radius: 18px;
   box-shadow: 0 22px 60px rgba(10, 2, 2, 0.55);
@@ -363,10 +609,16 @@ body {
 /* Footer */
 
 .footer {
-  padding: 22px;
+  padding: 24px 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 25px;
 
   color: #c9ad92;
-  background-color: rgba(16, 5, 4, 0.88);
+  background-color: rgba(16, 5, 4, 0.9);
   border-top: 1px solid rgba(230, 192, 91, 0.25);
 
   text-align: center;
@@ -374,31 +626,21 @@ body {
   font-size: 13px;
 }
 
-/* Таблет */
-
-@media (max-width: 800px) {
-  .perfume-details {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .details-image img {
-    height: 330px;
-  }
+.footer a {
+  color: #e1b94d;
+  text-decoration: none;
 }
 
-/* Телефон */
+.footer a:hover {
+  text-decoration: underline;
+}
 
-@media (max-width: 600px) {
-  body {
-    background-attachment: scroll;
-  }
+/* Таблет */
 
-  .header,
-  .catalog-header,
-  .details-header {
-    min-height: 75px;
-    padding: 14px 5%;
+@media (max-width: 950px) {
+  .catalog-header {
+    padding-right: 4%;
+    padding-left: 4%;
   }
 
   .brand img {
@@ -406,19 +648,83 @@ body {
   }
 
   .navigation {
-    gap: 16px;
+    gap: 14px;
   }
 
   .navigation a {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  .perfume-details {
+    grid-template-columns: 280px 1fr;
+    gap: 35px;
+  }
+}
+
+/* Телефон */
+
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .announcement-bar {
+    min-height: 40px;
+    padding: 6px 2%;
+    grid-template-columns: 28px 1fr 28px;
+  }
+
+  .announcement-message {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .announcement-arrow {
+    width: 28px;
+  }
+
+  .header,
+  .catalog-header,
+  .details-header {
+    min-height: auto;
+    padding: 10px 4%;
+
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .brand img {
+    width: 150px;
+  }
+
+  .navigation {
+    width: 100%;
+    padding-bottom: 5px;
+
+    justify-content: flex-start;
+    gap: 17px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navigation a {
+    flex-shrink: 0;
+    font-size: 12px;
   }
 
   .hero {
-    padding: 125px 6% 60px;
+    padding: 145px 6% 60px;
   }
 
   .hero h1 {
-    font-size: 60px;
+    font-size: 58px;
   }
 
   .hero-text {
@@ -426,38 +732,115 @@ body {
   }
 
   .collection-main {
-    padding: 50px 0 70px;
+    width: 94%;
+    padding: 42px 0 65px;
+  }
+
+  .collection-heading {
+    margin-bottom: 28px;
   }
 
   .collection-heading h1 {
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .collection-heading > p:last-child {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .catalog-tools {
+    padding: 17px;
+  }
+
+  .filter-buttons {
+    gap: 7px;
+  }
+
+  .filter-button {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .results-message {
+    font-size: 12px;
   }
 
   .collection-grid {
-    grid-template-columns: minmax(0, 280px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .collection-image {
-    height: 280px;
+    height: 210px;
+    padding: 18px 8px 10px;
   }
 
   .collection-image img {
-    height: 235px;
+    max-width: 94%;
+    height: 180px;
+  }
+
+  .collection-info {
+    padding: 14px 8px 16px;
+  }
+
+  .product-category {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .collection-info h2 {
+    font-size: 17px;
+  }
+
+  .collection-info p {
+    margin-bottom: 13px;
+    font-size: 12px;
+  }
+
+  .collection-info .details-button {
+    width: 100%;
+    padding: 9px 6px;
+    font-size: 10px;
   }
 
   .details-main {
-    padding: 40px 0 70px;
+    width: 92%;
+    padding: 35px 0 65px;
   }
 
   .perfume-details {
-    padding: 28px 20px;
+    padding: 27px 20px;
+
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .details-image img {
-    height: 280px;
+    height: 300px;
+  }
+
+  .details-content h1 {
+    font-size: 38px;
+  }
+}
+
+/* Многу тесни телефони */
+
+@media (max-width: 370px) {
+  .collection-grid {
+    gap: 8px;
+  }
+
+  .collection-image {
+    height: 185px;
+  }
+
+  .collection-image img {
+    height: 158px;
+  }
+
+  .collection-info h2 {
+    font-size: 15px;
   }
 }
