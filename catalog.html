@@ -4,17 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Колекција | Sniff Lab</title>
+  <title>Каталог | Sniff Lab</title>
 
   <meta
     name="description"
-    content="Разгледајте ја колекцијата парфеми на Sniff Lab."
+    content="Пребарајте и откријте го вашиот следен омилен парфем во каталогот на Sniff Lab."
   >
 
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body class="catalog-page">
+  <div class="announcement-bar">
+    <button
+      class="announcement-arrow"
+      type="button"
+      aria-label="Претходна информација"
+    >
+      ‹
+    </button>
+
+    <p class="announcement-message">
+      ✨ 100% оригинални парфеми — тестирај пред да купиш цело шише
+    </p>
+
+    <button
+      class="announcement-arrow"
+      type="button"
+      aria-label="Следна информација"
+    >
+      ›
+    </button>
+  </div>
+
   <header class="catalog-header">
     <a href="index.html" class="brand">
       <img src="logo.png" alt="Sniff Lab лого">
@@ -23,6 +45,13 @@
     <nav class="navigation" aria-label="Главна навигација">
       <a href="index.html">Почетна</a>
       <a href="catalog.html" class="active">Каталог</a>
+      <a href="about.html">За нас</a>
+      <a href="delivery.html">Испорака</a>
+      <a href="contact.html">Контакт</a>
+      <a href="cart.html" class="cart-link">
+        Кошничка
+        <span class="cart-count">0</span>
+      </a>
     </nav>
   </header>
 
@@ -33,104 +62,77 @@
       <p>Избери го твојот совршен мирис</p>
     </section>
 
-    <section class="collection-grid" aria-label="Колекција парфеми">
-      <article class="collection-card">
-        <div class="collection-image">
-          <img
-            src="afnan-9pm.png"
-            alt="Afnan 9PM парфем"
+    <section class="catalog-tools" aria-label="Пребарување и филтри">
+      <div class="search-wrapper">
+        <label for="product-search">Пребарај парфем</label>
+
+        <input
+          type="search"
+          id="product-search"
+          placeholder="Напиши име или нота..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="filter-wrapper">
+        <p>Категории</p>
+
+        <div class="filter-buttons">
+          <button
+            type="button"
+            class="filter-button active-filter"
+            data-category="site"
           >
-        </div>
+            Сите
+          </button>
 
-        <div class="collection-info">
-          <h2>Afnan 9PM</h2>
-          <p>Машки парфем</p>
-
-          <a href="afnan-9pm.html" class="details-button">
-            Детали
-          </a>
-        </div>
-      </article>
-
-      <article class="collection-card">
-        <div class="collection-image">
-          <img
-            src="afnan-9pm-nightout.png"
-            alt="Afnan 9PM Night Out парфем"
+          <button
+            type="button"
+            class="filter-button"
+            data-category="arapski"
           >
-        </div>
+            Арапски
+          </button>
 
-        <div class="collection-info">
-          <h2>Afnan 9PM Night Out</h2>
-          <p>Машки парфем</p>
-
-          <a href="afnan-9pm-nightout.html" class="details-button">
-            Детали
-          </a>
-        </div>
-      </article>
-
-      <article class="collection-card">
-        <div class="collection-image">
-          <img
-            src="afnan-9pm-rebel.png"
-            alt="Afnan 9PM Rebel парфем"
+          <button
+            type="button"
+            class="filter-button"
+            data-category="dizajnerski"
           >
-        </div>
+            Дизајнерски
+          </button>
 
-        <div class="collection-info">
-          <h2>Afnan 9PM Rebel</h2>
-          <p>Машки парфем</p>
-
-          <a href="afnan-9pm-rebel.html" class="details-button">
-            Детали
-          </a>
-        </div>
-      </article>
-
-      <article class="collection-card">
-        <div class="collection-image">
-          <img
-            src="afnan-supremacy-collectors-edition.webp"
-            alt="Afnan Supremacy Collector's Edition парфем"
+          <button
+            type="button"
+            class="filter-button"
+            data-category="nish"
           >
+            Ниш
+          </button>
         </div>
-
-        <div class="collection-info">
-          <h2>Afnan Supremacy Collector's Edition</h2>
-          <p>Машки парфем</p>
-
-          <a
-            href="afnan-supremacy-collectors-edition.html"
-            class="details-button"
-          >
-            Детали
-          </a>
-        </div>
-      </article>
-
-      <article class="collection-card">
-        <div class="collection-image">
-          <img
-            src="afnan-turathi-blue.png"
-            alt="Afnan Turathi Blue парфем"
-          >
-        </div>
-
-        <div class="collection-info">
-          <h2>Afnan Turathi Blue</h2>
-          <p>Машки парфем</p>
-
-          <a href="afnan-turathi-blue.html" class="details-button">
-            Детали
-          </a>
-        </div>
-      </article>
+      </div>
     </section>
+
+    <p id="results-message" class="results-message">
+      Се вчитуваат парфемите...
+    </p>
+
+    <section
+      id="product-grid"
+      class="collection-grid"
+      aria-label="Колекција парфеми"
+    ></section>
   </main>
 
   <footer class="footer">
     <p>&copy; 2026 Sniff Lab. Сите права се задржани.</p>
+
+    <a href="mailto:sniff.lab.mk@gmail.com">
+      sniff.lab.mk@gmail.com
+    </a>
   </footer>
+
+  <script src="products.js?v=1"></script>
+  <script src="catalog.js?v=1"></script>
 </body>
 </html>
