@@ -48,12 +48,36 @@
       <a href="about.html">За нас</a>
       <a href="delivery.html">Испорака</a>
       <a href="contact.html">Контакт</a>
+
+      <button
+        type="button"
+        id="search-toggle"
+        class="nav-search-button"
+        aria-expanded="false"
+        aria-controls="header-search-panel"
+      >
+        🔍 Search
+      </button>
+
       <a href="cart.html" class="cart-link">
-        Кошничка
+        🛒 Кошничка
         <span class="cart-count">0</span>
       </a>
     </nav>
   </header>
+
+  <div id="header-search-panel" class="header-search-panel">
+    <div class="header-search-inner">
+      <label for="product-search">Пребарај парфем</label>
+
+      <input
+        type="search"
+        id="product-search"
+        placeholder="Напиши име"
+        autocomplete="off"
+      >
+    </div>
+  </div>
 
   <main class="collection-main">
     <section class="collection-heading">
@@ -62,18 +86,7 @@
       <p>Избери го твојот совршен мирис</p>
     </section>
 
-    <section class="catalog-tools" aria-label="Пребарување и филтри">
-      <div class="search-wrapper">
-        <label for="product-search">Пребарај парфем</label>
-
-        <input
-          type="search"
-          id="product-search"
-          placeholder="Напиши име или нота..."
-          autocomplete="off"
-        >
-      </div>
-
+    <section class="catalog-tools" aria-label="Филтри">
       <div class="filter-wrapper">
         <p>Категории</p>
 
@@ -133,6 +146,7 @@
   </footer>
 
   <script src="products.js?v=1"></script>
+  <script src="site.js?v=1"></script>
   <script src="catalog.js?v=1"></script>
 </body>
 </html>
