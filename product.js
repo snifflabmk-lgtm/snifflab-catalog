@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const productContainer = document.querySelector("#product-detail");
-  const pageTitle = document.querySelector("title");
+  const productContainer =
+    document.querySelector("#product-detail");
 
-  const params = new URLSearchParams(window.location.search);
+  const pageTitle =
+    document.querySelector("title");
+
+  const params =
+    new URLSearchParams(window.location.search);
+
   const productId = params.get("id");
 
   const product = window.products.find(
@@ -20,9 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     productContainer.innerHTML = `
       <div class="product-error">
         <h1>Парфемот не е пронајден</h1>
+
         <p>
           Производот можеби е отстранет или адресата не е точна.
         </p>
+
         <a href="catalog.html" class="back-button">
           Назад кон каталогот
         </a>
@@ -32,34 +39,43 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  pageTitle.textContent = `${product.name} | Sniff Lab`;
+  pageTitle.textContent =
+    `${product.name} | Sniff Lab`;
 
-  const priceOptions = Object.entries(product.prices)
-    .sort((first, second) => {
-      return Number(first[0]) - Number(second[0]);
-    })
-    .map(([milliliters, price], index) => {
-      return `
-        <label class="size-option">
-          <input
-            type="radio"
-            name="product-size"
-            value="${milliliters}"
-            data-price="${price}"
-            ${index === 0 ? "checked" : ""}
-          >
+  const priceOptions =
+    Object.entries(product.prices)
+      .sort((first, second) => {
+        return (
+          Number(first[0]) -
+          Number(second[0])
+        );
+      })
+      .map(
+        ([milliliters, price], index) => {
+          return `
+            <label class="size-option">
+              <input
+                type="radio"
+                name="product-size"
+                value="${milliliters}"
+                data-price="${price}"
+                ${index === 0 ? "checked" : ""}
+              >
 
-          <span>
-            ${milliliters} ml
-          </span>
-        </label>
-      `;
-    })
-    .join("");
+              <span>
+                ${milliliters} ml
+              </span>
+            </label>
+          `;
+        }
+      )
+      .join("");
 
   const seasons = product.seasons
     .map((season) => {
-      return `${seasonIcons[season] || ""} ${season}`;
+      return (
+        `${seasonIcons[season] || ""} ${season}`
+      );
     })
     .join(" | ");
 
@@ -74,7 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <div class="details-content">
         <p class="eyebrow">
-          ${product.category} · ${product.gender} парфем
+          ${product.category} ·
+          ${product.gender} парфем
         </p>
 
         <h1>${product.name}</h1>
@@ -103,8 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="selected-price">
             <span>Цена</span>
+
             <strong id="current-price">
-              ${Object.values(product.prices)[0]} денари
+              ${Object.values(product.prices)[0]}
+              денари
             </strong>
           </div>
 
@@ -122,13 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
             </select>
           </div>
 
-          <button
-            type="button"
-            id="add-to-cart"
-            class="primary-button add-to-cart-button"
-          >
-            🛒 Додај во кошничка
-          </button>
+          <div class="purchase-actions">
+            <button
+              type="button"
+              id="add-to-cart"
+              class="primary-button add-to-cart-button"
+            >
+              🛒 Додај во кошничка
+            </button>
+
+            <button
+              type="button"
+              id="buy-now"
+              class="primary-button buy-now-button"
+            >
+              ⚡ Купи веднаш
+            </button>
+          </div>
 
           <p
             id="cart-feedback"
@@ -144,14 +173,27 @@ document.addEventListener("DOMContentLoaded", () => {
     </article>
   `;
 
-  const sizeInputs = document.querySelectorAll(
-    'input[name="product-size"]'
-  );
+  const sizeInputs =
+    document.querySelectorAll(
+      'input[name="product-size"]'
+    );
 
-  const currentPrice = document.querySelector("#current-price");
-  const quantitySelect = document.querySelector("#product-quantity");
-  const addToCartButton = document.querySelector("#add-to-cart");
-  const cartFeedback = document.querySelector("#cart-feedback");
+  const currentPrice =
+    document.querySelector("#current-price");
+
+  const quantitySelect =
+    document.querySelector(
+      "#product-quantity"
+    );
+
+  const addToCartButton =
+    document.querySelector("#add-to-cart");
+
+  const buyNowButton =
+    document.querySelector("#buy-now");
+
+  const cartFeedback =
+    document.querySelector("#cart-feedback");
 
   sizeInputs.forEach((input) => {
     input.addEventListener("change", () => {
@@ -160,22 +202,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  addToCartButton.addEventListener("click", () => {
-    const selectedSize = document.querySelector(
-      'input[name="product-size"]:checked'
-    );
+  function addSelectedProductToCart() {
+    const selectedSize =
+      document.querySelector(
+        'input[name="product-size"]:checked'
+      );
 
-    const size = Number(selectedSize.value);
-    const price = Number(selectedSize.dataset.price);
-    const quantity = Number(quantitySelect.value);
+    const size =
+      Number(selectedSize.value);
+
+    const price =
+      Number(selectedSize.dataset.price);
+
+    const quantity =
+      Number(quantitySelect.value);
 
     const savedCart = JSON.parse(
-      localStorage.getItem("sniffLabCart") || "[]"
+      localStorage.getItem(
+        "sniffLabCart"
+      ) || "[]"
     );
 
-    const existingItem = savedCart.find((item) => {
-      return item.productId === product.id && item.size === size;
-    });
+    const existingItem =
+      savedCart.find((item) => {
+        return (
+          item.productId === product.id &&
+          item.size === size
+        );
+      });
 
     if (existingItem) {
       existingItem.quantity += quantity;
@@ -195,22 +249,55 @@ document.addEventListener("DOMContentLoaded", () => {
       JSON.stringify(savedCart)
     );
 
-    cartFeedback.textContent =
-      `${product.name} ${size} ml е додаден во кошничката.`;
-
-    const cartCount = document.querySelector(".cart-count");
+    const cartCount =
+      document.querySelector(
+        ".cart-count"
+      );
 
     if (cartCount) {
-      const totalItems = savedCart.reduce(
-        (total, item) => total + item.quantity,
-        0
-      );
+      const totalItems =
+        savedCart.reduce(
+          (total, item) => {
+            return total + item.quantity;
+          },
+          0
+        );
 
       cartCount.textContent = totalItems;
     }
 
-    setTimeout(() => {
-      cartFeedback.textContent = "";
-    }, 4000);
-  });
+    return {
+      size,
+      savedCart
+    };
+  }
+
+  addToCartButton.addEventListener(
+    "click",
+    () => {
+      const result =
+        addSelectedProductToCart();
+
+      cartFeedback.textContent =
+        `${product.name} ${result.size} ml е додаден во кошничката.`;
+
+      setTimeout(() => {
+        cartFeedback.textContent = "";
+      }, 4000);
+    }
+  );
+
+  buyNowButton.addEventListener(
+    "click",
+    () => {
+      addSelectedProductToCart();
+
+      buyNowButton.disabled = true;
+      buyNowButton.textContent =
+        "Се отвора наплатата...";
+
+      window.location.href =
+        "checkout.html";
+    }
+  );
 });
