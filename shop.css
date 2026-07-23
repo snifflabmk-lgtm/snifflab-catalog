@@ -149,18 +149,74 @@
   background-color: #160806;
 }
 
-/* Кошничка */
+/* Копчиња за купување */
+
+.purchase-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.add-to-cart-button,
+.buy-now-button {
+  width: 100%;
+  min-height: 52px;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+  line-height: 1.3;
+}
 
 .add-to-cart-button {
-  width: 100%;
-  min-height: 50px;
-  margin-bottom: 12px;
+  color: #f4d578;
+  background: rgba(35, 12, 9, 0.95);
+  border: 1px solid #dcb747;
+}
 
-  font-size: 14px;
+.add-to-cart-button:hover {
+  color: #24100c;
+  background: #e1b94d;
+}
+
+.buy-now-button {
+  color: #24100c;
+  background:
+    linear-gradient(
+      135deg,
+      #f0cf68,
+      #dca72e
+    );
+  border: 1px solid #f7dc83;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.3),
+    0 0 18px rgba(225, 185, 77, 0.12);
+}
+
+.buy-now-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #f8dd87,
+      #e9b943
+    );
+
+  transform: translateY(-2px);
+}
+
+.buy-now-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  transform: none;
 }
 
 .cart-feedback {
   min-height: 22px;
+  margin-top: 12px;
 
   color: #f0c34f;
   font-family: Arial, sans-serif;
@@ -215,5 +271,14 @@
 
   .quantity-wrapper {
     grid-template-columns: 1fr 90px;
+  }
+
+  .purchase-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .add-to-cart-button,
+  .buy-now-button {
+    min-height: 50px;
   }
 }
