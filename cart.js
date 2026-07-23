@@ -152,10 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = "";
       cartSummaryContainer.innerHTML = "";
+
+      cartSummaryContainer.style.display = "none";
       emptyCartMessage.hidden = false;
+
       return;
     }
 
+    cartSummaryContainer.style.display = "";
     emptyCartMessage.hidden = true;
 
     cartItemsContainer.innerHTML = cart
