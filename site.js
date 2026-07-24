@@ -461,6 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     navigation.appendChild(menuSocials);
+    document.body.appendChild(navigation);
 
     /* Темна позадина */
 
