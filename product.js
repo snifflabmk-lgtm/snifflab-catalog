@@ -46,6 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
   pageTitle.textContent =
     `${product.name} | Sniff Lab`;
 
+  function isAvailablePrice(price) {
+    return (
+      price !== null &&
+      price !== undefined &&
+      Number.isFinite(Number(price)) &&
+      Number(price) > 0
+    );
+  }
+
   const sortedPrices =
     Object.entries(product.prices)
       .sort((first, second) => {
@@ -55,26 +64,62 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       });
 
-  const priceOptions = sortedPrices
-    .map(
-      ([milliliters, price], index) => {
-        return `
-          <label class="size-option">
-            <input
-              type="radio"
-              name="product-size"
-              value="${milliliters}"
-              data-price="${price}"
-              ${index === 0 ? "checked" : ""}
-            >
+  const availablePrices =
+    sortedPrices.filter(([, price]) => {
+      return isAvailablePrice(price);
+    });
 
-            <span>
+  const firstAvailablePrice =
+    availablePrices.length > 0
+      ? availablePrices[0]
+      : null;
+
+  const priceOptions = sortedPrices
+    .map(([milliliters, price]) => {
+      const isAvailable =
+        isAvailablePrice(price);
+
+      const isFirstAvailable =
+        firstAvailablePrice &&
+        milliliters === firstAvailablePrice[0];
+
+      return `
+        <label
+          class="size-option ${
+            isAvailable
+              ? ""
+              : "unavailable-size"
+          }"
+        >
+          <input
+            type="radio"
+            name="product-size"
+            value="${milliliters}"
+            data-price="${
+              isAvailable ? price : ""
+            }"
+            ${isFirstAvailable ? "checked" : ""}
+            ${isAvailable ? "" : "disabled"}
+          >
+
+          <span>
+            <span class="size-name">
               ${milliliters} ml
             </span>
-          </label>
-        `;
-      }
-    )
+
+            ${
+              isAvailable
+                ? ""
+                : `
+                  <small class="stock-message">
+                    Нема на залиха
+                  </small>
+                `
+            }
+          </span>
+        </label>
+      `;
+    })
     .join("");
 
   const seasons = product.seasons
@@ -85,8 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .join(" | ");
 
-  const firstPrice =
-    sortedPrices[0][1];
+  const initialPriceText =
+    firstAvailablePrice
+      ? `${firstAvailablePrice[1]} денари`
+      : "Нема на залиха";
+
+  const hasAvailableSizes =
+    availablePrices.length > 0;
 
   productContainer.innerHTML = `
     <article class="perfume-details product-shop-details">
@@ -138,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Цена</span>
 
             <strong id="current-price">
-              ${firstPrice} денари
+              ${initialPriceText}
             </strong>
           </div>
 
@@ -147,7 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
               Количина
             </label>
 
-            <select id="product-quantity">
+            <select
+              id="product-quantity"
+              ${hasAvailableSizes ? "" : "disabled"}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -161,6 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
               type="button"
               id="add-to-cart"
               class="primary-button add-to-cart-button"
+              ${hasAvailableSizes ? "" : "disabled"}
             >
               🛒 Додај во кошничка
             </button>
@@ -169,6 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
               type="button"
               id="buy-now"
               class="primary-button buy-now-button"
+              ${hasAvailableSizes ? "" : "disabled"}
             >
               ⚡ Купи веднаш
             </button>
@@ -193,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sizeInputs =
     document.querySelectorAll(
-      'input[name="product-size"]'
+      'input[name="product-size"]:not(:disabled)'
     );
 
   const currentPrice =
@@ -256,8 +311,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function addSelectedProductToCart() {
     const selectedSize =
       document.querySelector(
-        'input[name="product-size"]:checked'
+        'input[name="product-size"]:checked:not(:disabled)'
       );
+
+    if (!selectedSize) {
+      cartFeedback.textContent =
+        "Избраната милилитража не е достапна.";
+
+      return null;
+    }
 
     const size =
       Number(selectedSize.value);
@@ -314,6 +376,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const result =
         addSelectedProductToCart();
 
+      if (!result) {
+        return;
+      }
+
       cartFeedback.textContent =
         `${product.name} ${result.size} ml е додаден во кошничката.`;
 
@@ -326,7 +392,12 @@ document.addEventListener("DOMContentLoaded", () => {
   buyNowButton.addEventListener(
     "click",
     () => {
-      addSelectedProductToCart();
+      const result =
+        addSelectedProductToCart();
+
+      if (!result) {
+        return;
+      }
 
       buyNowButton.disabled = true;
 
