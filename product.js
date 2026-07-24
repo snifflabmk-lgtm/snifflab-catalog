@@ -27,10 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <h1>Парфемот не е пронајден</h1>
 
         <p>
-          Производот можеби е отстранет или адресата не е точна.
+          Производот можеби е отстранет или
+          адресата не е точна.
         </p>
 
-        <a href="catalog.html" class="back-button">
+        <a
+          href="catalog.html"
+          class="back-button"
+        >
           Назад кон каталогот
         </a>
       </div>
@@ -42,34 +46,36 @@ document.addEventListener("DOMContentLoaded", () => {
   pageTitle.textContent =
     `${product.name} | Sniff Lab`;
 
-  const priceOptions =
+  const sortedPrices =
     Object.entries(product.prices)
       .sort((first, second) => {
         return (
           Number(first[0]) -
           Number(second[0])
         );
-      })
-      .map(
-        ([milliliters, price], index) => {
-          return `
-            <label class="size-option">
-              <input
-                type="radio"
-                name="product-size"
-                value="${milliliters}"
-                data-price="${price}"
-                ${index === 0 ? "checked" : ""}
-              >
+      });
 
-              <span>
-                ${milliliters} ml
-              </span>
-            </label>
-          `;
-        }
-      )
-      .join("");
+  const priceOptions = sortedPrices
+    .map(
+      ([milliliters, price], index) => {
+        return `
+          <label class="size-option">
+            <input
+              type="radio"
+              name="product-size"
+              value="${milliliters}"
+              data-price="${price}"
+              ${index === 0 ? "checked" : ""}
+            >
+
+            <span>
+              ${milliliters} ml
+            </span>
+          </label>
+        `;
+      }
+    )
+    .join("");
 
   const seasons = product.seasons
     .map((season) => {
@@ -78,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     })
     .join(" | ");
+
+  const firstPrice =
+    sortedPrices[0][1];
 
   productContainer.innerHTML = `
     <article class="perfume-details product-shop-details">
@@ -98,17 +107,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <section class="details-section">
           <h2>Сезона</h2>
+
           <p>${seasons}</p>
         </section>
 
         <section class="details-section">
           <h2>Ноти</h2>
-          <p>${product.notes.join(", ")}.</p>
+
+          <p>
+            ${product.notes.join(", ")}.
+          </p>
         </section>
 
         <section class="details-section">
           <h2>Прилика</h2>
-          <p>${product.occasions.join(", ")}.</p>
+
+          <p>
+            ${product.occasions.join(", ")}.
+          </p>
         </section>
 
         <section class="purchase-section">
@@ -122,8 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Цена</span>
 
             <strong id="current-price">
-              ${Object.values(product.prices)[0]}
-              денари
+              ${firstPrice} денари
             </strong>
           </div>
 
@@ -166,7 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ></p>
         </section>
 
-        <a href="catalog.html" class="back-button">
+        <a
+          href="catalog.html"
+          class="back-button"
+        >
           Назад кон каталогот
         </a>
       </div>
@@ -179,7 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   const currentPrice =
-    document.querySelector("#current-price");
+    document.querySelector(
+      "#current-price"
+    );
 
   const quantitySelect =
     document.querySelector(
@@ -187,13 +207,19 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   const addToCartButton =
-    document.querySelector("#add-to-cart");
+    document.querySelector(
+      "#add-to-cart"
+    );
 
   const buyNowButton =
-    document.querySelector("#buy-now");
+    document.querySelector(
+      "#buy-now"
+    );
 
   const cartFeedback =
-    document.querySelector("#cart-feedback");
+    document.querySelector(
+      "#cart-feedback"
+    );
 
   sizeInputs.forEach((input) => {
     input.addEventListener("change", () => {
@@ -201,6 +227,31 @@ document.addEventListener("DOMContentLoaded", () => {
         `${input.dataset.price} денари`;
     });
   });
+
+  function updateVisibleCartCounts(cart) {
+    const totalItems = cart.reduce(
+      (total, item) => {
+        return (
+          total +
+          Number(item.quantity || 0)
+        );
+      },
+      0
+    );
+
+    document
+      .querySelectorAll(
+        ".cart-count, .mobile-cart-count"
+      )
+      .forEach((cartCount) => {
+        cartCount.textContent =
+          totalItems;
+      });
+
+    window.dispatchEvent(
+      new Event("sniffLabCartUpdated")
+    );
+  }
 
   function addSelectedProductToCart() {
     const selectedSize =
@@ -249,22 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
       JSON.stringify(savedCart)
     );
 
-    const cartCount =
-      document.querySelector(
-        ".cart-count"
-      );
-
-    if (cartCount) {
-      const totalItems =
-        savedCart.reduce(
-          (total, item) => {
-            return total + item.quantity;
-          },
-          0
-        );
-
-      cartCount.textContent = totalItems;
-    }
+    updateVisibleCartCounts(savedCart);
 
     return {
       size,
@@ -293,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
       addSelectedProductToCart();
 
       buyNowButton.disabled = true;
+
       buyNowButton.textContent =
         "Се отвора наплатата...";
 
