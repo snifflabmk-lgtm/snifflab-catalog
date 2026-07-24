@@ -64,6 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
               `;
             }
 
+            if (badge === "top") {
+              return `
+                <span class="product-badge badge-top">
+                  TOP
+                </span>
+              `;
+            }
+
             return "";
           })
           .join("")}
