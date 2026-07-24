@@ -1,0 +1,485 @@
+/* Главен header за сите уреди */
+
+body.menu-active {
+  overflow: hidden;
+}
+
+.header,
+.catalog-header,
+.details-header {
+  position: relative;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: 118px;
+  padding: 12px 6%;
+
+  display: grid;
+  grid-template-columns: 90px 1fr 130px;
+  align-items: center;
+  gap: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(25, 7, 6, 0.98),
+      rgba(45, 13, 10, 0.97)
+    );
+
+  border-bottom: 1px solid rgba(225, 185, 77, 0.38);
+  backdrop-filter: blur(9px);
+}
+
+/* Hamburger копче */
+
+.mobile-menu-button {
+  grid-column: 1;
+  justify-self: start;
+
+  width: 52px;
+  height: 52px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  color: #e1b94d;
+  background-color: rgba(225, 185, 77, 0.04);
+  border: 1px solid rgba(225, 185, 77, 0.32);
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-menu-button:hover {
+  color: #f5d77b;
+  background-color: rgba(225, 185, 77, 0.09);
+  border-color: rgba(225, 185, 77, 0.72);
+  transform: translateY(-2px);
+}
+
+.mobile-menu-button span {
+  display: block;
+  width: 26px;
+  height: 2px;
+
+  background-color: currentColor;
+  border-radius: 20px;
+}
+
+/* Лого во средина */
+
+.header .brand,
+.catalog-header .brand,
+.details-header .brand {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.header .brand img,
+.catalog-header .brand img,
+.details-header .brand img {
+  display: block;
+  width: 195px;
+  height: auto;
+}
+
+/* Search и кошничка десно */
+
+.mobile-header-actions {
+  grid-column: 3;
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.mobile-search-button,
+.mobile-cart-button {
+  position: relative;
+
+  width: 48px;
+  height: 50px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f3e4d2;
+  background-color: transparent;
+  border: none;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-search-button:hover,
+.mobile-cart-button:hover {
+  color: #e1b94d;
+  transform: translateY(-2px);
+}
+
+.mobile-search-button svg,
+.mobile-cart-button svg {
+  width: 31px;
+  height: 31px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mobile-cart-count {
+  position: absolute;
+  top: 1px;
+  right: -2px;
+
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #25100c;
+  background-color: #e1b94d;
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Темна позадина зад менито */
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3990;
+
+  display: block;
+
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.mobile-menu-overlay.menu-overlay-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Странично hamburger мени */
+
+.navigation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4000;
+
+  width: min(390px, 88vw);
+  height: 100dvh;
+  padding: 100px 30px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+
+  background:
+    linear-gradient(
+      155deg,
+      #2d0d0a,
+      #130504 72%
+    );
+
+  border-right: 1px solid rgba(225, 185, 77, 0.58);
+
+  box-shadow:
+    24px 0 60px rgba(0, 0, 0, 0.62),
+    inset 0 0 50px rgba(225, 185, 77, 0.025);
+
+  overflow-y: auto;
+
+  transform: translateX(-105%);
+
+  transition: transform 0.32s ease;
+}
+
+.navigation.mobile-menu-open {
+  transform: translateX(0);
+}
+
+/* Копче за затворање */
+
+.mobile-menu-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e1b94d;
+  background-color: rgba(225, 185, 77, 0.06);
+  border: 1px solid rgba(225, 185, 77, 0.38);
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+  font-size: 29px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.mobile-menu-close:hover {
+  color: #1c0907;
+  background-color: #e1b94d;
+}
+
+/* Линкови во менито */
+
+.navigation > a:not(.cart-link) {
+  width: 100%;
+  padding: 18px 5px;
+
+  display: block;
+  flex-shrink: 0;
+
+  color: #f5e8d8;
+  border-bottom: 1px solid rgba(225, 185, 77, 0.19);
+
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+.navigation > a:not(.cart-link):hover,
+.navigation > a.active:not(.cart-link) {
+  color: #e1b94d;
+  padding-left: 12px;
+}
+
+.navigation > a.active::after {
+  display: none;
+}
+
+/* Старите Search и кошничка се кријат во страничното мени */
+
+.navigation > .nav-search-button,
+.navigation > .cart-link,
+.navigation > a[href="catalog.html?search=open"] {
+  display: none;
+}
+
+/* Instagram и TikTok најдолу */
+
+.mobile-menu-socials {
+  margin-top: auto;
+  padding-top: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.mobile-menu-socials::before {
+  content: "Следете нè";
+
+  margin-right: 6px;
+
+  color: #c9b39e;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.mobile-menu-socials a {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e1b94d;
+  background-color: rgba(225, 185, 77, 0.05);
+  border: 1px solid rgba(225, 185, 77, 0.44);
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-menu-socials a:hover {
+  color: #1b0907;
+  background-color: #e1b94d;
+  transform: translateY(-3px);
+}
+
+.mobile-menu-socials svg {
+  width: 23px;
+  height: 23px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mobile-menu-socials .mobile-social-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Телефон */
+
+@media (max-width: 700px) {
+  .header,
+  .catalog-header,
+  .details-header {
+    min-height: 92px;
+    padding: 10px 16px;
+
+    grid-template-columns: 52px 1fr 92px;
+    gap: 8px;
+  }
+
+  .mobile-menu-button {
+    width: 46px;
+    height: 46px;
+    gap: 6px;
+  }
+
+  .mobile-menu-button span {
+    width: 23px;
+  }
+
+  .header .brand img,
+  .catalog-header .brand img,
+  .details-header .brand img {
+    width: 125px;
+  }
+
+  .mobile-header-actions {
+    gap: 7px;
+  }
+
+  .mobile-search-button,
+  .mobile-cart-button {
+    width: 40px;
+    height: 44px;
+  }
+
+  .mobile-search-button svg,
+  .mobile-cart-button svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .mobile-cart-count {
+    top: 0;
+    right: -1px;
+
+    min-width: 19px;
+    height: 19px;
+
+    font-size: 10px;
+  }
+
+  .navigation {
+    width: min(340px, 86vw);
+    padding: 90px 25px 27px;
+  }
+
+  .navigation > a:not(.cart-link) {
+    padding: 17px 4px;
+    font-size: 16px;
+  }
+
+  .mobile-menu-close {
+    top: 22px;
+    right: 22px;
+
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Многу тесни телефони */
+
+@media (max-width: 370px) {
+  .header,
+  .catalog-header,
+  .details-header {
+    grid-template-columns: 46px 1fr 84px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .header .brand img,
+  .catalog-header .brand img,
+  .details-header .brand img {
+    width: 108px;
+  }
+
+  .mobile-menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-header-actions {
+    gap: 3px;
+  }
+
+  .mobile-search-button,
+  .mobile-cart-button {
+    width: 38px;
+  }
+}
