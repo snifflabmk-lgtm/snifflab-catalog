@@ -297,5 +297,46 @@ window.products = [
       "Одмор",
       "Casual"
     ]
+  },
+
+  {
+    id: "armaf-ba-ha-mas",
+    name: "Armaf Ba Ha Mas",
+    brand: "Armaf",
+    image: "armaf-ba-ha-mas.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [
+      "top"
+    ],
+    prices: {
+      3: 200,
+      5: 300,
+      10: 450,
+      20: 750
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Диња",
+      "Морска вода",
+      "Круша",
+      "Алги",
+      "Сол",
+      "Мошус"
+    ],
+    occasions: [
+      "Плажа",
+      "Летен одмор",
+      "Секојдневно носење",
+      "Прошетки",
+      "Beach bar",
+      "Летни забави",
+      "Дневен состанок",
+      "Патување"
+    ]
   }
 ];
