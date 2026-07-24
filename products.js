@@ -537,4 +537,33 @@ window.products = [
       "Специјални пригоди"
     ]
   }
+,
+
+  {
+    id: "dior-sauvage-elixir",
+    name: "Dior Sauvage Elixir",
+    brand: "Dior",
+    image: "dior-sauvage-elixir.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: { 3: 700, 5: 1100, 10: 1900, 20: 3400 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Лаванда",
+      "Сладунец",
+      "Мускатно оревче",
+      "Цимет",
+      "Сандалово дрво",
+      "Кардамон"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Формални настани",
+      "Прослави"
+    ]
+  }
 ];
