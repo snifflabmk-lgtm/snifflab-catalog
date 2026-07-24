@@ -173,7 +173,7 @@ body.menu-active {
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  z-index: 3990;
+  z-index: 900;
 
   display: block;
 
