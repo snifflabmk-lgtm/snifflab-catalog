@@ -4,8 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll("[data-category]");
   const resultsMessage = document.querySelector("#results-message");
 
+  const productsPerPage = 8;
+
   let activeCategory = "site";
   let searchTerm = "";
+  let currentPage = 1;
+
+  const paginationContainer = document.createElement("nav");
+
+  paginationContainer.id = "catalog-pagination";
+  paginationContainer.className = "catalog-pagination";
+  paginationContainer.setAttribute(
+    "aria-label",
+    "Страници од каталогот"
+  );
+
+  productGrid.insertAdjacentElement(
+    "afterend",
+    paginationContainer
+  );
 
   function normalizeText(text) {
     return text
@@ -111,7 +128,68 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  function renderProducts() {
+  function createPagination(totalPages) {
+    if (totalPages <= 1) {
+      paginationContainer.innerHTML = "";
+      paginationContainer.hidden = true;
+      return;
+    }
+
+    paginationContainer.hidden = false;
+
+    const pageButtons = Array.from(
+      { length: totalPages },
+      (_, index) => {
+        const pageNumber = index + 1;
+
+        return `
+          <button
+            type="button"
+            class="pagination-button ${
+              pageNumber === currentPage
+                ? "active-page"
+                : ""
+            }"
+            data-page="${pageNumber}"
+            aria-label="Отвори страница ${pageNumber}"
+            ${
+              pageNumber === currentPage
+                ? 'aria-current="page"'
+                : ""
+            }
+          >
+            ${pageNumber}
+          </button>
+        `;
+      }
+    ).join("");
+
+    paginationContainer.innerHTML = `
+      <button
+        type="button"
+        class="pagination-button pagination-navigation"
+        data-page="${currentPage - 1}"
+        ${currentPage === 1 ? "disabled" : ""}
+      >
+        ‹ Претходна
+      </button>
+
+      <div class="pagination-numbers">
+        ${pageButtons}
+      </div>
+
+      <button
+        type="button"
+        class="pagination-button pagination-navigation"
+        data-page="${currentPage + 1}"
+        ${currentPage === totalPages ? "disabled" : ""}
+      >
+        Следна ›
+      </button>
+    `;
+  }
+
+  function renderProducts(shouldScroll = false) {
     const filteredProducts = getFilteredProducts();
 
     if (filteredProducts.length === 0) {
@@ -125,21 +203,59 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      resultsMessage.textContent = "0 пронајдени парфеми";
+      resultsMessage.textContent =
+        "0 пронајдени парфеми";
+
+      paginationContainer.innerHTML = "";
+      paginationContainer.hidden = true;
+
       return;
     }
 
-    productGrid.innerHTML = filteredProducts
+    const totalPages = Math.ceil(
+      filteredProducts.length / productsPerPage
+    );
+
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
+    const startIndex =
+      (currentPage - 1) * productsPerPage;
+
+    const productsForCurrentPage =
+      filteredProducts.slice(
+        startIndex,
+        startIndex + productsPerPage
+      );
+
+    productGrid.innerHTML = productsForCurrentPage
       .map(createProductCard)
       .join("");
 
     resultsMessage.textContent =
-      `${filteredProducts.length} пронајдени парфеми`;
+      `${filteredProducts.length} пронајдени парфеми · Страница ${currentPage} од ${totalPages}`;
+
+    createPagination(totalPages);
+
+    if (shouldScroll) {
+      const collectionHeading = document.querySelector(
+        ".collection-heading"
+      );
+
+      if (collectionHeading) {
+        collectionHeading.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
   }
 
   if (searchInput) {
     searchInput.addEventListener("input", (event) => {
       searchTerm = event.target.value;
+      currentPage = 1;
       renderProducts();
     });
   }
@@ -147,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       activeCategory = button.dataset.category;
+      currentPage = 1;
 
       filterButtons.forEach((item) => {
         item.classList.remove("active-filter");
@@ -156,6 +273,35 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts();
     });
   });
+
+  paginationContainer.addEventListener(
+    "click",
+    (event) => {
+      const button = event.target.closest("[data-page]");
+
+      if (!button || button.disabled) {
+        return;
+      }
+
+      const selectedPage = Number(button.dataset.page);
+      const filteredProducts = getFilteredProducts();
+
+      const totalPages = Math.ceil(
+        filteredProducts.length / productsPerPage
+      );
+
+      if (
+        selectedPage < 1 ||
+        selectedPage > totalPages ||
+        selectedPage === currentPage
+      ) {
+        return;
+      }
+
+      currentPage = selectedPage;
+      renderProducts(true);
+    }
+  );
 
   renderProducts();
 });
