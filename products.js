@@ -192,8 +192,8 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: [
-  "top"
-],
+      "top"
+    ],
     prices: {
       3: 300,
       5: 500,
@@ -219,6 +219,44 @@ window.products = [
       "Прошетки",
       "Дневни излегувања",
       "Smart casual"
+    ]
+  },
+
+  {
+    id: "arabiyat-prestige-marwa",
+    name: "Arabiyat Prestige Marwa",
+    brand: "Arabiyat Prestige",
+    image: "arabiyat-prestige-marwa.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 300,
+      5: 450,
+      10: 650,
+      20: 1200
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Ѓумбир",
+      "Амброксан",
+      "Лимон",
+      "Бергамот",
+      "Цимет",
+      "Чај"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Канцеларија",
+      "Кафе",
+      "Романтичен состанок",
+      "Излегувања",
+      "Деловни средби",
+      "Патување"
     ]
   }
 ];
