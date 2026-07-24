@@ -181,5 +181,42 @@ window.products = [
       "Романтичен состанок",
       "Вечерни излегувања"
     ]
+  },
+
+  {
+    id: "al-haramain-amber-oud-aqua-dubai",
+    name: "Al Haramain Amber Oud Aqua Dubai",
+    brand: "Al Haramain",
+    image: "al-haramain-amber-oud-aqua-dubai.webp",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 300,
+      5: 500,
+      10: 750,
+      20: 1350
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Зелени ноти",
+      "Бергамот",
+      "Мандарина",
+      "Портокал",
+      "Диња",
+      "Мошус"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа",
+      "Одмор",
+      "Прошетки",
+      "Дневни излегувања",
+      "Smart casual"
+    ]
   }
 ];
