@@ -37,10 +37,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function createProductBadges(product) {
+    const badges = product.badges || [];
+
+    if (badges.length === 0) {
+      return "";
+    }
+
+    return `
+      <div class="product-badges">
+        ${badges
+          .map((badge) => {
+            if (badge === "new") {
+              return `
+                <span class="product-badge badge-new">
+                  NEW
+                </span>
+              `;
+            }
+
+            if (badge === "bestseller") {
+              return `
+                <span class="product-badge badge-bestseller">
+                  BESTSELLER
+                </span>
+              `;
+            }
+
+            return "";
+          })
+          .join("")}
+      </div>
+    `;
+  }
+
   function createProductCard(product) {
     return `
       <article class="collection-card">
         <div class="collection-image">
+          ${createProductBadges(product)}
+
           <img
             src="${product.image}"
             alt="${product.name} парфем"
@@ -74,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       productGrid.innerHTML = `
         <div class="no-results">
           <h2>Нема пронајдени парфеми</h2>
+
           <p>
             Обиди се со друго име или избери друга категорија.
           </p>
@@ -92,10 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
       `${filteredProducts.length} пронајдени парфеми`;
   }
 
-  searchInput.addEventListener("input", (event) => {
-    searchTerm = event.target.value;
-    renderProducts();
-  });
+  if (searchInput) {
+    searchInput.addEventListener("input", (event) => {
+      searchTerm = event.target.value;
+      renderProducts();
+    });
+  }
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
