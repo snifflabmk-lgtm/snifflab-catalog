@@ -337,5 +337,33 @@ window.products = [
       "Вечерни прошетки",
       "Летни излегувања"
     ]
+  },
+
+  {
+    id: "armani-stronger-with-you-intensely",
+    name: "Armani Stronger With You Intensely",
+    brand: "Armani",
+    image: "armani-stronger-with-you-intensely.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: { 3: 450, 5: 650, 10: 950, 20: 1800 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Ванила",
+      "Карамела",
+      "Цимет",
+      "Килибар",
+      "Тонка грав",
+      "Розов пипер"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Забави",
+      "Формални настани"
+    ]
   }
 ];
