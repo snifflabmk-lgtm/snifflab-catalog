@@ -14,10 +14,7 @@ window.products = [
       10: 500,
       20: 900
     },
-    seasons: [
-      "Есен",
-      "Зима"
-    ],
+    seasons: ["Есен", "Зима"],
     notes: [
       "Ванила",
       "Јаболко",
@@ -42,20 +39,14 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [
-      "bestseller"
-    ],
+    badges: ["bestseller"],
     prices: {
       3: 350,
       5: 500,
       10: 750,
       20: 1350
     },
-    seasons: [
-      "Пролет",
-      "Есен",
-      "Зима"
-    ],
+    seasons: ["Пролет", "Есен", "Зима"],
     notes: [
       "Питахаја",
       "Тонка грав",
@@ -87,12 +78,7 @@ window.products = [
       10: 600,
       20: 1100
     },
-    seasons: [
-      "Пролет",
-      "Лето",
-      "Есен",
-      "Зима"
-    ],
+    seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Ананас",
       "Суво дрво",
@@ -117,21 +103,14 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [
-      "bestseller"
-    ],
+    badges: ["bestseller"],
     prices: {
       3: 300,
       5: 500,
       10: 750,
       20: 1350
     },
-    seasons: [
-      "Пролет",
-      "Лето",
-      "Есен",
-      "Зима"
-    ],
+    seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Ананас",
       "Бергамот",
@@ -163,10 +142,7 @@ window.products = [
       10: 550,
       20: 950
     },
-    seasons: [
-      "Пролет",
-      "Лето"
-    ],
+    seasons: ["Пролет", "Лето"],
     notes: [
       "Цитруси",
       "Дрвенести ноти",
@@ -191,19 +167,14 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [
-      "top"
-    ],
+    badges: ["top"],
     prices: {
       3: 300,
       5: 500,
       10: 750,
       20: 1350
     },
-    seasons: [
-      "Пролет",
-      "Лето"
-    ],
+    seasons: ["Пролет", "Лето"],
     notes: [
       "Зелени ноти",
       "Бергамот",
@@ -237,10 +208,7 @@ window.products = [
       10: 650,
       20: 1200
     },
-    seasons: [
-      "Пролет",
-      "Лето"
-    ],
+    seasons: ["Пролет", "Лето"],
     notes: [
       "Ѓумбир",
       "Амброксан",
@@ -275,10 +243,7 @@ window.products = [
       10: 450,
       20: 850
     },
-    seasons: [
-      "Пролет",
-      "Лето"
-    ],
+    seasons: ["Пролет", "Лето"],
     notes: [
       "Портокал",
       "Грејпфрут",
@@ -307,19 +272,14 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [
-      "top"
-    ],
+    badges: ["top"],
     prices: {
       3: 200,
       5: 300,
       10: 450,
       20: 750
     },
-    seasons: [
-      "Пролет",
-      "Лето"
-    ],
+    seasons: ["Пролет", "Лето"],
     notes: [
       "Диња",
       "Морска вода",
@@ -337,6 +297,39 @@ window.products = [
       "Летни забави",
       "Дневен состанок",
       "Патување"
+    ]
+  },
+
+  {
+    id: "armaf-club-de-nuit-intense-man-parfum",
+    name: "Armaf Club de Nuit Intense Man Parfum",
+    brand: "Armaf",
+    image: "armaf-club-de-nuit-intense-man-parfum.webp",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: {
+      3: 300,
+      5: 450,
+      10: 700,
+      20: 1150
+    },
+    seasons: ["Пролет", "Лето", "Есен", "Зима"],
+    notes: [
+      "Лимон",
+      "Бреза",
+      "Ананас",
+      "Бергамот",
+      "Амброксан",
+      "Мошус"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Деловни средби",
+      "Романтичен состанок",
+      "Формални настани",
+      "Специјални пригоди"
     ]
   }
 ];
