@@ -8,12 +8,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: [],
-    prices: {
-      3: 250,
-      5: 350,
-      10: 500,
-      20: 900
-    },
+    prices: { 3: 250, 5: 350, 10: 500, 20: 900 },
     seasons: ["Есен", "Зима"],
     notes: [
       "Ванила",
@@ -40,12 +35,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: ["bestseller"],
-    prices: {
-      3: 350,
-      5: 500,
-      10: 750,
-      20: 1350
-    },
+    prices: { 3: 350, 5: 500, 10: 750, 20: 1350 },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
       "Питахаја",
@@ -72,12 +62,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: [],
-    prices: {
-      3: 300,
-      5: 450,
-      10: 600,
-      20: 1100
-    },
+    prices: { 3: 300, 5: 450, 10: 600, 20: 1100 },
     seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Ананас",
@@ -104,12 +89,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: ["bestseller"],
-    prices: {
-      3: 300,
-      5: 500,
-      10: 750,
-      20: 1350
-    },
+    prices: { 3: 300, 5: 500, 10: 750, 20: 1350 },
     seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Ананас",
@@ -136,12 +116,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: [],
-    prices: {
-      3: 250,
-      5: 350,
-      10: 550,
-      20: 950
-    },
+    prices: { 3: 250, 5: 350, 10: 550, 20: 950 },
     seasons: ["Пролет", "Лето"],
     notes: [
       "Цитруси",
@@ -168,12 +143,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: ["top"],
-    prices: {
-      3: 300,
-      5: 500,
-      10: 750,
-      20: 1350
-    },
+    prices: { 3: 300, 5: 500, 10: 750, 20: 1350 },
     seasons: ["Пролет", "Лето"],
     notes: [
       "Зелени ноти",
@@ -202,12 +172,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: [],
-    prices: {
-      3: 300,
-      5: 450,
-      10: 650,
-      20: 1200
-    },
+    prices: { 3: 300, 5: 450, 10: 650, 20: 1200 },
     seasons: ["Пролет", "Лето"],
     notes: [
       "Ѓумбир",
@@ -237,12 +202,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: [],
-    prices: {
-      3: 200,
-      5: 300,
-      10: 450,
-      20: 850
-    },
+    prices: { 3: 200, 5: 300, 10: 450, 20: 850 },
     seasons: ["Пролет", "Лето"],
     notes: [
       "Портокал",
@@ -273,12 +233,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: ["top"],
-    prices: {
-      3: 200,
-      5: 300,
-      10: 450,
-      20: 750
-    },
+    prices: { 3: 200, 5: 300, 10: 450, 20: 750 },
     seasons: ["Пролет", "Лето"],
     notes: [
       "Диња",
@@ -309,12 +264,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: ["top"],
-    prices: {
-      3: 300,
-      5: 450,
-      10: 700,
-      20: 1150
-    },
+    prices: { 3: 300, 5: 450, 10: 700, 20: 1150 },
     seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Лимон",
@@ -330,6 +280,33 @@ window.products = [
       "Романтичен состанок",
       "Формални настани",
       "Специјални пригоди"
+    ]
+  },
+
+  {
+    id: "armaf-dubai-chocolate",
+    name: "Armaf Dubai Chocolate",
+    brand: "Armaf",
+    image: "armaf-dubai-chocolate.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 250, 5: 350, 10: 500, 20: 850 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Темно чоколадо",
+      "Кафе",
+      "Фстаци",
+      "Лешник",
+      "Пралине"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Забави",
+      "Дружења",
+      "Празнични пригоди"
     ]
   }
 ];
