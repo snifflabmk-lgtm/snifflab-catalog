@@ -477,4 +477,34 @@ window.products = [
       "Вечерни излегувања"
     ]
   }
+,
+
+  {
+    id: "davidoff-cool-water-edt",
+    name: "Davidoff Cool Water EDT",
+    brand: "Davidoff",
+    image: "davidoff-cool-water-edt.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 200, 5: 350, 10: 500, 20: 900 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Морска вода",
+      "Лаванда",
+      "Нане",
+      "Зелени ноти",
+      "Рузмарин",
+      "Коријандер"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа",
+      "Дружење",
+      "Плажа",
+      "Дневни прошетки",
+      "Спорт"
+    ]
+  }
 ];
