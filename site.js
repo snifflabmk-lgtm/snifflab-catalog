@@ -9,7 +9,7 @@ if (
     document.createElement("link");
 
   mobileMenuStyles.rel = "stylesheet";
-  mobileMenuStyles.href = "mobile-menu.css?v=1";
+  mobileMenuStyles.href = "mobile-menu.css?v=2";
 
   document.head.appendChild(mobileMenuStyles);
 }
