@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cartItemsContainer = document.querySelector("#cart-items");
-  const cartSummaryContainer = document.querySelector("#cart-summary");
-  const emptyCartMessage = document.querySelector("#empty-cart");
+  const cartItemsContainer =
+    document.querySelector("#cart-items");
+
+  const cartSummaryContainer =
+    document.querySelector("#cart-summary");
+
+  const emptyCartMessage =
+    document.querySelector("#empty-cart");
 
   function getCart() {
     return JSON.parse(
@@ -14,10 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "sniffLabCart",
       JSON.stringify(cart)
     );
+
+    window.dispatchEvent(
+      new Event("sniffLabCartUpdated")
+    );
   }
 
   function formatPrice(price) {
-    return new Intl.NumberFormat("mk-MK").format(price);
+    return new Intl.NumberFormat(
+      "mk-MK"
+    ).format(price);
   }
 
   function calculateSubtotal(cart) {
@@ -27,21 +38,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateHeaderCount(cart) {
-    const cartCount = document.querySelector(".cart-count");
+    const totalItems = cart.reduce(
+      (total, item) => {
+        return total + item.quantity;
+      },
+      0
+    );
 
-    if (!cartCount) {
-      return;
-    }
-
-    const totalItems = cart.reduce((total, item) => {
-      return total + item.quantity;
-    }, 0);
-
-    cartCount.textContent = totalItems;
+    document
+      .querySelectorAll(
+        ".cart-count, .mobile-cart-count"
+      )
+      .forEach((cartCount) => {
+        cartCount.textContent = totalItems;
+      });
   }
 
   function createCartItem(item, index) {
-    const itemTotal = item.price * item.quantity;
+    const itemTotal =
+      item.price * item.quantity;
 
     return `
       <article class="cart-item">
@@ -54,8 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="cart-item-info">
           <h2>${item.name}</h2>
+
           <p>${item.size} ml</p>
-          <strong>${formatPrice(item.price)} денари</strong>
+
+          <strong>
+            ${formatPrice(item.price)} денари
+          </strong>
         </div>
 
         <div class="cart-item-controls">
@@ -99,24 +118,36 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createCartSummary(cart) {
-    const subtotal = calculateSubtotal(cart);
-    const freeDeliveryRemaining = Math.max(2000 - subtotal, 0);
-    const mysterySampleRemaining = Math.max(1500 - subtotal, 0);
+    const subtotal =
+      calculateSubtotal(cart);
+
+    const freeDeliveryRemaining =
+      Math.max(2000 - subtotal, 0);
+
+    const mysterySampleRemaining =
+      Math.max(1500 - subtotal, 0);
 
     const deliveryMessage =
       subtotal >= 2000
         ? "Бесплатна достава"
-        : `Уште ${formatPrice(freeDeliveryRemaining)} денари до бесплатна достава`;
+        : `Уште ${formatPrice(
+            freeDeliveryRemaining
+          )} денари до бесплатна достава`;
 
     const mysterySampleMessage =
       subtotal >= 1500
         ? "🎁 Добивате бесплатен mystery sample"
-        : `Уште ${formatPrice(mysterySampleRemaining)} денари до бесплатен mystery sample`;
+        : `Уште ${formatPrice(
+            mysterySampleRemaining
+          )} денари до бесплатен mystery sample`;
 
     return `
       <div class="summary-row">
-        <span>Вкупно производи</span>
-        <strong>${formatPrice(subtotal)} денари</strong>
+        <span>Вкупен износ</span>
+
+        <strong>
+          ${formatPrice(subtotal)} денари
+        </strong>
       </div>
 
       <div class="summary-notice">
@@ -138,7 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
           : ""
       }
 
-      <a href="checkout.html" class="primary-button checkout-button">
+      <a
+        href="checkout.html"
+        class="primary-button checkout-button"
+      >
         Продолжи кон нарачка
       </a>
     `;
@@ -153,7 +187,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItemsContainer.innerHTML = "";
       cartSummaryContainer.innerHTML = "";
 
-      cartSummaryContainer.style.display = "none";
+      cartSummaryContainer.style.display =
+        "none";
+
       emptyCartMessage.hidden = false;
 
       return;
@@ -170,40 +206,48 @@ document.addEventListener("DOMContentLoaded", () => {
       createCartSummary(cart);
   }
 
-  cartItemsContainer.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-action]");
+  cartItemsContainer.addEventListener(
+    "click",
+    (event) => {
+      const button = event.target.closest(
+        "[data-action]"
+      );
 
-    if (!button) {
-      return;
-    }
+      if (!button) {
+        return;
+      }
 
-    const action = button.dataset.action;
-    const index = Number(button.dataset.index);
-    const cart = getCart();
+      const action = button.dataset.action;
+      const index = Number(
+        button.dataset.index
+      );
 
-    if (!cart[index]) {
-      return;
-    }
+      const cart = getCart();
 
-    if (action === "increase") {
-      cart[index].quantity += 1;
-    }
+      if (!cart[index]) {
+        return;
+      }
 
-    if (action === "decrease") {
-      cart[index].quantity -= 1;
+      if (action === "increase") {
+        cart[index].quantity += 1;
+      }
 
-      if (cart[index].quantity <= 0) {
+      if (action === "decrease") {
+        cart[index].quantity -= 1;
+
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1);
+        }
+      }
+
+      if (action === "remove") {
         cart.splice(index, 1);
       }
-    }
 
-    if (action === "remove") {
-      cart.splice(index, 1);
+      saveCart(cart);
+      renderCart();
     }
-
-    saveCart(cart);
-    renderCart();
-  });
+  );
 
   renderCart();
 });
