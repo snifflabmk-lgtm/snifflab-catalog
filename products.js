@@ -365,5 +365,33 @@ window.products = [
       "Забави",
       "Формални настани"
     ]
+  },
+
+  {
+    id: "aromatix-french-avenue-forbidden-fruit",
+    name: "Aromatix x French Avenue Forbidden Fruit",
+    brand: "Aromatix x French Avenue",
+    image: "aromatix-french-avenue-forbidden-fruit.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 300, 5: 450, 10: 650, 20: 1250 },
+    seasons: ["Есен", "Зима", "Пролет"],
+    notes: [
+      "Крвав портокал",
+      "Црвено јаболко",
+      "Праска",
+      "Маргарита",
+      "Ванила",
+      "Килибар"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Забави",
+      "Елегантни настани"
+    ]
   }
 ];
