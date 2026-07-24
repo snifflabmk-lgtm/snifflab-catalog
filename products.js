@@ -258,5 +258,44 @@ window.products = [
       "Деловни средби",
       "Патување"
     ]
+  },
+
+  {
+    id: "armaf-odyssey-aqua",
+    name: "Armaf Odyssey Aqua",
+    brand: "Armaf",
+    image: "armaf-odyssey-aqua.webp",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 200,
+      5: 300,
+      10: 450,
+      20: 850
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Портокал",
+      "Грејпфрут",
+      "Артемизија",
+      "Нане",
+      "Лаванда",
+      "Амброксан"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Канцеларија",
+      "Летни излегувања",
+      "Спорт",
+      "Прошетки",
+      "Кафе",
+      "Одмор",
+      "Casual"
+    ]
   }
 ];
