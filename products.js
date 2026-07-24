@@ -191,7 +191,9 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: [
+  "top"
+],
     prices: {
       3: 300,
       5: 500,
