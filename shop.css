@@ -38,13 +38,15 @@
   pointer-events: none;
 }
 
-.size-option span {
+.size-option > span {
   min-height: 48px;
   padding: 10px 6px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
 
   color: #f0dfcc;
   background-color: rgba(29, 10, 8, 0.85);
@@ -54,15 +56,17 @@
   font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: 700;
+  text-align: center;
 
   transition:
     color 0.25s ease,
     background-color 0.25s ease,
     border-color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
-.size-option:hover span {
+.size-option:not(.unavailable-size):hover > span {
   border-color: #edca65;
   transform: translateY(-2px);
 }
@@ -73,6 +77,42 @@
   border-color: #f4d578;
 
   box-shadow: 0 7px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Недостапна милилитража */
+
+.unavailable-size {
+  cursor: not-allowed;
+}
+
+.unavailable-size > span {
+  position: relative;
+
+  color: rgba(240, 223, 204, 0.48);
+  background-color: rgba(15, 7, 6, 0.72);
+  border-color: rgba(142, 105, 74, 0.35);
+
+  opacity: 0.72;
+  box-shadow: none;
+}
+
+.unavailable-size .size-name {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.stock-message {
+  display: block;
+
+  color: #d58c7e;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* Цена */
@@ -144,6 +184,11 @@
   box-shadow: 0 0 0 3px rgba(240, 206, 104, 0.14);
 }
 
+.quantity-wrapper select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .quantity-wrapper option {
   color: #fff8eb;
   background-color: #160806;
@@ -208,9 +253,15 @@
   transform: translateY(-2px);
 }
 
+.add-to-cart-button:disabled,
 .buy-now-button:disabled {
-  opacity: 0.7;
-  cursor: wait;
+  color: rgba(240, 223, 204, 0.5);
+  background: rgba(35, 20, 18, 0.72);
+  border-color: rgba(142, 105, 74, 0.4);
+
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
   transform: none;
 }
 
@@ -261,8 +312,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .size-option span {
-    min-height: 45px;
+  .size-option > span {
+    min-height: 52px;
+  }
+
+  .stock-message {
+    font-size: 8px;
   }
 
   .selected-price strong {
