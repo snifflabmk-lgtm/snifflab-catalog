@@ -978,4 +978,42 @@ window.products = [
       "Посебни моменти"
     ]
   }
+  },
+
+  {
+    id: "lattafa-khamrah-waha",
+    name: "Lattafa Khamrah Waha",
+    brand: "Lattafa",
+    image: "lattafa-khamrah-waha.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["bestseller"],
+    prices: {
+      3: 400,
+      5: 550,
+      10: 750,
+      20: 1350
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Ванила",
+      "Бергамот",
+      "Краставица",
+      "Тонка грав",
+      "Јузу",
+      "Смрека"
+    ],
+    occasions: [
+      "Летни вечери",
+      "Rooftop & Beach Bar",
+      "Романтичен состанок на зајдисонце",
+      "Одмор",
+      "Летни забави",
+      "Вечерни прошетки"
+    ]
+  }
 ];
