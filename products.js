@@ -596,4 +596,33 @@ window.products = [
       "Вечерни прошетки"
     ]
   }
+,
+
+  {
+    id: "french-avenue-liquid-brun",
+    name: "French Avenue Liquid Brun",
+    brand: "French Avenue",
+    image: "french-avenue-liquid-brun.webp",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: { 3: 300, 5: 400, 10: 600, 20: 1050 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Цвет од портокал",
+      "Пралина",
+      "Амброксан",
+      "Кардамон",
+      "Ванила",
+      "Цимет"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Формални настани",
+      "Прослави"
+    ]
+  }
 ];
