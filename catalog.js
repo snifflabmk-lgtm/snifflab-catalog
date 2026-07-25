@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const availablePrices = Object.values(
         product.prices || {}
       ).filter((price) => {
-        return Number.isFinite(Number(price));
+        return Number.isFinite(Number(price)) && Number(price) > 0;
       });
 
       if (availablePrices.length === 0) {
@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
     )
       .map(Number)
       .filter((price) => {
-        return Number.isFinite(price);
+        return Number.isFinite(price) && price > 0;
       });
 
     if (availablePrices.length === 0) {
