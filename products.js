@@ -1116,5 +1116,44 @@ window.products = [
       "Патувања",
       "Прошетки"
     ]
+   },
+
+  {
+    id: "rochas-moustache-edp",
+    name: "Rochas Moustache EDP",
+    brand: "Rochas",
+    image: "rochas-moustache-edp.webp",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 200,
+      5: 350,
+      10: 500,
+      20: 900
+    },
+    seasons: [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Бензоин",
+      "Ванила",
+      "Розов пипер",
+      "Кедар",
+      "Роза",
+      "Мандарина",
+      "Портокал"
+    ],
+    occasions: [
+      "Вечера во ресторан",
+      "Романтичен состанок",
+      "Lounge Bar",
+      "Деловна вечера",
+      "Театар",
+      "Елегантни вечери"
+    ]
   }
 ];
