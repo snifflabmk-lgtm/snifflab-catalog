@@ -1194,5 +1194,43 @@ window.products = [
       "Летни вечери",
       "Прослави"
     ]
+    },
+
+  {
+    id: "versace-dylan-blue",
+    name: "Versace Dylan Blue",
+    brand: "Versace",
+    image: "versace-dylan-blue.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: {
+      3: 300,
+      5: 450,
+      10: 750,
+      20: 1450
+    },
+    seasons: [
+      "Пролет",
+      "Лето",
+      "Есен"
+    ],
+    notes: [
+      "Амброксан",
+      "Бергамот",
+      "Водени ноти",
+      "Грејпфрут",
+      "Темјан",
+      "Бибер"
+    ],
+    occasions: [
+      "Градски прошетки",
+      "Работа",
+      "Кафе со пријатели",
+      "Прв романтичен состанок",
+      "Патувања",
+      "Вечерни прошетки"
+    ]
   }
 ];
