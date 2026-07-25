@@ -625,4 +625,33 @@ window.products = [
       "Прослави"
     ]
   }
+,
+
+  {
+    id: "french-avenue-spectre-ghost",
+    name: "French Avenue Spectre Ghost",
+    brand: "French Avenue",
+    image: "french-avenue-spectre-ghost.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 300, 5: 400, 10: 650, 20: 1150 },
+    seasons: ["Пролет", "Есен", "Зима"],
+    notes: [
+      "Ванила",
+      "Ѓумбир",
+      "Кардамон",
+      "Бергамот",
+      "Кедар",
+      "Розов пипер"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Забави",
+      "Елегантни настани"
+    ]
+  }
 ];
