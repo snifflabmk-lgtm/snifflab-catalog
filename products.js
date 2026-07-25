@@ -720,6 +720,42 @@ window.products = [
       "Патувања"
     ]
   },
+  {
+    id: "gucci-guilty-elixir",
+    name: "Gucci Guilty Elixir",
+    brand: "Gucci",
+    image: "gucci-guilty-elixir.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 650,
+      5: 1100,
+      10: 1900,
+      20: 3400
+    },
+    seasons: [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Цвет од портокал",
+      "Ванила",
+      "Амброфикс",
+      "Корен од ирис",
+      "Бензоин",
+      "Морско оревче"
+    ],
+    occasions: [
+      "Луксузни вечери",
+      "Романтичен состанок",
+      "Гала настани",
+      "Формални пригоди",
+      "Посебни моменти"
+    ]
+  },
 
   {
     id: "khadlaj-island",
