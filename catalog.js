@@ -279,6 +279,33 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  function createPriceRange(product) {
+    const availablePrices = Object.values(
+      product.prices || {}
+    )
+      .map(Number)
+      .filter((price) => {
+        return Number.isFinite(price);
+      });
+
+    if (availablePrices.length === 0) {
+      return "Цена по договор";
+    }
+
+    const lowestPrice = Math.min(...availablePrices);
+    const highestPrice = Math.max(...availablePrices);
+
+    const formatPrice = (price) => {
+      return new Intl.NumberFormat("mk-MK").format(price);
+    };
+
+    if (lowestPrice === highestPrice) {
+      return `${formatPrice(lowestPrice)} денари`;
+    }
+
+    return `${formatPrice(lowestPrice)} – ${formatPrice(highestPrice)} денари`;
+  }
+
   function createProductCard(product) {
     return `
       <article class="collection-card">
@@ -299,6 +326,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <h2>${product.name}</h2>
           <p>${product.gender} парфем</p>
+          <p class="product-price-range">
+            ${createPriceRange(product)}
+          </p>
 
           <a
             href="product.html?id=${product.id}"
