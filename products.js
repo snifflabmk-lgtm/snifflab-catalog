@@ -1079,5 +1079,42 @@ window.products = [
       "Летни забави",
       "Излети"
     ]
+  },
+
+  {
+    id: "riiffs-freeze",
+    name: "RiiFFS Freeze",
+    brand: "RiiFFS",
+    image: "riiffs-freeze.webp",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["bestseller"],
+    prices: {
+      3: 250,
+      5: 400,
+      10: 600,
+      20: 1050
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Нане",
+      "Кора од лимон",
+      "Мраз",
+      "Бергамот",
+      "Чај",
+      "Грејпфрут"
+    ],
+    occasions: [
+      "Активен ден",
+      "Секојдневно носење",
+      "Теретана",
+      "Утринско кафе",
+      "Патувања",
+      "Прошетки"
+    ]
   }
 ];
