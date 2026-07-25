@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productGrid = document.querySelector("#product-grid");
   const searchInput = document.querySelector("#product-search");
   const resultsMessage = document.querySelector("#results-message");
+  const sortSelect = document.querySelector("#product-sort");
 
   const categoryButtons = document.querySelectorAll(
     "[data-category]"
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeCategory = "site";
   let activeSeason = "site";
   let activeBadge = "site";
+  let activeSort = "recommended";
   let searchTerm = "";
 
   function getPageFromUrl() {
@@ -175,8 +177,51 @@ document.addEventListener("DOMContentLoaded", () => {
       return 4;
     }
 
-    return filteredProducts.sort(
-      (firstProduct, secondProduct) => {
+    function getLowestPrice(product) {
+      const availablePrices = Object.values(
+        product.prices || {}
+      ).filter((price) => {
+        return Number.isFinite(Number(price));
+      });
+
+      if (availablePrices.length === 0) {
+        return Number.POSITIVE_INFINITY;
+      }
+
+      return Math.min(
+        ...availablePrices.map(Number)
+      );
+    }
+
+    return filteredProducts.sort((firstProduct, secondProduct) => {
+      if (activeSort === "name-asc") {
+        return firstProduct.name.localeCompare(
+          secondProduct.name,
+          "mk-MK"
+        );
+      }
+
+      if (activeSort === "name-desc") {
+        return secondProduct.name.localeCompare(
+          firstProduct.name,
+          "mk-MK"
+        );
+      }
+
+      if (activeSort === "price-asc") {
+        return (
+          getLowestPrice(firstProduct) -
+          getLowestPrice(secondProduct)
+        );
+      }
+
+      if (activeSort === "price-desc") {
+        return (
+          getLowestPrice(secondProduct) -
+          getLowestPrice(firstProduct)
+        );
+      }
+
         const priorityDifference =
           getProductPriority(firstProduct) -
           getProductPriority(secondProduct);
@@ -189,8 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
           secondProduct.name,
           "mk-MK"
         );
-      }
-    );
+    });
   }
 
   function createProductBadges(product) {
@@ -472,7 +516,12 @@ document.addEventListener("DOMContentLoaded", () => {
     activeCategory = "site";
     activeSeason = "site";
     activeBadge = "site";
+    activeSort = "recommended";
     currentPage = 1;
+
+    if (sortSelect) {
+      sortSelect.value = "recommended";
+    }
 
     categoryButtons.forEach((button) => {
       button.classList.toggle(
@@ -591,6 +640,14 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts();
     });
   });
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", (event) => {
+      activeSort = event.target.value;
+      currentPage = 1;
+      renderProducts();
+    });
+  }
 
   paginationContainer.addEventListener(
     "click",
