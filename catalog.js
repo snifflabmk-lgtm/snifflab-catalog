@@ -50,13 +50,53 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeSeason = "site";
   let activeBadge = "site";
   let searchTerm = "";
-  let currentPage = 1;
+
+  function getPageFromUrl() {
+    const urlParameters = new URLSearchParams(
+      window.location.search
+    );
+
+    const pageFromUrl = Number(
+      urlParameters.get("page")
+    );
+
+    if (
+      Number.isInteger(pageFromUrl) &&
+      pageFromUrl > 0
+    ) {
+      return pageFromUrl;
+    }
+
+    return 1;
+  }
+
+  let currentPage = getPageFromUrl();
+
+  function updatePageInUrl() {
+    const pageUrl = new URL(window.location.href);
+
+    if (currentPage === 1) {
+      pageUrl.searchParams.delete("page");
+    } else {
+      pageUrl.searchParams.set(
+        "page",
+        String(currentPage)
+      );
+    }
+
+    window.history.replaceState(
+      {},
+      "",
+      pageUrl
+    );
+  }
 
   const paginationContainer =
     document.createElement("nav");
 
   paginationContainer.id = "catalog-pagination";
   paginationContainer.className = "catalog-pagination";
+
   paginationContainer.setAttribute(
     "aria-label",
     "Страници од каталогот"
@@ -324,6 +364,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveFilterCount();
 
     if (filteredProducts.length === 0) {
+      currentPage = 1;
+      updatePageInUrl();
+
       productGrid.innerHTML = `
         <div class="no-results">
           <h2>Нема пронајдени парфеми</h2>
@@ -350,6 +393,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentPage > totalPages) {
       currentPage = totalPages;
     }
+
+    if (currentPage < 1) {
+      currentPage = 1;
+    }
+
+    updatePageInUrl();
 
     const startIndex =
       (currentPage - 1) * productsPerPage;
@@ -542,6 +591,11 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts(true);
     }
   );
+
+  window.addEventListener("popstate", () => {
+    currentPage = getPageFromUrl();
+    renderProducts();
+  });
 
   renderProducts();
 });
