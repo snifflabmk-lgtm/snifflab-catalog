@@ -684,6 +684,42 @@ window.products = [
     ]
   }
 ,
+  {
+    id: "gisada-ambassador-men",
+    name: "Gisada Ambassador Men",
+    brand: "Gisada",
+    image: "gisada-ambassador-men.webp",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 400,
+      5: 550,
+      10: 950,
+      20: 1850
+    },
+    seasons: [
+      "Пролет",
+      "Лето",
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Манго",
+      "Ванила",
+      "Килибар",
+      "Мандарина",
+      "Јаболко",
+      "Лаванда"
+    ],
+    occasions: [
+      "Состаноци",
+      "Канцеларија",
+      "Ресторан",
+      "Патувања"
+    ]
+  },
 
   {
     id: "khadlaj-island",
