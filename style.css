@@ -1369,3 +1369,36 @@ a {
     width: min(260px, 100%);
   }
 }
+/* Целосно отстранување на лентата зад Филтри */
+
+.catalog-page .catalog-tools {
+  width: fit-content !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  margin: 30px auto 24px !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.catalog-page .catalog-tools::before,
+.catalog-page .catalog-tools::after {
+  display: none !important;
+  content: none !important;
+}
+
+@media (max-width: 700px) {
+  .catalog-page .catalog-tools {
+    width: min(260px, 90%) !important;
+    margin: 24px auto 20px !important;
+  }
+}
