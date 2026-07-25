@@ -944,7 +944,8 @@ window.products = [
       "Патувања",
       "Вечерни прошетки"
     ]
-  }
+  },
+
   {
     id: "lattafa-khamrah",
     name: "Lattafa Khamrah",
@@ -976,4 +977,5 @@ window.products = [
       "Ладни вечери",
       "Посебни моменти"
     ]
-  },
+  }
+];
