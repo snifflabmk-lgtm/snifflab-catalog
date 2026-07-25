@@ -1,16 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productGrid = document.querySelector("#product-grid");
   const searchInput = document.querySelector("#product-search");
-  const filterButtons = document.querySelectorAll("[data-category]");
   const resultsMessage = document.querySelector("#results-message");
+
+  const categoryButtons = document.querySelectorAll(
+    "[data-category]"
+  );
+
+  const seasonButtons = document.querySelectorAll(
+    "[data-season]"
+  );
+
+  const badgeButtons = document.querySelectorAll(
+    "[data-badge]"
+  );
+
+  const filterToggle = document.querySelector(
+    "#filter-toggle"
+  );
+
+  const filterPanel = document.querySelector(
+    "#filter-panel"
+  );
+
+  const filterOverlay = document.querySelector(
+    "#filter-overlay"
+  );
+
+  const filterClose = document.querySelector(
+    "#filter-close"
+  );
+
+  const clearFiltersButton = document.querySelector(
+    "#clear-filters"
+  );
+
+  const showFilteredProductsButton =
+    document.querySelector(
+      "#show-filtered-products"
+    );
+
+  const activeFilterCount = document.querySelector(
+    "#active-filter-count"
+  );
 
   const productsPerPage = 8;
 
   let activeCategory = "site";
+  let activeSeason = "site";
+  let activeBadge = "site";
   let searchTerm = "";
   let currentPage = 1;
 
-  const paginationContainer = document.createElement("nav");
+  const paginationContainer =
+    document.createElement("nav");
 
   paginationContainer.id = "catalog-pagination";
   paginationContainer.className = "catalog-pagination";
@@ -25,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   function normalizeText(text) {
-    return text
+    return String(text)
       .toLocaleLowerCase("mk-MK")
       .trim();
   }
@@ -36,21 +79,42 @@ document.addEventListener("DOMContentLoaded", () => {
         activeCategory === "site" ||
         product.categorySlug === activeCategory;
 
+      const productSeasons = product.seasons || [];
+
+      const matchesSeason =
+        activeSeason === "site" ||
+        productSeasons.includes(activeSeason);
+
+      const productBadges = product.badges || [];
+
+      const matchesBadge =
+        activeBadge === "site" ||
+        productBadges.includes(activeBadge);
+
       const searchableText = normalizeText(
         [
           product.name,
           product.brand,
           product.category,
           product.gender,
-          ...product.notes
+          ...(product.notes || []),
+          ...(product.seasons || []),
+          ...(product.occasions || [])
         ].join(" ")
       );
 
       const matchesSearch =
         searchTerm === "" ||
-        searchableText.includes(normalizeText(searchTerm));
+        searchableText.includes(
+          normalizeText(searchTerm)
+        );
 
-      return matchesCategory && matchesSearch;
+      return (
+        matchesCategory &&
+        matchesSeason &&
+        matchesBadge &&
+        matchesSearch
+      );
     });
   }
 
@@ -189,8 +253,75 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  function updateActiveFilterCount() {
+    let count = 0;
+
+    if (activeCategory !== "site") {
+      count += 1;
+    }
+
+    if (activeSeason !== "site") {
+      count += 1;
+    }
+
+    if (activeBadge !== "site") {
+      count += 1;
+    }
+
+    activeFilterCount.textContent = count;
+    activeFilterCount.hidden = count === 0;
+  }
+
+  function setActiveButton(buttons, activeButton) {
+    buttons.forEach((button) => {
+      button.classList.remove("active-filter");
+    });
+
+    activeButton.classList.add("active-filter");
+  }
+
+  function openFilterPanel() {
+    filterPanel.classList.add("filter-panel-open");
+    filterOverlay.hidden = false;
+
+    filterPanel.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    filterToggle.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+    document.body.classList.add(
+      "filters-are-open"
+    );
+  }
+
+  function closeFilterPanel() {
+    filterPanel.classList.remove("filter-panel-open");
+    filterOverlay.hidden = true;
+
+    filterPanel.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    filterToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    document.body.classList.remove(
+      "filters-are-open"
+    );
+  }
+
   function renderProducts(shouldScroll = false) {
     const filteredProducts = getFilteredProducts();
+
+    updateActiveFilterCount();
 
     if (filteredProducts.length === 0) {
       productGrid.innerHTML = `
@@ -198,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h2>Нема пронајдени парфеми</h2>
 
           <p>
-            Обиди се со друго име или избери друга категорија.
+            Обиди се со други филтри или пребарај друго име.
           </p>
         </div>
       `;
@@ -239,9 +370,10 @@ document.addEventListener("DOMContentLoaded", () => {
     createPagination(totalPages);
 
     if (shouldScroll) {
-      const collectionHeading = document.querySelector(
-        ".collection-heading"
-      );
+      const collectionHeading =
+        document.querySelector(
+          ".collection-heading"
+        );
 
       if (collectionHeading) {
         collectionHeading.scrollIntoView({
@@ -252,24 +384,126 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (searchInput) {
-    searchInput.addEventListener("input", (event) => {
-      searchTerm = event.target.value;
-      currentPage = 1;
-      renderProducts();
+  function clearAllFilters() {
+    activeCategory = "site";
+    activeSeason = "site";
+    activeBadge = "site";
+    currentPage = 1;
+
+    categoryButtons.forEach((button) => {
+      button.classList.toggle(
+        "active-filter",
+        button.dataset.category === "site"
+      );
     });
+
+    seasonButtons.forEach((button) => {
+      button.classList.toggle(
+        "active-filter",
+        button.dataset.season === "site"
+      );
+    });
+
+    badgeButtons.forEach((button) => {
+      button.classList.toggle(
+        "active-filter",
+        button.dataset.badge === "site"
+      );
+    });
+
+    renderProducts();
   }
 
-  filterButtons.forEach((button) => {
+  if (filterToggle) {
+    filterToggle.addEventListener(
+      "click",
+      openFilterPanel
+    );
+  }
+
+  if (filterClose) {
+    filterClose.addEventListener(
+      "click",
+      closeFilterPanel
+    );
+  }
+
+  if (filterOverlay) {
+    filterOverlay.addEventListener(
+      "click",
+      closeFilterPanel
+    );
+  }
+
+  if (showFilteredProductsButton) {
+    showFilteredProductsButton.addEventListener(
+      "click",
+      closeFilterPanel
+    );
+  }
+
+  if (clearFiltersButton) {
+    clearFiltersButton.addEventListener(
+      "click",
+      clearAllFilters
+    );
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeFilterPanel();
+    }
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener(
+      "input",
+      (event) => {
+        searchTerm = event.target.value;
+        currentPage = 1;
+        renderProducts();
+      }
+    );
+  }
+
+  categoryButtons.forEach((button) => {
     button.addEventListener("click", () => {
       activeCategory = button.dataset.category;
       currentPage = 1;
 
-      filterButtons.forEach((item) => {
-        item.classList.remove("active-filter");
-      });
+      setActiveButton(
+        categoryButtons,
+        button
+      );
 
-      button.classList.add("active-filter");
+      renderProducts();
+    });
+  });
+
+  seasonButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeSeason = button.dataset.season;
+      currentPage = 1;
+
+      setActiveButton(
+        seasonButtons,
+        button
+      );
+
+      renderProducts();
+    });
+  });
+
+  badgeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeBadge = button.dataset.badge;
+      currentPage = 1;
+
+      setActiveButton(
+        badgeButtons,
+        button
+      );
+
       renderProducts();
     });
   });
@@ -277,14 +511,20 @@ document.addEventListener("DOMContentLoaded", () => {
   paginationContainer.addEventListener(
     "click",
     (event) => {
-      const button = event.target.closest("[data-page]");
+      const button = event.target.closest(
+        "[data-page]"
+      );
 
       if (!button || button.disabled) {
         return;
       }
 
-      const selectedPage = Number(button.dataset.page);
-      const filteredProducts = getFilteredProducts();
+      const selectedPage = Number(
+        button.dataset.page
+      );
+
+      const filteredProducts =
+        getFilteredProducts();
 
       const totalPages = Math.ceil(
         filteredProducts.length / productsPerPage
