@@ -954,3 +954,387 @@ a {
     padding: 0 11px;
   }
 }
+/* Копче за филтри */
+
+.catalog-tools {
+  width: 100%;
+  margin: 30px 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filter-toggle-button {
+  min-height: 50px;
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  color: #f4dfc7;
+  background-color: rgba(29, 9, 7, 0.92);
+  border: 1px solid rgba(225, 185, 77, 0.62);
+  border-radius: 8px;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25),
+    inset 0 0 18px rgba(225, 185, 77, 0.03);
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.filter-toggle-button:hover {
+  color: #24100c;
+  background-color: #e1b94d;
+  border-color: #f5d77b;
+
+  transform: translateY(-2px);
+}
+
+.filter-toggle-icon {
+  color: #e1b94d;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.filter-toggle-button:hover .filter-toggle-icon {
+  color: #24100c;
+}
+
+.active-filter-count {
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #24100c;
+  background-color: #f0c34f;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.active-filter-count[hidden] {
+  display: none;
+}
+
+/* Темна позадина зад филтрите */
+
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2990;
+
+  background-color: rgba(5, 1, 1, 0.76);
+  backdrop-filter: blur(4px);
+}
+
+.filter-overlay[hidden] {
+  display: none;
+}
+
+/* Страничен панел */
+
+.filter-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3000;
+
+  width: min(430px, 92vw);
+  height: 100dvh;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  color: #f7e9d8;
+  background:
+    linear-gradient(
+      160deg,
+      #2a0c09 0%,
+      #170605 55%,
+      #0d0303 100%
+    );
+
+  border-left: 1px solid rgba(225, 185, 77, 0.55);
+
+  box-shadow:
+    -20px 0 50px rgba(0, 0, 0, 0.55),
+    inset 1px 0 rgba(255, 220, 130, 0.05);
+
+  transform: translateX(105%);
+  visibility: hidden;
+
+  transition:
+    transform 0.38s ease,
+    visibility 0.38s ease;
+}
+
+.filter-panel.filter-panel-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.filters-are-open {
+  overflow: hidden;
+}
+
+/* Горен дел */
+
+.filter-panel-header {
+  padding: 28px 28px 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-bottom: 1px solid rgba(225, 185, 77, 0.25);
+}
+
+.filter-panel-eyebrow {
+  margin-bottom: 6px;
+
+  color: #dcae3d;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.filter-panel-header h2 {
+  color: #f0c34f;
+  font-size: 34px;
+}
+
+.filter-close-button {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #edc452;
+  background-color: rgba(35, 10, 8, 0.78);
+  border: 1px solid rgba(225, 185, 77, 0.52);
+  border-radius: 50%;
+
+  font-family: Arial, sans-serif;
+  font-size: 29px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.filter-close-button:hover {
+  color: #24100c;
+  background-color: #e1b94d;
+  transform: rotate(90deg);
+}
+
+/* Содржина на филтрите */
+
+.filter-panel-content {
+  padding: 10px 28px 30px;
+  overflow-y: auto;
+}
+
+.filter-group {
+  padding: 24px 0;
+
+  border-bottom: 1px solid rgba(225, 185, 77, 0.18);
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.filter-group h3 {
+  margin-bottom: 15px;
+
+  color: #f5dfc8;
+  font-size: 20px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-option {
+  min-height: 42px;
+  padding: 0 15px;
+
+  color: #d9c4ae;
+  background-color: rgba(41, 13, 10, 0.72);
+  border: 1px solid rgba(225, 185, 77, 0.35);
+  border-radius: 999px;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.filter-option:hover {
+  color: #f7e8d6;
+  border-color: #e1b94d;
+  transform: translateY(-1px);
+}
+
+.filter-option.active-filter {
+  color: #24100c;
+  background:
+    linear-gradient(
+      135deg,
+      #f0cf68,
+      #dca72e
+    );
+  border-color: #f6dc87;
+
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.25),
+    0 0 13px rgba(225, 185, 77, 0.12);
+}
+
+/* Долни копчиња */
+
+.filter-panel-footer {
+  padding: 20px 28px 24px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+
+  background-color: rgba(11, 3, 3, 0.92);
+  border-top: 1px solid rgba(225, 185, 77, 0.25);
+}
+
+.clear-filters-button,
+.show-products-button {
+  min-height: 50px;
+  padding: 10px 14px;
+
+  border-radius: 7px;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.clear-filters-button {
+  color: #e3cdb6;
+  background-color: transparent;
+  border: 1px solid rgba(225, 185, 77, 0.45);
+}
+
+.clear-filters-button:hover {
+  color: #f3cb5d;
+  border-color: #e1b94d;
+}
+
+.show-products-button {
+  color: #24100c;
+  background:
+    linear-gradient(
+      135deg,
+      #f0cf68,
+      #dca72e
+    );
+  border: 1px solid #f6dc87;
+}
+
+.show-products-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Филтри на телефон */
+
+@media (max-width: 700px) {
+  .catalog-tools {
+    margin: 23px 0 20px;
+  }
+
+  .filter-toggle-button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .filter-panel {
+    width: min(390px, 94vw);
+  }
+
+  .filter-panel-header {
+    padding: 22px 20px 18px;
+  }
+
+  .filter-panel-header h2 {
+    font-size: 29px;
+  }
+
+  .filter-panel-content {
+    padding: 5px 20px 22px;
+  }
+
+  .filter-group {
+    padding: 20px 0;
+  }
+
+  .filter-options {
+    gap: 8px;
+  }
+
+  .filter-option {
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .filter-panel-footer {
+    padding: 16px 20px 20px;
+    grid-template-columns: 1fr;
+  }
+}
