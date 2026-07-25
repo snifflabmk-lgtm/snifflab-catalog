@@ -1272,5 +1272,42 @@ window.products = [
       "Викенд-забави",
       "Посебен впечаток"
     ]
+    },
+
+  {
+    id: "viktor-rolf-spicebomb-extreme",
+    name: "Viktor & Rolf Spicebomb Extreme",
+    brand: "Viktor & Rolf",
+    image: "viktor-rolf-spicebomb-extreme.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: {
+      3: 450,
+      5: 700,
+      10: 1100,
+      20: 2150
+    },
+    seasons: [
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Ванила",
+      "Тутун",
+      "Цимет",
+      "Ким",
+      "Бурбон виски",
+      "Шафран"
+    ],
+    occasions: [
+      "Виски бар",
+      "Зимски вечери",
+      "Интимен романтичен состанок",
+      "Елегантни настани",
+      "Празнични прослави",
+      "Ноќни излегувања"
+    ]
   }
 ];
