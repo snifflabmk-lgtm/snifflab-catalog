@@ -654,4 +654,33 @@ window.products = [
       "Елегантни настани"
     ]
   }
+,
+
+  {
+    id: "french-avenue-vulcan-feu",
+    name: "French Avenue Vulcan Feu",
+    brand: "French Avenue",
+    image: "french-avenue-vulcan-feu.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 300, 5: 450, 10: 650, 20: 1100 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Манго",
+      "Лимон",
+      "Ѓумбир",
+      "Тонка грав",
+      "Кедар",
+      "Розов пипер"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Забави",
+      "Елегантни настани"
+    ]
+  }
 ];
