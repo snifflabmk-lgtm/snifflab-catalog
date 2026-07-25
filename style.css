@@ -1576,3 +1576,68 @@ a {
     padding: 0 28px 0 10px;
   }
 }
+/* Усогласени копчиња: Филтри и Подреди по */
+
+.catalog-tools {
+  align-items: center;
+}
+
+.filter-toggle-button,
+.catalog-sort {
+  width: 230px;
+}
+
+.filter-toggle-button,
+.catalog-sort .filter-sort-select {
+  min-height: 62px;
+  margin: 0;
+
+  color: #fff4e3;
+  background-color: rgba(31, 10, 8, 0.96);
+  border: 1px solid rgba(225, 185, 77, 0.72);
+  border-radius: 9px;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.catalog-sort {
+  display: block;
+}
+
+.catalog-sort label {
+  display: none;
+}
+
+.catalog-sort .filter-sort-select {
+  width: 100%;
+  padding: 0 42px 0 18px;
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-toggle-button:hover,
+.catalog-sort .filter-sort-select:hover,
+.catalog-sort .filter-sort-select:focus {
+  background-color: rgba(42, 15, 11, 0.98);
+  border-color: #f0ce68;
+  box-shadow: 0 0 0 3px rgba(240, 206, 104, 0.1);
+}
+
+@media (max-width: 700px) {
+  .filter-toggle-button,
+  .catalog-sort {
+    width: calc(50% - 6px);
+  }
+
+  .filter-toggle-button,
+  .catalog-sort .filter-sort-select {
+    min-height: 50px;
+    font-size: 12px;
+  }
+
+  .catalog-sort .filter-sort-select {
+    padding: 0 28px 0 10px;
+  }
+}
