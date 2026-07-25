@@ -906,4 +906,43 @@ window.products = [
       "Топли денови"
     ]
   }
+,
+
+  {
+    id: "lattafa-dynasty",
+    name: "Lattafa Dynasty",
+    brand: "Lattafa",
+    image: "lattafa-dynasty.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: {
+      3: 250,
+      5: 350,
+      10: 500,
+      20: 850
+    },
+    seasons: [
+      "Пролет",
+      "Лето",
+      "Есен"
+    ],
+    notes: [
+      "Чај од ројбос",
+      "Бергамот",
+      "Ѓумбир",
+      "Велур",
+      "Жалфија",
+      "Кедар"
+    ],
+    occasions: [
+      "Бизнис состаноци",
+      "Вечера во ресторан",
+      "Романтичен состанок",
+      "Прослави",
+      "Патувања",
+      "Вечерни прошетки"
+    ]
+  }
 ];
