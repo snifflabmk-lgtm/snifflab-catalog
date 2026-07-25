@@ -945,4 +945,35 @@ window.products = [
       "Вечерни прошетки"
     ]
   }
-];
+  {
+    id: "lattafa-khamrah",
+    name: "Lattafa Khamrah",
+    brand: "Lattafa",
+    image: "lattafa-khamrah.webp",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    prices: {
+      3: 200,
+      5: 300,
+      10: 500,
+      20: 850
+    },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Цимет",
+      "Ванила",
+      "Урми",
+      "Пралина",
+      "Тонка грав",
+      "Мускатно оревче"
+    ],
+    occasions: [
+      "Романтична вечер",
+      "Lounge & Bar",
+      "Празнични прослави",
+      "Луксузна вечера",
+      "Ладни вечери",
+      "Посебни моменти"
+    ]
+  },
