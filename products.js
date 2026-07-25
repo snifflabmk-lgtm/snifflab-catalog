@@ -868,4 +868,42 @@ window.products = [
       "Оставање силен впечаток"
     ]
   }
+,
+
+  {
+    id: "lattafa-atlas",
+    name: "Lattafa Atlas",
+    brand: "Lattafa",
+    image: "lattafa-atlas.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: {
+      3: 300,
+      5: 500,
+      10: 750,
+      20: 1450
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Морска вода",
+      "Сол",
+      "Амбра",
+      "Дабов мов",
+      "Лимон",
+      "Сандалово дрво"
+    ],
+    occasions: [
+      "Покрај море",
+      "Плажа",
+      "Летни авантури",
+      "Прошетки",
+      "Дневно носење",
+      "Топли денови"
+    ]
+  }
 ];
