@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getFilteredProducts() {
-    return window.products.filter((product) => {
+    const filteredProducts = window.products.filter((product) => {
       const matchesCategory =
         activeCategory === "site" ||
         product.categorySlug === activeCategory;
@@ -156,6 +156,41 @@ document.addEventListener("DOMContentLoaded", () => {
         matchesSearch
       );
     });
+
+    function getProductPriority(product) {
+      const badges = product.badges || [];
+
+      if (badges.includes("new")) {
+        return 1;
+      }
+
+      if (badges.includes("bestseller")) {
+        return 2;
+      }
+
+      if (badges.includes("top")) {
+        return 3;
+      }
+
+      return 4;
+    }
+
+    return filteredProducts.sort(
+      (firstProduct, secondProduct) => {
+        const priorityDifference =
+          getProductPriority(firstProduct) -
+          getProductPriority(secondProduct);
+
+        if (priorityDifference !== 0) {
+          return priorityDifference;
+        }
+
+        return firstProduct.name.localeCompare(
+          secondProduct.name,
+          "mk-MK"
+        );
+      }
+    );
   }
 
   function createProductBadges(product) {
