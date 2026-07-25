@@ -106,7 +106,7 @@
 
     <section
       class="catalog-tools"
-      aria-label="Филтри"
+      aria-label="Алатки за каталогот"
     >
       <input
         type="search"
@@ -116,45 +116,29 @@
         aria-hidden="true"
       >
 
-      <div class="filter-wrapper">
-        <p>
-          Категории
-        </p>
+      <button
+        type="button"
+        id="filter-toggle"
+        class="filter-toggle-button"
+        aria-expanded="false"
+        aria-controls="filter-panel"
+      >
+        <span class="filter-toggle-icon">
+          ☰
+        </span>
 
-        <div class="filter-buttons">
-          <button
-            type="button"
-            class="filter-button active-filter"
-            data-category="site"
-          >
-            Сите
-          </button>
+        <span>
+          Филтри
+        </span>
 
-          <button
-            type="button"
-            class="filter-button"
-            data-category="arapski"
-          >
-            Арапски
-          </button>
-
-          <button
-            type="button"
-            class="filter-button"
-            data-category="dizajnerski"
-          >
-            Дизајнерски
-          </button>
-
-          <button
-            type="button"
-            class="filter-button"
-            data-category="nish"
-          >
-            Ниш
-          </button>
-        </div>
-      </div>
+        <span
+          id="active-filter-count"
+          class="active-filter-count"
+          hidden
+        >
+          0
+        </span>
+      </button>
     </section>
 
     <p
@@ -170,6 +154,188 @@
       aria-label="Колекција парфеми"
     ></section>
   </main>
+
+  <div
+    id="filter-overlay"
+    class="filter-overlay"
+    hidden
+  ></div>
+
+  <aside
+    id="filter-panel"
+    class="filter-panel"
+    aria-label="Филтри за парфеми"
+    aria-hidden="true"
+  >
+    <div class="filter-panel-header">
+      <div>
+        <p class="filter-panel-eyebrow">
+          Sniff Lab
+        </p>
+
+        <h2>
+          Филтри
+        </h2>
+      </div>
+
+      <button
+        type="button"
+        id="filter-close"
+        class="filter-close-button"
+        aria-label="Затвори ги филтрите"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="filter-panel-content">
+      <section class="filter-group">
+        <h3>
+          Категорија
+        </h3>
+
+        <div class="filter-options">
+          <button
+            type="button"
+            class="filter-option active-filter"
+            data-category="site"
+          >
+            Сите
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-category="arapski"
+          >
+            Арапски
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-category="dizajnerski"
+          >
+            Дизајнерски
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-category="nish"
+          >
+            Ниш
+          </button>
+        </div>
+      </section>
+
+      <section class="filter-group">
+        <h3>
+          Сезона
+        </h3>
+
+        <div class="filter-options">
+          <button
+            type="button"
+            class="filter-option active-filter"
+            data-season="site"
+          >
+            Сите
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-season="Пролет"
+          >
+            🌸 Пролет
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-season="Лето"
+          >
+            ☀️ Лето
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-season="Есен"
+          >
+            🍂 Есен
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-season="Зима"
+          >
+            ❄️ Зима
+          </button>
+        </div>
+      </section>
+
+      <section class="filter-group">
+        <h3>
+          Ознака
+        </h3>
+
+        <div class="filter-options">
+          <button
+            type="button"
+            class="filter-option active-filter"
+            data-badge="site"
+          >
+            Сите
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-badge="new"
+          >
+            NEW
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-badge="top"
+          >
+            TOP
+          </button>
+
+          <button
+            type="button"
+            class="filter-option"
+            data-badge="bestseller"
+          >
+            BESTSELLER
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div class="filter-panel-footer">
+      <button
+        type="button"
+        id="clear-filters"
+        class="clear-filters-button"
+      >
+        Исчисти ги филтрите
+      </button>
+
+      <button
+        type="button"
+        id="show-filtered-products"
+        class="show-products-button"
+      >
+        Прикажи парфеми
+      </button>
+    </div>
+  </aside>
 
   <footer class="footer">
     <p>
