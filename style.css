@@ -1338,3 +1338,34 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* Корекција на кутијата околу Филтри */
+
+.catalog-tools {
+  width: 100%;
+  margin: 30px auto 24px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.filter-toggle-button {
+  min-width: 170px;
+}
+
+@media (max-width: 700px) {
+  .catalog-tools {
+    margin: 23px auto 20px;
+    padding: 0 5px;
+  }
+
+  .filter-toggle-button {
+    width: min(260px, 100%);
+  }
+}
