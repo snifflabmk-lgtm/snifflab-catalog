@@ -566,4 +566,34 @@ window.products = [
       "Прослави"
     ]
   }
+,
+
+  {
+    id: "french-avenue-atlantis-extrait",
+    name: "French Avenue Atlantis Extrait",
+    brand: "French Avenue",
+    image: "french-avenue-atlantis-extrait.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 300, 5: 450, 10: 650, 20: 1250 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Лубеница",
+      "Кокос",
+      "Портокал",
+      "Мандарина",
+      "Сива амбра",
+      "Какао мешунка"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа",
+      "Дружење",
+      "Дневен романтичен состанок",
+      "Летни излегувања",
+      "Вечерни прошетки"
+    ]
+  }
 ];
