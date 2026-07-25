@@ -1448,3 +1448,66 @@ a {
   font-size: 16px;
   font-weight: 700;
 }
+/* Филтри лево и подредување десно */
+
+.catalog-tools {
+  width: 100%;
+  margin: 35px 0 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.catalog-sort {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.catalog-sort label {
+  color: #e5bd4b;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.catalog-sort .filter-sort-select {
+  width: 230px;
+  min-height: 52px;
+}
+
+@media (max-width: 700px) {
+  .catalog-tools {
+    margin: 25px 0 18px;
+    gap: 10px;
+  }
+
+  .filter-toggle-button {
+    min-height: 48px;
+    padding: 0 16px;
+  }
+
+  .catalog-sort {
+    gap: 6px;
+  }
+
+  .catalog-sort label {
+    font-size: 11px;
+  }
+
+  .catalog-sort .filter-sort-select {
+    width: 155px;
+    min-height: 48px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+}
