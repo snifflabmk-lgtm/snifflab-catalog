@@ -1402,3 +1402,49 @@ a {
     margin: 24px auto 20px !important;
   }
 }
+/* Подредување и ценовен опсег */
+
+.filter-sort-label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #d8c3ae;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.filter-sort-select {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+
+  color: #fff7e8;
+  background-color: #190907;
+  border: 1px solid rgba(225, 185, 77, 0.65);
+  border-radius: 8px;
+  outline: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.filter-sort-select:focus {
+  border-color: #f0ce68;
+  box-shadow: 0 0 0 3px rgba(240, 206, 104, 0.14);
+}
+
+.filter-sort-select option {
+  color: #fff7e8;
+  background-color: #190907;
+}
+
+.product-price-range {
+  margin-top: 8px;
+
+  color: #e8bd4d;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
