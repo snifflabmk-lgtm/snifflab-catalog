@@ -1083,8 +1083,8 @@ window.products = [
 
   {
     id: "riiffs-freeze",
-    name: "RiiFFS Freeze",
-    brand: "RiiFFS",
+    name: "Riiffs Freeze",
+    brand: "Riiffs",
     image: "riiffs-freeze.webp",
     category: "Арапски",
     categorySlug: "arapski",
