@@ -1155,5 +1155,44 @@ window.products = [
       "Театар",
       "Елегантни вечери"
     ]
+  },
+
+  {
+    id: "tiziana-terenzi-kirke",
+    name: "Tiziana Terenzi Kirke",
+    brand: "Tiziana Terenzi",
+    image: "tiziana-terenzi-kirke.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Машки",
+    badges: ["top"],
+    prices: {
+      3: 450,
+      5: 750,
+      10: 1300,
+      20: 2450
+    },
+    seasons: [
+      "Пролет",
+      "Лето",
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Мошус",
+      "Маракуја",
+      "Праска",
+      "Круша",
+      "Малина",
+      "Касис"
+    ],
+    occasions: [
+      "Луксузен одмор",
+      "VIP забави",
+      "Незаборавен романтичен состанок",
+      "Специјални моменти",
+      "Летни вечери",
+      "Прослави"
+    ]
   }
 ];
