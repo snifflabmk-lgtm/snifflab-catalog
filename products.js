@@ -1014,5 +1014,43 @@ window.products = [
       "Летни забави",
       "Вечерни прошетки"
     ]
+  },
+
+  {
+    id: "mancera-instant-crush",
+    name: "Mancera Instant Crush",
+    brand: "Mancera",
+    image: "mancera-instant-crush.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Машки",
+    badges: [],
+    prices: {
+      3: 450,
+      5: 750,
+      10: 1250,
+      20: 2050
+    },
+    seasons: [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Шафран",
+      "Ванила",
+      "Килибар",
+      "Мошус",
+      "Сандалово дрво",
+      "Ѓумбир"
+    ],
+    occasions: [
+      "Луксузни настани",
+      "Коктел забави",
+      "Елегантен романтичен состанок",
+      "Гала вечери",
+      "Ноќен град",
+      "Посебни моменти"
+    ]
   }
 ];
