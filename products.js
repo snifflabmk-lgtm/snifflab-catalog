@@ -721,4 +721,41 @@ window.products = [
       "Дневни прошетки"
     ]
   }
+,
+
+  {
+    id: "khadlaj-island-dreams",
+    name: "Khadlaj Island Dreams",
+    brand: "Khadlaj",
+    image: "khadlaj-island-dreams.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["top"],
+    prices: {
+      3: 300,
+      5: 400,
+      10: 550,
+      20: 900
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Ѓумбир",
+      "Бергамот",
+      "Грејпфрут",
+      "Мошус",
+      "Амброксан"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Плажа",
+      "Дружење",
+      "Дневен романтичен состанок",
+      "Зајдисонце",
+      "Летни излегувања"
+    ]
+  }
 ];
