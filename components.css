@@ -343,3 +343,47 @@
     font-size: 12px;
   }
 }
+/* Политика за приватност — контакт страница */
+
+.contact-footer {
+  position: relative;
+  padding-bottom: 82px;
+}
+
+.contact-footer > a[href="privacy.html"] {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+
+  transform: translateX(-50%);
+
+  color: #d9b35b;
+  border-bottom: 1px solid rgba(217, 179, 91, 0.45);
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.contact-footer > a[href="privacy.html"]:hover {
+  color: #f4d578;
+  border-color: #f4d578;
+}
+
+@media (max-width: 700px) {
+  .contact-footer {
+    padding-bottom: 88px;
+  }
+
+  .contact-footer > a[href="privacy.html"] {
+    bottom: 20px;
+    font-size: 12px;
+  }
+}
