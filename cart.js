@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const WEB_APP_URL =
+    "https://script.google.com/macros/s/AKfycbzzphhEJsh5WzE8bSkbyeny4rJVqNrqdK7TvDBBrYpr8FBKAebTU-ydNsFDFCWdOUgG/exec";
+
   const cartItemsContainer =
     document.querySelector("#cart-items");
 
@@ -7,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const emptyCartMessage =
     document.querySelector("#empty-cart");
+
+  let stockByName = new Map();
+  let stockIsReady = false;
+  let stockCheckFailed = false;
 
   function getCart() {
     return JSON.parse(
@@ -31,9 +38,215 @@ document.addEventListener("DOMContentLoaded", () => {
     ).format(price);
   }
 
+  function normalizeProductName(name) {
+    return String(name || "")
+      .toLocaleLowerCase("mk-MK")
+      .replace(/[’']/g, "")
+      .replace(/&/g, "and")
+      .replace(/[^a-zа-ш0-9]+/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function getStockName(item) {
+    if (item.stockName) {
+      return item.stockName;
+    }
+
+    if (
+      Array.isArray(window.products)
+    ) {
+      const product = window.products.find(
+        (candidate) =>
+          candidate.id === item.productId
+      );
+
+      if (product) {
+        return product.stockName || product.name;
+      }
+    }
+
+    return item.name;
+  }
+
+  function requestJsonp(parameters) {
+    return new Promise((resolve, reject) => {
+      const callbackName =
+        `sniffLabCartStock_${Date.now()}_${Math.floor(
+          Math.random() * 100000
+        )}`;
+
+      const script =
+        document.createElement("script");
+
+      const url =
+        new URL(WEB_APP_URL);
+
+      Object.entries(parameters).forEach(
+        ([key, value]) => {
+          url.searchParams.set(key, value);
+        }
+      );
+
+      url.searchParams.set(
+        "callback",
+        callbackName
+      );
+
+      let completed = false;
+
+      function cleanUp() {
+        delete window[callbackName];
+        script.remove();
+      }
+
+      const timeout = window.setTimeout(() => {
+        if (completed) {
+          return;
+        }
+
+        completed = true;
+        cleanUp();
+
+        reject(
+          new Error("Не може да се провери залихата.")
+        );
+      }, 12000);
+
+      window[callbackName] = (response) => {
+        if (completed) {
+          return;
+        }
+
+        completed = true;
+        window.clearTimeout(timeout);
+        cleanUp();
+        resolve(response);
+      };
+
+      script.onerror = () => {
+        if (completed) {
+          return;
+        }
+
+        completed = true;
+        window.clearTimeout(timeout);
+        cleanUp();
+
+        reject(
+          new Error("Не може да се провери залихата.")
+        );
+      };
+
+      script.src = url.toString();
+      document.body.appendChild(script);
+    });
+  }
+
+  async function loadStock() {
+    const response = await requestJsonp({
+      action: "stock"
+    });
+
+    if (
+      !response ||
+      response.success !== true ||
+      !Array.isArray(response.products)
+    ) {
+      throw new Error(
+        "Не е добиен валиден одговор за залихата."
+      );
+    }
+
+    stockByName = new Map(
+      response.products.map((product) => {
+        return [
+          normalizeProductName(product.name),
+          Math.max(
+            0,
+            Number(product.remainingMl) || 0
+          )
+        ];
+      })
+    );
+
+    stockIsReady = true;
+    stockCheckFailed = false;
+  }
+
+  function getRemainingStock(item) {
+    const key = normalizeProductName(
+      getStockName(item)
+    );
+
+    return stockByName.has(key)
+      ? stockByName.get(key)
+      : null;
+  }
+
+  function getRequestedMlForProduct(
+    cart,
+    targetItem,
+    quantityChange = 0
+  ) {
+    const targetName = normalizeProductName(
+      getStockName(targetItem)
+    );
+
+    return cart.reduce((total, item) => {
+      if (
+        normalizeProductName(getStockName(item)) !==
+        targetName
+      ) {
+        return total;
+      }
+
+      const extraQuantity =
+        item === targetItem
+          ? quantityChange
+          : 0;
+
+      return (
+        total +
+        Number(item.size) *
+          (Number(item.quantity) + extraQuantity)
+      );
+    }, 0);
+  }
+
+  function getCartStockProblem(cart) {
+    if (!stockIsReady) {
+      return null;
+    }
+
+    for (const item of cart) {
+      const remainingStock =
+        getRemainingStock(item);
+
+      if (remainingStock === null) {
+        return `${item.name} не е пронајден во залихата.`;
+      }
+
+      const requestedMl =
+        getRequestedMlForProduct(
+          cart,
+          item
+        );
+
+      if (requestedMl > remainingStock) {
+        return `${item.name}: во кошничката имате ${requestedMl} ml, а моментално се достапни ${remainingStock} ml.`;
+      }
+    }
+
+    return null;
+  }
+
   function calculateSubtotal(cart) {
     return cart.reduce((total, item) => {
-      return total + item.price * item.quantity;
+      return (
+        total +
+        item.price * item.quantity
+      );
     }, 0);
   }
 
@@ -58,6 +271,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemTotal =
       item.price * item.quantity;
 
+    const remainingStock =
+      getRemainingStock(item);
+
+    const requestedMl =
+      getRequestedMlForProduct(
+        getCart(),
+        item
+      );
+
+    const stockText =
+      !stockIsReady
+        ? "Се проверува залихата..."
+        : remainingStock === null
+          ? "Залихата не може да се пронајде"
+          : requestedMl > remainingStock
+            ? `Недоволна залиха: достапни ${remainingStock} ml`
+            : `Достапни ${remainingStock} ml`;
+
+    const stockClass =
+      stockIsReady &&
+      (
+        remainingStock === null ||
+        requestedMl > remainingStock
+      )
+        ? " cart-stock-error"
+        : "";
+
     return `
       <article class="cart-item">
         <div class="cart-item-image">
@@ -69,12 +309,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="cart-item-info">
           <h2>${item.name}</h2>
-
           <p>${item.size} ml</p>
 
           <strong>
             ${formatPrice(item.price)} денари
           </strong>
+
+          <p class="cart-stock-status${stockClass}">
+            ${stockText}
+          </p>
         </div>
 
         <div class="cart-item-controls">
@@ -95,6 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
               data-action="increase"
               data-index="${index}"
               aria-label="Зголеми количина"
+              ${stockIsReady ? "" : "disabled"}
             >
               +
             </button>
@@ -141,6 +385,37 @@ document.addEventListener("DOMContentLoaded", () => {
             mysterySampleRemaining
           )} денари до бесплатен mystery sample`;
 
+    const stockProblem =
+      getCartStockProblem(cart);
+
+    const stockNotice =
+      stockCheckFailed
+        ? `
+          <p class="cart-stock-warning">
+            Во моментов не можеме да ја провериме залихата.
+            Освежете ја страницата и обидете се повторно.
+          </p>
+        `
+        : stockProblem
+          ? `
+            <p class="cart-stock-warning">
+              ❌ ${stockProblem}
+              Намалете ја количината за да продолжите.
+            </p>
+          `
+          : !stockIsReady
+            ? `
+              <p class="cart-stock-checking">
+                Се проверува достапната залиха...
+              </p>
+            `
+            : "";
+
+    const canCheckout =
+      stockIsReady &&
+      !stockCheckFailed &&
+      !stockProblem;
+
     return `
       <div class="summary-row">
         <span>Вкупен износ</span>
@@ -169,12 +444,28 @@ document.addEventListener("DOMContentLoaded", () => {
           : ""
       }
 
-      <a
-        href="checkout.html"
-        class="primary-button checkout-button"
-      >
-        Продолжи кон нарачка
-      </a>
+      ${stockNotice}
+
+      ${
+        canCheckout
+          ? `
+            <a
+              href="checkout.html"
+              class="primary-button checkout-button"
+            >
+              Продолжи кон нарачка
+            </a>
+          `
+          : `
+            <button
+              type="button"
+              class="primary-button checkout-button"
+              disabled
+            >
+              Продолжи кон нарачка
+            </button>
+          `
+      }
     `;
   }
 
@@ -186,12 +477,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = "";
       cartSummaryContainer.innerHTML = "";
-
       cartSummaryContainer.style.display =
         "none";
-
       emptyCartMessage.hidden = false;
-
       return;
     }
 
@@ -218,24 +506,49 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const action = button.dataset.action;
-      const index = Number(
-        button.dataset.index
-      );
+      const index =
+        Number(button.dataset.index);
 
       const cart = getCart();
+      const item = cart[index];
 
-      if (!cart[index]) {
+      if (!item) {
         return;
       }
 
       if (action === "increase") {
-        cart[index].quantity += 1;
+        if (!stockIsReady) {
+          return;
+        }
+
+        const remainingStock =
+          getRemainingStock(item);
+
+        const requestedAfterIncrease =
+          getRequestedMlForProduct(
+            cart,
+            item,
+            1
+          );
+
+        if (
+          remainingStock === null ||
+          requestedAfterIncrease >
+            remainingStock
+        ) {
+          window.alert(
+            `Нема доволно залиха. За ${item.name} моментално се достапни ${remainingStock ?? 0} ml.`
+          );
+          return;
+        }
+
+        item.quantity += 1;
       }
 
       if (action === "decrease") {
-        cart[index].quantity -= 1;
+        item.quantity -= 1;
 
-        if (cart[index].quantity <= 0) {
+        if (item.quantity <= 0) {
           cart.splice(index, 1);
         }
       }
@@ -249,5 +562,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
-  renderCart();
+  async function initializeCart() {
+    renderCart();
+
+    try {
+      await loadStock();
+    } catch (error) {
+      stockCheckFailed = true;
+      stockIsReady = false;
+    }
+
+    renderCart();
+  }
+
+  initializeCart();
 });
