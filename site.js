@@ -717,4 +717,31 @@ document.addEventListener("DOMContentLoaded", () => {
       socialLinks
     );
   }
+
+/* Политика за приватност во footer */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const footer =
+    document.querySelector(".footer");
+
+  if (
+    !footer ||
+    footer.querySelector(
+      'a[href="privacy.html"]'
+    )
+  ) {
+    return;
+  }
+
+  const privacyLink =
+    document.createElement("a");
+
+  privacyLink.href = "privacy.html";
+  privacyLink.className =
+    "footer-privacy-link";
+
+  privacyLink.textContent =
+    "Политика за приватност";
+
+  footer.appendChild(privacyLink);
 });
