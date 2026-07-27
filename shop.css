@@ -337,3 +337,12 @@
     min-height: 50px;
   }
 }
+/* Повеќе простор меѓу залихата и количината */
+
+.live-stock-information {
+  margin-bottom: 22px;
+}
+
+.quantity-wrapper {
+  margin-top: 0;
+}
