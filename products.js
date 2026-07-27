@@ -2,6 +2,7 @@ window.products = [
   {
     id: "afnan-9pm",
     name: "Afnan 9PM",
+    stockName: "Afnan - 9pm",
     brand: "Afnan",
     image: "afnan-9pm.png",
     category: "Арапски",
@@ -29,6 +30,7 @@ window.products = [
   {
     id: "afnan-9pm-nightout",
     name: "Afnan 9PM Night Out",
+    stockName: "Afnan - 9pm Night Out",
     brand: "Afnan",
     image: "afnan-9pm-nightout.png",
     category: "Арапски",
@@ -56,6 +58,7 @@ window.products = [
   {
     id: "afnan-9pm-rebel",
     name: "Afnan 9PM Rebel",
+    stockName: "Afnan - 9pm Rebel",
     brand: "Afnan",
     image: "afnan-9pm-rebel.png",
     category: "Арапски",
@@ -83,6 +86,7 @@ window.products = [
   {
     id: "afnan-supremacy-collectors-edition",
     name: "Afnan Supremacy Collector's Edition",
+    stockName: "Afnan - Supremacy Collector's Edition",
     brand: "Afnan",
     image: "afnan-supremacy-collectors-edition.webp",
     category: "Арапски",
@@ -110,6 +114,7 @@ window.products = [
   {
     id: "afnan-turathi-blue",
     name: "Afnan Turathi Blue",
+    stockName: "Afnan - Turathi Blue",
     brand: "Afnan",
     image: "afnan-turathi-blue.png",
     category: "Арапски",
@@ -137,6 +142,7 @@ window.products = [
   {
     id: "al-haramain-amber-oud-aqua-dubai",
     name: "Al Haramain Amber Oud Aqua Dubai",
+    stockName: "Al Haramain - Amber Oud Aqua Dubai",
     brand: "Al Haramain",
     image: "al-haramain-amber-oud-aqua-dubai.webp",
     category: "Арапски",
@@ -166,6 +172,7 @@ window.products = [
   {
     id: "arabiyat-prestige-marwa",
     name: "Arabiyat Prestige Marwa",
+    stockName: "Arabiyat Prestige - Marwa",
     brand: "Arabiyat Prestige",
     image: "arabiyat-prestige-marwa.png",
     category: "Арапски",
@@ -196,6 +203,7 @@ window.products = [
   {
     id: "armaf-odyssey-aqua",
     name: "Armaf Odyssey Aqua",
+    stockName: "Armaf - Aqua",
     brand: "Armaf",
     image: "armaf-odyssey-aqua.webp",
     category: "Арапски",
@@ -227,6 +235,7 @@ window.products = [
   {
     id: "armaf-ba-ha-mas",
     name: "Armaf Ba Ha Mas",
+    stockName: "Armaf - Ba Ha Mas",
     brand: "Armaf",
     image: "armaf-ba-ha-mas.png",
     category: "Арапски",
@@ -258,6 +267,7 @@ window.products = [
   {
     id: "armaf-club-de-nuit-intense-man-parfum",
     name: "Armaf Club de Nuit Intense Man Parfum",
+    stockName: "Armaf - Club de Nuit Intense Man",
     brand: "Armaf",
     image: "armaf-club-de-nuit-intense-man-parfum.webp",
     category: "Арапски",
@@ -286,6 +296,7 @@ window.products = [
   {
     id: "armaf-dubai-chocolate",
     name: "Armaf Dubai Chocolate",
+    stockName: "Armaf - Dubai Chocolate",
     brand: "Armaf",
     image: "armaf-dubai-chocolate.png",
     category: "Арапски",
@@ -313,6 +324,7 @@ window.products = [
   {
     id: "armaf-mandarin-sky",
     name: "Armaf Mandarin Sky",
+    stockName: "Armaf - Mandarin Sky",
     brand: "Armaf",
     image: "armaf-mandarin-sky.png",
     category: "Арапски",
@@ -342,6 +354,7 @@ window.products = [
   {
     id: "armani-stronger-with-you-intensely",
     name: "Armani Stronger With You Intensely",
+    stockName: "Armani - Stronger With You Intensely",
     brand: "Armani",
     image: "armani-stronger-with-you-intensely.png",
     category: "Дизајнерски",
@@ -370,6 +383,7 @@ window.products = [
   {
     id: "aromatix-french-avenue-forbidden-fruit",
     name: "Aromatix x French Avenue Forbidden Fruit",
+    stockName: "Aromatix x French Avenue - Forbidden Fruit",
     brand: "Aromatix x French Avenue",
     image: "aromatix-french-avenue-forbidden-fruit.png",
     category: "Арапски",
@@ -398,6 +412,7 @@ window.products = [
   {
     id: "aromatix-french-avenue-platine-blanc",
     name: "Aromatix x French Avenue Platine Blanc",
+    stockName: "Aromatix x French Avenue - Platine Blanc",
     brand: "Aromatix x French Avenue",
     image: "aromatix-french-avenue-platine-blanc.png",
     category: "Арапски",
@@ -427,6 +442,7 @@ window.products = [
   {
     id: "azzaro-the-most-wanted",
     name: "Azzaro The Most Wanted",
+    stockName: "Azzaro - The Most Wanted Intense EDP",
     brand: "Azzaro",
     image: "azzaro-the-most-wanted.png",
     category: "Дизајнерски",
@@ -452,6 +468,7 @@ window.products = [
   {
     id: "chanel-bleu-de-chanel-edp",
     name: "Chanel Bleu de Chanel EDP",
+    stockName: "Chanel - Bleu de Chanel EDP",
     brand: "Chanel",
     image: "chanel-bleu-de-chanel-edp.webp",
     category: "Дизајнерски",
@@ -482,6 +499,7 @@ window.products = [
   {
     id: "davidoff-cool-water-edt",
     name: "Davidoff Cool Water EDT",
+    stockName: "Davidoff - Cool Water EDT",
     brand: "Davidoff",
     image: "davidoff-cool-water-edt.png",
     category: "Дизајнерски",
@@ -512,6 +530,7 @@ window.products = [
   {
     id: "dior-sauvage-edt",
     name: "Dior Sauvage EDT",
+    stockName: "Dior - Sauvage EDT",
     brand: "Dior",
     image: "dior-sauvage-edt.webp",
     category: "Дизајнерски",
@@ -542,6 +561,7 @@ window.products = [
   {
     id: "dior-sauvage-elixir",
     name: "Dior Sauvage Elixir",
+    stockName: "Dior - Sauvage Elixir",
     brand: "Dior",
     image: "dior-sauvage-elixir.png",
     category: "Дизајнерски",
@@ -571,6 +591,7 @@ window.products = [
   {
     id: "french-avenue-atlantis-extrait",
     name: "French Avenue Atlantis Extrait",
+    stockName: "French Avenue - Atlantis Extrait",
     brand: "French Avenue",
     image: "french-avenue-atlantis-extrait.png",
     category: "Арапски",
@@ -601,6 +622,7 @@ window.products = [
   {
     id: "french-avenue-liquid-brun",
     name: "French Avenue Liquid Brun",
+    stockName: "French Avenue - Liquid Brun",
     brand: "French Avenue",
     image: "french-avenue-liquid-brun.webp",
     category: "Арапски",
@@ -630,6 +652,7 @@ window.products = [
   {
     id: "french-avenue-spectre-ghost",
     name: "French Avenue Spectre Ghost",
+    stockName: "French Avenue - Spectre Ghost",
     brand: "French Avenue",
     image: "french-avenue-spectre-ghost.png",
     category: "Арапски",
@@ -659,6 +682,7 @@ window.products = [
   {
     id: "french-avenue-vulcan-feu",
     name: "French Avenue Vulcan Feu",
+    stockName: "French Avenue - Vulcan Feu",
     brand: "French Avenue",
     image: "french-avenue-vulcan-feu.png",
     category: "Арапски",
@@ -687,6 +711,7 @@ window.products = [
   {
     id: "gisada-ambassador-men",
     name: "Gisada Ambassador Men",
+    stockName: "Gisada - Ambassador Man",
     brand: "Gisada",
     image: "gisada-ambassador-men.webp",
     category: "Ниш",
@@ -723,6 +748,7 @@ window.products = [
   {
     id: "gucci-guilty-elixir",
     name: "Gucci Guilty Elixir",
+    stockName: "Gucci - Guilty Elixir",
     brand: "Gucci",
     image: "gucci-guilty-elixir.png",
     category: "Дизајнерски",
@@ -760,6 +786,7 @@ window.products = [
   {
     id: "khadlaj-island",
     name: "Khadlaj Island",
+    stockName: "Khadlaj - Island",
     brand: "Khadlaj",
     image: "khadlaj-island.png",
     category: "Арапски",
@@ -798,6 +825,7 @@ window.products = [
   {
     id: "khadlaj-island-dreams",
     name: "Khadlaj Island Dreams",
+    stockName: "Khadlaj - Island Dreams",
     brand: "Khadlaj",
     image: "khadlaj-island-dreams.png",
     category: "Арапски",
@@ -835,6 +863,7 @@ window.products = [
   {
     id: "lattafa-asad",
     name: "Lattafa Asad",
+    stockName: "Lattafa - Asad",
     brand: "Lattafa",
     image: "lattafa-asad.png",
     category: "Арапски",
@@ -873,6 +902,7 @@ window.products = [
   {
     id: "lattafa-atlas",
     name: "Lattafa Atlas",
+    stockName: "Lattafa - Atlas",
     brand: "Lattafa",
     image: "lattafa-atlas.png",
     category: "Арапски",
@@ -911,6 +941,7 @@ window.products = [
   {
     id: "lattafa-dynasty",
     name: "Lattafa Dynasty",
+    stockName: "Lattafa - Dynasty",
     brand: "Lattafa",
     image: "lattafa-dynasty.png",
     category: "Арапски",
@@ -949,6 +980,7 @@ window.products = [
   {
     id: "lattafa-khamrah",
     name: "Lattafa Khamrah",
+    stockName: "Lattafa - Khamrah",
     brand: "Lattafa",
     image: "lattafa-khamrah.webp",
     category: "Арапски",
@@ -982,6 +1014,7 @@ window.products = [
   {
     id: "lattafa-khamrah-waha",
     name: "Lattafa Khamrah Waha",
+    stockName: "Lattafa - Khamrah Waha",
     brand: "Lattafa",
     image: "lattafa-khamrah-waha.png",
     category: "Арапски",
@@ -1016,6 +1049,7 @@ window.products = [
   {
     id: "mancera-instant-crush",
     name: "Mancera Instant Crush",
+    stockName: "Mancera - Instant Crush",
     brand: "Mancera",
     image: "mancera-instant-crush.png",
     category: "Ниш",
@@ -1050,6 +1084,7 @@ window.products = [
   {
     id: "rasasi-hawas-tropical",
     name: "Rasasi Hawas Tropical",
+    stockName: "Rasasi - Hawas Tropical",
     brand: "Rasasi",
     image: "rasasi-hawas-tropical.png",
     category: "Арапски",
@@ -1084,6 +1119,7 @@ window.products = [
   {
     id: "riiffs-freeze",
     name: "Riiffs Freeze",
+    stockName: "Riffs - Freeze",
     brand: "Riiffs",
     image: "riiffs-freeze.webp",
     category: "Арапски",
@@ -1121,6 +1157,7 @@ window.products = [
   {
     id: "rochas-moustache-edp",
     name: "Rochas Moustache EDP",
+    stockName: "Rochas - Moustache EDP",
     brand: "Rochas",
     image: "rochas-moustache-edp.webp",
     category: "Дизајнерски",
@@ -1160,6 +1197,7 @@ window.products = [
   {
     id: "tiziana-terenzi-kirke",
     name: "Tiziana Terenzi Kirke",
+    stockName: "Tiziana Terenzi - Kirke",
     brand: "Tiziana Terenzi",
     image: "tiziana-terenzi-kirke.png",
     category: "Ниш",
@@ -1199,6 +1237,7 @@ window.products = [
   {
     id: "versace-dylan-blue",
     name: "Versace Dylan Blue",
+    stockName: "Versace - Dylan Blue",
     brand: "Versace",
     image: "versace-dylan-blue.png",
     category: "Дизајнерски",
@@ -1237,6 +1276,7 @@ window.products = [
   {
     id: "versace-eros-edp",
     name: "Versace Eros EDP",
+    stockName: "Versace - Eros EDP",
     brand: "Versace",
     image: "versace-eros-edp.png",
     category: "Дизајнерски",
@@ -1277,6 +1317,7 @@ window.products = [
   {
     id: "viktor-rolf-spicebomb-extreme",
     name: "Viktor & Rolf Spicebomb Extreme",
+    stockName: "Viktor & Rolf - Spicebomb Extreme",
     brand: "Viktor & Rolf",
     image: "viktor-rolf-spicebomb-extreme.png",
     category: "Дизајнерски",
