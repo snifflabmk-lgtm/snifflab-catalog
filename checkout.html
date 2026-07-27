@@ -2,7 +2,11 @@
 <html lang="mk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Нарачка | Sniff Lab</title>
 
@@ -10,10 +14,12 @@
     name="description"
     content="Внесете ги податоците за достава и потврдете ја вашата Sniff Lab нарачка."
   >
+
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
+
   <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="components.css?v=1">
+  <link rel="stylesheet" href="components.css?v=3">
   <link rel="stylesheet" href="checkout.css?v=1">
 </head>
 
@@ -28,7 +34,7 @@
     </button>
 
     <p class="announcement-message">
-      ✨ 100% оригинални парфеми — тестирај пред да купиш цело шише
+      ✨ 100% оригинални парфеми, тестирај пред да купиш цело шише
     </p>
 
     <button
@@ -45,7 +51,10 @@
       <img src="logo.png" alt="Sniff Lab лого">
     </a>
 
-    <nav class="navigation" aria-label="Главна навигација">
+    <nav
+      class="navigation"
+      aria-label="Главна навигација"
+    >
       <a href="index.html">Почетна</a>
       <a href="catalog.html">Каталог</a>
       <a href="about.html">За нас</a>
@@ -66,21 +75,28 @@
   <main class="checkout-main">
     <section class="checkout-heading">
       <p class="eyebrow">Sniff Lab</p>
+
       <h1>Заврши ја нарачката</h1>
+
       <p>
         Внеси ги податоците за испорака и провери ја
         нарачката пред испраќање.
       </p>
     </section>
 
-    <div id="checkout-content" class="checkout-layout">
+    <div
+      id="checkout-content"
+      class="checkout-layout"
+    >
       <section class="checkout-form-card">
         <h2>Податоци за купувачот</h2>
 
         <form id="checkout-form">
           <div class="form-grid">
             <div class="form-field">
-              <label for="first-name">Име *</label>
+              <label for="first-name">
+                Име *
+              </label>
 
               <input
                 type="text"
@@ -92,7 +108,9 @@
             </div>
 
             <div class="form-field">
-              <label for="last-name">Презиме *</label>
+              <label for="last-name">
+                Презиме *
+              </label>
 
               <input
                 type="text"
@@ -104,7 +122,9 @@
             </div>
 
             <div class="form-field">
-              <label for="phone">Телефон *</label>
+              <label for="phone">
+                Телефон *
+              </label>
 
               <input
                 type="tel"
@@ -117,7 +137,9 @@
             </div>
 
             <div class="form-field">
-              <label for="email">Е-пошта *</label>
+              <label for="email">
+                Е-пошта *
+              </label>
 
               <input
                 type="email"
@@ -130,7 +152,9 @@
             </div>
 
             <div class="form-field">
-              <label for="city">Град / населено место *</label>
+              <label for="city">
+                Град / населено место *
+              </label>
 
               <input
                 type="text"
@@ -142,7 +166,9 @@
             </div>
 
             <div class="form-field">
-              <label for="address">Адреса *</label>
+              <label for="address">
+                Адреса *
+              </label>
 
               <input
                 type="text"
@@ -190,8 +216,12 @@
               >
 
               <span>
-                Ги потврдувам податоците и се согласувам
-                да бидам контактиран/а во врска со нарачката. *
+                Ги потврдувам податоците и се согласувам да бидам
+                контактиран/а во врска со нарачката. Прочитајте ја
+                <a href="privacy.html" target="_blank">
+                  Политиката за приватност
+                </a>.
+                *
               </span>
             </label>
           </div>
@@ -205,14 +235,16 @@
             <strong>Достава</strong>
 
             <p>
-              За нарачки под 2.000 денари, цената за
-              достава се пресметува според тарифата на
-              ЕЛС Еко Логистик и ќе биде потврдена пред
-              испраќањето.
+              За нарачки под 2.000 денари, цената за достава
+              се пресметува според тарифата на ЕЛС Еко Логистик
+              и ќе биде потврдена пред испраќањето.
             </p>
           </div>
 
-          <button type="submit" class="primary-button order-button">
+          <button
+            type="submit"
+            class="primary-button order-button"
+          >
             Потврди ја нарачката
           </button>
 
@@ -227,41 +259,60 @@
       <aside class="checkout-summary-card">
         <h2>Твојата нарачка</h2>
 
-        <div id="order-items" class="order-items"></div>
+        <div
+          id="order-items"
+          class="order-items"
+        ></div>
 
-        <div id="order-total" class="order-total"></div>
+        <div
+          id="order-total"
+          class="order-total"
+        ></div>
 
-        <a href="cart.html" class="edit-cart-link">
+        <a
+          href="cart.html"
+          class="edit-cart-link"
+        >
           ← Назад кон кошничката
         </a>
       </aside>
     </div>
 
-    <section id="empty-checkout" class="empty-cart" hidden>
+    <section
+      id="empty-checkout"
+      class="empty-cart"
+      hidden
+    >
       <h2>Нема производи за нарачка</h2>
 
       <p>
         Прво додај парфем во кошничката.
       </p>
 
-      <a href="catalog.html" class="primary-button">
+      <a
+        href="catalog.html"
+        class="primary-button"
+      >
         Разгледај го каталогот
       </a>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Sniff Lab. Сите права се задржани.</p>
+    <p>
+      &copy; 2026 Sniff Lab. Сите права се задржани.
+    </p>
 
     <a href="mailto:sniff.lab.mk@gmail.com">
       sniff.lab.mk@gmail.com
     </a>
+
     <a href="privacy.html">
       Политика за приватност
     </a>
   </footer>
 
-  <script src="site.js?v=1"></script>
-  <script src="checkout.js?v=1"></script>
+  <script src="site.js?v=4"></script>
+  <script src="checkout.js?v=2"></script>
 </body>
 </html>
