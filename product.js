@@ -162,8 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
+    const stockLookupName =
+      product.stockName || product.name;
+
     const normalizedProductName =
-      normalizeProductName(product.name);
+      normalizeProductName(stockLookupName);
 
     const stockProduct =
       response.products.find((item) => {
@@ -606,6 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
         savedCart.push({
           productId: product.id,
           name: product.name,
+          stockName: product.stockName || product.name,
           image: product.image,
           size,
           price,
