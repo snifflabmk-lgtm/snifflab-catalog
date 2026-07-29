@@ -482,6 +482,12 @@ document.addEventListener("DOMContentLoaded", () => {
         submitButton.textContent =
           "НАРАЧКАТА Е ИСПРАТЕНА";
 
+
+        gtag("event", "purchase", {
+          transaction_id: orderData.orderId,
+          value: orderData.subtotal,
+          currency: "MKD"
+        });
         setTimeout(() => {
           window.location.href =
             "index.html";
