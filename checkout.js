@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const WEB_APP_URL =
     "https://script.google.com/macros/s/AKfycbzzphhEJsh5WzE8bSkbyeny4rJVqNrqdK7TvDBBrYpr8FBKAebTU-ydNsFDFCWdOUgG/exec";
 
+  const MAX_ORDER_ITEMS = 12;
+
   const checkoutForm =
     document.querySelector("#checkout-form");
 
@@ -371,6 +373,14 @@ document.addEventListener("DOMContentLoaded", () => {
           "error"
         );
 
+        return;
+      }
+
+      if (currentCart.length > MAX_ORDER_ITEMS) {
+        showMessage(
+          "❌ Може да нарачате најмногу 12 различни парфеми.",
+          "error"
+        );
         return;
       }
 
