@@ -215,6 +215,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getCartStockProblem(cart) {
+    if (cart.length > 12) {
+      return "Може да нарачате најмногу 12 различни парфеми.";
+    }
+
     if (!stockIsReady) {
       return null;
     }
