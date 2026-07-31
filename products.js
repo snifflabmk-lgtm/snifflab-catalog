@@ -1080,7 +1080,46 @@ window.products = [
       "Посебни моменти"
     ]
   },
-
+  {
+    id: "rasasi-hawas-ice",
+    name: "Rasasi Hawas Ice",
+    stockName: "Rasasi - Hawas Ice",
+    brand: "Rasasi",
+    image: "rasasi-hawas-ice.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: {
+      3: 250,
+      5: 400,
+      10: 650,
+      20: 1200
+    },
+    seasons: [
+      "Пролет",
+      "Лето"
+    ],
+    notes: [
+      "Слива",
+      "Јаболко",
+      "Лимон",
+      "Бергамот",
+      "Мошус",
+      "Цвет од портокал"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Летни излегувања",
+      "Плажа",
+      "Одмор",
+      "Кафе",
+      "Теретана",
+      "Прошетки",
+      "Патување",
+      "Casual"
+    ]
+  },
   {
     id: "rasasi-hawas-tropical",
     name: "Rasasi Hawas Tropical",
