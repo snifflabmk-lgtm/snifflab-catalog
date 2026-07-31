@@ -53,9 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return item.stockName;
     }
 
-    if (
-      Array.isArray(window.products)
-    ) {
+    if (Array.isArray(window.products)) {
       const product = window.products.find(
         (candidate) =>
           candidate.id === item.productId
@@ -249,7 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return cart.reduce((total, item) => {
       return (
         total +
-        item.price * item.quantity
+        Number(item.price) *
+          Number(item.quantity)
       );
     }, 0);
   }
@@ -257,7 +256,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateHeaderCount(cart) {
     const totalItems = cart.reduce(
       (total, item) => {
-        return total + item.quantity;
+        return (
+          total +
+          Number(item.quantity)
+        );
       },
       0
     );
@@ -273,7 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createCartItem(item, index) {
     const itemTotal =
-      item.price * item.quantity;
+      Number(item.price) *
+      Number(item.quantity);
 
     const remainingStock =
       getRemainingStock(item);
@@ -313,6 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="cart-item-info">
           <h2>${item.name}</h2>
+
           <p>${item.size} ml</p>
 
           <strong>
@@ -365,140 +369,108 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-function createCartSummary(cart) {
-  const subtotal =
-    calculateSubtotal(cart);
+  function createCartSummary(cart) {
+    const subtotal =
+      calculateSubtotal(cart);
 
-  const deliveryPrice =
-    subtotal >= 2000 ? 0 : 160;
+    const deliveryPrice =
+      subtotal >= 2000 ? 0 : 160;
 
-  const total =
-    subtotal + deliveryPrice;
+    const total =
+      subtotal + deliveryPrice;
 
-  const freeDeliveryRemaining =
-    Math.max(2000 - subtotal, 0);
+    const freeDeliveryRemaining =
+      Math.max(2000 - subtotal, 0);
 
-  const mysterySampleRemaining =
-    Math.max(1500 - subtotal, 0);
+    const mysterySampleRemaining =
+      Math.max(1500 - subtotal, 0);
 
-  const deliveryMessage =
-    subtotal >= 2000
-      ? "Бесплатна достава"
-      : `Достава: ${formatPrice(
-          deliveryPrice
-        )} денари`;
+    const mysterySampleMessage =
+      subtotal >= 1500
+        ? "🎁 Добивате бесплатен mystery sample"
+        : `Уште ${formatPrice(
+            mysterySampleRemaining
+          )} денари до бесплатен mystery sample`;
 
-  const mysterySampleMessage =
-    subtotal >= 1500
-      ? "🎁 Добивате бесплатен mystery sample"
-      : `Уште ${formatPrice(
-          mysterySampleRemaining
-        )} денари до бесплатен mystery sample`;
+    const stockProblem =
+      getCartStockProblem(cart);
 
-  const stockProblem =
-    getCartStockProblem(cart);
-
-  const stockNotice =
-    stockCheckFailed
-      ? `
-        <p class="cart-stock-warning">
-          Во моментов не можеме да ја провериме залихата.
-          Освежете ја страницата и обидете се повторно.
-        </p>
-      `
-      : stockProblem
+    const stockNotice =
+      stockCheckFailed
         ? `
           <p class="cart-stock-warning">
-            ❌ ${stockProblem}
-            Намалете ја количината за да продолжите.
+            Во моментов не можеме да ја провериме залихата.
+            Освежете ја страницата и обидете се повторно.
           </p>
         `
-        : !stockIsReady
+        : stockProblem
           ? `
-            <p class="cart-stock-checking">
-              Се проверува достапната залиха...
+            <p class="cart-stock-warning">
+              ❌ ${stockProblem}
+              Намалете ја количината за да продолжите.
             </p>
           `
-          : "";
+          : !stockIsReady
+            ? `
+              <p class="cart-stock-checking">
+                Се проверува достапната залиха...
+              </p>
+            `
+            : "";
 
-  const canCheckout =
-    stockIsReady &&
-    !stockCheckFailed &&
-    !stockProblem;
+    const canCheckout =
+      stockIsReady &&
+      !stockCheckFailed &&
+      !stockProblem;
 
-  return `
-    <div class="summary-row">
-      <span>Производи</span>
+    return `
+      <div class="summary-row">
+        <span>Производи</span>
 
-      <strong>
-        ${formatPrice(subtotal)} денари
-      </strong>
-    </div>
+        <strong>
+          ${formatPrice(subtotal)} денари
+        </strong>
+      </div>
 
-    <div class="summary-row">
-      <span>Достава</span>
+      <div class="summary-row">
+        <span>Достава</span>
 
-      <strong>
-        ${
-          deliveryPrice === 0
-            ? "Бесплатна"
-            : `${formatPrice(deliveryPrice)} денари`
-        }
-      </strong>
-    </div>
+        <strong>
+          ${
+            deliveryPrice === 0
+              ? "Бесплатна"
+              : `${formatPrice(deliveryPrice)} денари`
+          }
+        </strong>
+      </div>
 
-    <div class="summary-row">
-      <span>Вкупен износ</span>
+      <div class="summary-row">
+        <span>Вкупен износ</span>
 
-      <strong>
-        ${formatPrice(total)} денари
-      </strong>
-    </div>
+        <strong>
+          ${formatPrice(total)} денари
+        </strong>
+      </div>
 
-    <div class="summary-notice">
-      🚚 ${deliveryMessage}
-    </div>
+      ${
+        subtotal < 2000
+          ? `
+            <div class="summary-notice">
+              🚚 Уште ${formatPrice(
+                freeDeliveryRemaining
+              )} денари до бесплатна достава
+            </div>
+          `
+          : `
+            <div class="summary-notice">
+              🚚 Бесплатна достава
+            </div>
+          `
+      }
 
-    ${
-      subtotal < 2000
-        ? `
-          <div class="summary-notice">
-            Уште ${formatPrice(
-              freeDeliveryRemaining
-            )} денари до бесплатна достава
-          </div>
-        `
-        : ""
-    }
-
-    <div class="summary-notice">
-      ${mysterySampleMessage}
-    </div>
-
-    ${stockNotice}
-
-    ${
-      canCheckout
-        ? `
-          <a
-            href="checkout.html"
-            class="primary-button checkout-button"
-          >
-            Продолжи кон нарачка
-          </a>
-        `
-        : `
-          <button
-            type="button"
-            class="primary-button checkout-button"
-            disabled
-          >
-            Продолжи кон нарачка
-          </button>
-        `
-    }
-  `;
-}
+      <div class="summary-notice">
+        ${mysterySampleMessage}
+      </div>
 
       ${stockNotice}
 
@@ -533,8 +505,10 @@ function createCartSummary(cart) {
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = "";
       cartSummaryContainer.innerHTML = "";
+
       cartSummaryContainer.style.display =
         "none";
+
       emptyCartMessage.hidden = false;
       return;
     }
@@ -562,6 +536,7 @@ function createCartSummary(cart) {
       }
 
       const action = button.dataset.action;
+
       const index =
         Number(button.dataset.index);
 
@@ -595,6 +570,7 @@ function createCartSummary(cart) {
           window.alert(
             `Нема доволно залиха. За ${item.name} моментално се достапни ${remainingStock ?? 0} ml.`
           );
+
           return;
         }
 
@@ -624,6 +600,8 @@ function createCartSummary(cart) {
     try {
       await loadStock();
     } catch (error) {
+      console.error(error);
+
       stockCheckFailed = true;
       stockIsReady = false;
     }
