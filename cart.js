@@ -365,88 +365,140 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  function createCartSummary(cart) {
-    const subtotal =
-      calculateSubtotal(cart);
+function createCartSummary(cart) {
+  const subtotal =
+    calculateSubtotal(cart);
 
-    const freeDeliveryRemaining =
-      Math.max(2000 - subtotal, 0);
+  const deliveryPrice =
+    subtotal >= 2000 ? 0 : 160;
 
-    const mysterySampleRemaining =
-      Math.max(1500 - subtotal, 0);
+  const total =
+    subtotal + deliveryPrice;
 
-    const deliveryMessage =
-      subtotal >= 2000
-        ? "Бесплатна достава"
-        : `Уште ${formatPrice(
-            freeDeliveryRemaining
-          )} денари до бесплатна достава`;
+  const freeDeliveryRemaining =
+    Math.max(2000 - subtotal, 0);
 
-    const mysterySampleMessage =
-      subtotal >= 1500
-        ? "🎁 Добивате бесплатен mystery sample"
-        : `Уште ${formatPrice(
-            mysterySampleRemaining
-          )} денари до бесплатен mystery sample`;
+  const mysterySampleRemaining =
+    Math.max(1500 - subtotal, 0);
 
-    const stockProblem =
-      getCartStockProblem(cart);
+  const deliveryMessage =
+    subtotal >= 2000
+      ? "Бесплатна достава"
+      : `Достава: ${formatPrice(
+          deliveryPrice
+        )} денари`;
 
-    const stockNotice =
-      stockCheckFailed
+  const mysterySampleMessage =
+    subtotal >= 1500
+      ? "🎁 Добивате бесплатен mystery sample"
+      : `Уште ${formatPrice(
+          mysterySampleRemaining
+        )} денари до бесплатен mystery sample`;
+
+  const stockProblem =
+    getCartStockProblem(cart);
+
+  const stockNotice =
+    stockCheckFailed
+      ? `
+        <p class="cart-stock-warning">
+          Во моментов не можеме да ја провериме залихата.
+          Освежете ја страницата и обидете се повторно.
+        </p>
+      `
+      : stockProblem
         ? `
           <p class="cart-stock-warning">
-            Во моментов не можеме да ја провериме залихата.
-            Освежете ја страницата и обидете се повторно.
+            ❌ ${stockProblem}
+            Намалете ја количината за да продолжите.
           </p>
         `
-        : stockProblem
+        : !stockIsReady
           ? `
-            <p class="cart-stock-warning">
-              ❌ ${stockProblem}
-              Намалете ја количината за да продолжите.
+            <p class="cart-stock-checking">
+              Се проверува достапната залиха...
             </p>
           `
-          : !stockIsReady
-            ? `
-              <p class="cart-stock-checking">
-                Се проверува достапната залиха...
-              </p>
-            `
-            : "";
+          : "";
 
-    const canCheckout =
-      stockIsReady &&
-      !stockCheckFailed &&
-      !stockProblem;
+  const canCheckout =
+    stockIsReady &&
+    !stockCheckFailed &&
+    !stockProblem;
 
-    return `
-      <div class="summary-row">
-        <span>Вкупен износ</span>
+  return `
+    <div class="summary-row">
+      <span>Производи</span>
 
-        <strong>
-          ${formatPrice(subtotal)} денари
-        </strong>
-      </div>
+      <strong>
+        ${formatPrice(subtotal)} денари
+      </strong>
+    </div>
 
-      <div class="summary-notice">
-        🚚 ${deliveryMessage}
-      </div>
+    <div class="summary-row">
+      <span>Достава</span>
 
-      <div class="summary-notice">
-        ${mysterySampleMessage}
-      </div>
+      <strong>
+        ${
+          deliveryPrice === 0
+            ? "Бесплатна"
+            : `${formatPrice(deliveryPrice)} денари`
+        }
+      </strong>
+    </div>
 
-      ${
-        subtotal < 2000
-          ? `
-            <p class="delivery-note">
-              Цената за достава ќе биде додадена
-              откако ќе ја утврдиме тарифата.
-            </p>
-          `
-          : ""
-      }
+    <div class="summary-row">
+      <span>Вкупен износ</span>
+
+      <strong>
+        ${formatPrice(total)} денари
+      </strong>
+    </div>
+
+    <div class="summary-notice">
+      🚚 ${deliveryMessage}
+    </div>
+
+    ${
+      subtotal < 2000
+        ? `
+          <div class="summary-notice">
+            Уште ${formatPrice(
+              freeDeliveryRemaining
+            )} денари до бесплатна достава
+          </div>
+        `
+        : ""
+    }
+
+    <div class="summary-notice">
+      ${mysterySampleMessage}
+    </div>
+
+    ${stockNotice}
+
+    ${
+      canCheckout
+        ? `
+          <a
+            href="checkout.html"
+            class="primary-button checkout-button"
+          >
+            Продолжи кон нарачка
+          </a>
+        `
+        : `
+          <button
+            type="button"
+            class="primary-button checkout-button"
+            disabled
+          >
+            Продолжи кон нарачка
+          </button>
+        `
+    }
+  `;
+}
 
       ${stockNotice}
 
