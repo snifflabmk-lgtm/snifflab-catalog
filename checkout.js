@@ -73,132 +73,165 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderOrderSummary(cart) {
-    const subtotal =
-      calculateSubtotal(cart);
+  const subtotal =
+    calculateSubtotal(cart);
 
-    orderItemsContainer.innerHTML = cart
-      .map((item) => {
-        const itemTotal =
-          Number(item.price) *
-          Number(item.quantity);
+  const deliveryPrice =
+    subtotal >= 2000 ? 0 : 160;
 
-        return `
-          <article class="order-summary-item">
-            <img
-              src="${item.image}"
-              alt="${item.name} парфем"
-            >
+  const total =
+    subtotal + deliveryPrice;
 
-            <div>
-              <h3>${item.name}</h3>
+  orderItemsContainer.innerHTML = cart
+    .map((item) => {
+      const itemTotal =
+        Number(item.price) *
+        Number(item.quantity);
 
-              <p>
-                ${item.size} ml · Количина ${item.quantity}
-              </p>
-            </div>
+      return `
+        <article class="order-summary-item">
+          <img
+            src="${item.image}"
+            alt="${item.name} парфем"
+          >
 
-            <strong>
-              ${formatPrice(itemTotal)} денари
-            </strong>
-          </article>
-        `;
-      })
-      .join("");
+          <div>
+            <h3>${item.name}</h3>
 
-    orderTotalContainer.innerHTML = `
-      <div class="checkout-total-row">
-        <span>Вкупно производи</span>
-
-        <strong>
-          ${formatPrice(subtotal)} денари
-        </strong>
-      </div>
-
-      <div class="checkout-delivery-row">
-        <span>Достава</span>
-
-        <strong>
-          ${
-            subtotal >= 2000
-              ? "Бесплатна"
-              : "Ќе биде дополнително потврдена"
-          }
-        </strong>
-      </div>
-
-      ${
-        subtotal >= 1500
-          ? `
-            <p class="checkout-gift">
-              🎁 Добивате бесплатен mystery sample
+            <p>
+              ${item.size} ml · Количина ${item.quantity}
             </p>
-          `
-          : ""
-      }
-    `;
-  }
+          </div>
 
-  function createOrderData(
-    cart,
-    orderId
-  ) {
-    const formData =
-      new FormData(checkoutForm);
+          <strong>
+            ${formatPrice(itemTotal)} денари
+          </strong>
+        </article>
+      `;
+    })
+    .join("");
 
-    return {
-      orderId: orderId,
+  orderTotalContainer.innerHTML = `
+    <div class="checkout-total-row">
+      <span>Вкупно производи</span>
 
-      firstName: String(
-        formData.get("firstName") || ""
-      ).trim(),
+      <strong>
+        ${formatPrice(subtotal)} денари
+      </strong>
+    </div>
 
-      lastName: String(
-        formData.get("lastName") || ""
-      ).trim(),
+    <div class="checkout-delivery-row">
+      <span>Достава</span>
 
-      phone: String(
-        formData.get("phone") || ""
-      ).trim(),
+      <strong>
+        ${
+          deliveryPrice === 0
+            ? "Бесплатна"
+            : `${formatPrice(deliveryPrice)} денари`
+        }
+      </strong>
+    </div>
 
-      email: String(
-        formData.get("email") || ""
-      ).trim(),
+    <div class="checkout-total-row">
+      <span>Вкупно за плаќање</span>
 
-      city: String(
-        formData.get("city") || ""
-      ).trim(),
+      <strong>
+        ${formatPrice(total)} денари
+      </strong>
+    </div>
 
-      address: String(
-        formData.get("address") || ""
-      ).trim(),
+    ${
+      subtotal >= 1500
+        ? `
+          <p class="checkout-gift">
+            🎁 Добивате бесплатен mystery sample
+          </p>
+        `
+        : ""
+    }
+  `;
+}
 
-      note: String(
-        formData.get("note") || ""
-      ).trim(),
+ function createOrderData(
+  cart,
+  orderId
+) {
+  const formData =
+    new FormData(checkoutForm);
 
-      newsletter:
-        formData.get("marketingConsent") ===
-        "yes",
+  const subtotal =
+    calculateSubtotal(cart);
 
-      paymentMethod:
-        "Плаќање при достава",
+  const deliveryPrice =
+    subtotal >= 2000 ? 0 : 160;
 
-      deliveryService:
-        "ЕЛС Еко Логистик",
+  const total =
+    subtotal + deliveryPrice;
 
-      items: cart.map((item) => ({
-        name: item.name,
-        size: `${item.size} ml`,
-        price: Number(item.price),
-        quantity: Number(item.quantity),
-        image: item.image
-      })),
+  return {
+    orderId: orderId,
 
-      subtotal:
-        calculateSubtotal(cart)
-    };
-  }
+    firstName: String(
+      formData.get("firstName") || ""
+    ).trim(),
 
+    lastName: String(
+      formData.get("lastName") || ""
+    ).trim(),
+
+    phone: String(
+      formData.get("phone") || ""
+    ).trim(),
+
+    email: String(
+      formData.get("email") || ""
+    ).trim(),
+
+    city: String(
+      formData.get("city") || ""
+    ).trim(),
+
+    address: String(
+      formData.get("address") || ""
+    ).trim(),
+
+    note: String(
+      formData.get("note") || ""
+    ).trim(),
+
+    newsletter:
+      formData.get("marketingConsent") ===
+      "yes",
+
+    paymentMethod:
+      "Плаќање при достава",
+
+    deliveryService:
+      "ЕЛС Еко Логистик",
+
+    deliveryPrice:
+      deliveryPrice,
+
+    delivery:
+      deliveryPrice === 0
+        ? "Бесплатна"
+        : "160 денари",
+
+    items: cart.map((item) => ({
+      name: item.name,
+      size: `${item.size} ml`,
+      price: Number(item.price),
+      quantity: Number(item.quantity),
+      image: item.image
+    })),
+
+    subtotal:
+      subtotal,
+
+    total:
+      total
+  };
+}
   function showMessage(
     message,
     type
@@ -495,7 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         gtag("event", "purchase", {
           transaction_id: orderData.orderId,
-          value: orderData.subtotal,
+         value: orderData.total,
           currency: "MKD"
         });
         setTimeout(() => {
