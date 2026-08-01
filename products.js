@@ -37,7 +37,7 @@ window.products = [
     categorySlug: "arapski",
     gender: "Машки",
     badges: ["bestseller"],
-    prices: { 3: 350, 5: 500, 10: 750, 20: 1350 },
+    prices: { 3: 350, 5: 500, 10: 750, 20: null },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
       "Питахаја",
