@@ -280,6 +280,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createPriceRange(product) {
+    if (product.id === "afnan-supremacy-collectors-edition") {
+      return "Нема на залиха";
+    }
+
     const availablePrices = Object.values(
       product.prices || {}
     )
