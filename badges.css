@@ -47,6 +47,20 @@
   border: 1px solid #ffe295;
 }
 
+/* РАСПРОДАДЕНО */
+
+.badge-soldout {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #c62828,
+    #8e1111
+  );
+
+  border: 1px solid #ff6b6b;
+}
+
 /* BESTSELLER */
 
 .badge-bestseller {
