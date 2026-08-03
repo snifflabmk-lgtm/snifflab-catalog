@@ -92,7 +92,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["bestseller"],
+    badges: ["soldout", "bestseller"],
     prices: { 3: null, 5: null, 10: null, 20: null },
     seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
