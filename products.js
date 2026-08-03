@@ -1158,7 +1158,7 @@ window.products = [
   {
     id: "riiffs-freeze",
     name: "Riiffs Freeze",
-    stockName: "Riffs - Freeze",
+    stockName: "Riiffs - Freeze",
     brand: "Riiffs",
     image: "riiffs-freeze.webp",
     category: "Арапски",
