@@ -256,6 +256,14 @@ document.addEventListener("DOMContentLoaded", () => {
               `;
             }
 
+            if (badge === "soldout") {
+              return `
+                <span class="product-badge badge-soldout">
+                  Распродадено
+                </span>
+              `;
+            }
+
             if (badge === "bestseller") {
               return `
                 <span class="product-badge badge-bestseller">
