@@ -274,6 +274,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const script =
           document.createElement("script");
 
+        script.crossOrigin = "anonymous";
+
         const query =
           new URLSearchParams({
             ...parameters,
