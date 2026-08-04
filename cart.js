@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const WEB_APP_URL =
-    "https://script.google.com/macros/s/AKfycbzzphhEJsh5WzE8bSkbyeny4rJVqNrqdK7TvDBBrYpr8FBKAebTU-ydNsFDFCWdOUgG/exec";
+    "https://script.google.com/macros/s/AKfycbx_Xwvym4OlpSHypwJXsSL2TKLauFl4LXZrcYlO6BCl3HifRoblXu3xwhPsvVscuW75/exec";
 
   const cartItemsContainer =
     document.querySelector("#cart-items");
