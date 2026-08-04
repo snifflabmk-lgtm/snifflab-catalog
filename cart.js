@@ -71,80 +71,37 @@ document.addEventListener("DOMContentLoaded", () => {
     return item.name;
   }
 
-  function requestJsonp(parameters) {
-    return new Promise((resolve, reject) => {
-      const callbackName =
-        `sniffLabCartStock_${Date.now()}_${Math.floor(
-          Math.random() * 100000
-        )}`;
+  async function requestJsonp(parameters) {
+    const url = new URL(WEB_APP_URL);
 
-      const script =
-        document.createElement("script");
-
-      script.crossOrigin = "anonymous";
-
-      const url =
-        new URL(WEB_APP_URL);
-
-      Object.entries(parameters).forEach(
-        ([key, value]) => {
-          url.searchParams.set(key, value);
-        }
-      );
-
-      url.searchParams.set(
-        "callback",
-        callbackName
-      );
-
-      let completed = false;
-
-      function cleanUp() {
-        delete window[callbackName];
-        script.remove();
+    Object.entries(parameters).forEach(
+      ([key, value]) => {
+        url.searchParams.set(key, value);
       }
+    );
 
-      const timeout = window.setTimeout(() => {
-        if (completed) {
-          return;
-        }
+    url.searchParams.set(
+      "_",
+      Date.now().toString()
+    );
 
-        completed = true;
-        cleanUp();
+    const response = await fetch(
+      url.toString(),
+      {
+        method: "GET",
+        mode: "cors",
+        credentials: "omit",
+        cache: "no-store"
+      }
+    );
 
-        reject(
-          new Error("Не може да се провери залихата.")
-        );
-      }, 12000);
+    if (!response.ok) {
+      throw new Error(
+        "Не може да се провери залихата."
+      );
+    }
 
-      window[callbackName] = (response) => {
-        if (completed) {
-          return;
-        }
-
-        completed = true;
-        window.clearTimeout(timeout);
-        cleanUp();
-        resolve(response);
-      };
-
-      script.onerror = () => {
-        if (completed) {
-          return;
-        }
-
-        completed = true;
-        window.clearTimeout(timeout);
-        cleanUp();
-
-        reject(
-          new Error("Не може да се провери залихата.")
-        );
-      };
-
-      script.src = url.toString();
-      document.body.appendChild(script);
-    });
+    return response.json();
   }
 
   async function loadStock() {
