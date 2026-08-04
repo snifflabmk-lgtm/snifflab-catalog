@@ -260,83 +260,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function requestJsonp(parameters) {
-    return new Promise(
-      (resolve, reject) => {
-        const callbackName =
-          "__sniffLabCallback_" +
-          Date.now() +
-          "_" +
-          Math.random()
-            .toString(36)
-            .slice(2);
+  async function requestJsonp(parameters) {
+    const query = new URLSearchParams({
+      ...parameters,
+      _: Date.now().toString()
+    });
 
-        const script =
-          document.createElement("script");
-
-        script.crossOrigin = "anonymous";
-
-        const query =
-          new URLSearchParams({
-            ...parameters,
-            callback: callbackName,
-            _: Date.now().toString()
-          });
-
-        let finished = false;
-
-        function cleanup() {
-          if (finished) {
-            return;
-          }
-
-          finished = true;
-
-          clearTimeout(timeout);
-
-          delete window[callbackName];
-
-          if (script.parentNode) {
-            script.parentNode.removeChild(
-              script
-            );
-          }
-        }
-
-        window[callbackName] =
-          function (data) {
-            cleanup();
-            resolve(data);
-          };
-
-        script.onerror = function () {
-          cleanup();
-
-          reject(
-            new Error(
-              "Не можевме да ја провериме нарачката."
-            )
-          );
-        };
-
-        const timeout = setTimeout(() => {
-          cleanup();
-
-          reject(
-            new Error(
-              "Проверката траеше предолго."
-            )
-          );
-        }, 10000);
-
-        script.src =
-          WEB_APP_URL +
-          "?" +
-          query.toString();
-
-        document.body.appendChild(script);
+    const response = await fetch(
+      WEB_APP_URL + "?" + query.toString(),
+      {
+        method: "GET",
+        mode: "cors",
+        credentials: "omit",
+        cache: "no-store"
       }
     );
+
+    if (!response.ok) {
+      throw new Error(
+        "Не можевме да ја провериме нарачката."
+      );
+    }
+
+    return response.json();
   }
 
   async function waitForOrderResult(
