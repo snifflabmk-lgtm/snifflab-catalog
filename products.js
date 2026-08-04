@@ -56,32 +56,37 @@ window.products = [
   },
 
   {
-    id: "afnan-9pm-rebel",
-    name: "Afnan 9PM Rebel",
-    stockName: "Afnan - 9pm Rebel",
-    brand: "Afnan",
-    image: "afnan-9pm-rebel.png",
-    category: "Арапски",
-    categorySlug: "arapski",
-    gender: "Машки",
-    badges: [],
-    prices: { 3: 300, 5: 450, 10: 600, 20: null },
-    seasons: ["Пролет", "Лето", "Есен", "Зима"],
-    notes: [
-      "Ананас",
-      "Суво дрво",
-      "Дабов мов",
-      "Сива амбра",
-      "Карамел",
-      "Кедар"
-    ],
-    occasions: [
-      "Вечерни излегувања",
-      "Романтичен состанок",
-      "Забава",
-      "Клуб"
-    ]
+  id: "afnan-9pm-rebel",
+  name: "Afnan 9PM Rebel",
+  stockName: "Afnan - 9pm Rebel",
+  brand: "Afnan",
+  image: "afnan-9pm-rebel.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["soldout"],
+  prices: {
+    3: null,
+    5: null,
+    10: null,
+    20: null
   },
+  seasons: ["Пролет", "Лето", "Есен", "Зима"],
+  notes: [
+    "Ананас",
+    "Суво дрво",
+    "Дабов мов",
+    "Сива амбра",
+    "Карамел",
+    "Кедар"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Забава",
+    "Клуб"
+  ]
+},
 
   {
     id: "afnan-supremacy-collectors-edition",
