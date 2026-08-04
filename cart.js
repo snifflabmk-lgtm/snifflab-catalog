@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const script =
         document.createElement("script");
 
+      script.crossOrigin = "anonymous";
+
       const url =
         new URL(WEB_APP_URL);
 
