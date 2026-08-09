@@ -1086,6 +1086,35 @@ window.products = [
     ]
   },
   {
+    id: "nishane-hacivat",
+    name: "Nishane Hacivat",
+    stockName: "Nishane - Hacivat",
+    brand: "Nishane",
+    image: "nishane-hacivat.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 650, 5: 1100, 10: 1900, 20: 3650 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Дабов мов",
+      "Ананас",
+      "Грејпфрут",
+      "Бергамот",
+      "Дрвенести ноти",
+      "Кедар"
+    ],
+    occasions: [
+      "Излегувања",
+      "Романтичен состанок",
+      "Свечени настани",
+      "Деловни состаноци",
+      "Специјални пригоди"
+    ]
+  },
+
+  {
     id: "rasasi-hawas-ice",
     name: "Rasasi Hawas Ice",
     stockName: "Rasasi - Hawas Ice",
