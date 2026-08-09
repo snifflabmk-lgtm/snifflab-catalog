@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     calculateSubtotal(cart);
 
   const deliveryPrice =
-    subtotal >= 2000 ? 0 : 160;
+    subtotal >= 2000 ? 0 : 170;
 
   const total =
     subtotal + deliveryPrice;
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     calculateSubtotal(cart);
 
   const deliveryPrice =
-    subtotal >= 2000 ? 0 : 160;
+    subtotal >= 2000 ? 0 : 170;
 
   const total =
     subtotal + deliveryPrice;
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     delivery:
       deliveryPrice === 0
         ? "Бесплатна"
-        : "160 денари",
+        : "170 денари",
 
     items: cart.map((item) => ({
       name: item.name,
