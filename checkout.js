@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function waitForOrderResult(
     orderId
   ) {
-    const maximumAttempts = 25;
+    const maximumAttempts = 60;
 
     for (
       let attempt = 0;
@@ -396,19 +396,33 @@ document.addEventListener("DOMContentLoaded", () => {
         JSON.stringify(orderData)
       );
 
+      const submissionKey =
+        `sniffLabOrderSubmitted:${orderId}`;
+
       try {
-        await fetch(WEB_APP_URL, {
-          method: "POST",
-          mode: "no-cors",
+        const wasAlreadySubmitted =
+          localStorage.getItem(submissionKey) ===
+          "true";
 
-          headers: {
-            "Content-Type":
-              "text/plain;charset=utf-8"
-          },
+        if (!wasAlreadySubmitted) {
+          await fetch(WEB_APP_URL, {
+            method: "POST",
+            mode: "no-cors",
 
-          body:
-            JSON.stringify(orderData)
-        });
+            headers: {
+              "Content-Type":
+                "text/plain;charset=utf-8"
+            },
+
+            body:
+              JSON.stringify(orderData)
+          });
+
+          localStorage.setItem(
+            submissionKey,
+            "true"
+          );
+        }
 
         const result =
           await waitForOrderResult(
@@ -427,6 +441,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           localStorage.removeItem(
             "sniffLabCheckoutOrderId"
+          );
+
+          localStorage.removeItem(
+            submissionKey
           );
 
           showMessage(
@@ -463,6 +481,10 @@ document.addEventListener("DOMContentLoaded", () => {
           "sniffLabCheckoutOrderId"
         );
 
+        localStorage.removeItem(
+          submissionKey
+        );
+
         checkoutForm.reset();
 
         showMessage(
@@ -487,15 +509,24 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (error) {
         console.error(error);
 
-        /*
-          Бројот на нарачката останува
-          зачуван. Ако купувачот притисне
-          повторно, нема да се создаде
-          дупликат.
-        */
+        const wasSubmitted =
+          localStorage.getItem(submissionKey) ===
+          "true";
+
+        if (wasSubmitted) {
+          showMessage(
+            "✅ Нарачката е испратена и се обработува. Не притискајте повторно. Ќе бидете контактирани за потврда.",
+            "success"
+          );
+
+          submitButton.disabled = true;
+          submitButton.textContent =
+            "НАРАЧКАТА СЕ ОБРАБОТУВА";
+          return;
+        }
 
         showMessage(
-          "❌ Не можевме веднаш да го потврдиме резултатот. Вашата кошничка е зачувана. Почекајте неколку секунди и притиснете повторно.",
+          "❌ Нарачката не беше испратена. Проверете ја интернет-конекцијата и обидете се повторно.",
           "error"
         );
 
