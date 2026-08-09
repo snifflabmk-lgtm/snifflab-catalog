@@ -405,9 +405,29 @@ document.addEventListener("DOMContentLoaded", () => {
           "true";
 
         if (!wasAlreadySubmitted) {
-          await fetch(WEB_APP_URL, {
+          /*
+            Го бележиме ID-то пред
+            испраќање за двоен клик да
+            не создаде дупликат.
+          */
+
+          localStorage.setItem(
+            submissionKey,
+            "true"
+          );
+
+          /*
+            Google Apps Script понекогаш
+            го задржува HTTP одговорот иако
+            нарачката е веќе примена.
+            Испраќаме во позадина и не ја
+            блокираме страницата.
+          */
+
+          fetch(WEB_APP_URL, {
             method: "POST",
             mode: "no-cors",
+            keepalive: true,
 
             headers: {
               "Content-Type":
@@ -416,12 +436,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             body:
               JSON.stringify(orderData)
+          }).catch((error) => {
+            console.error(error);
           });
-
-          localStorage.setItem(
-            submissionKey,
-            "true"
-          );
         }
 
         /*
