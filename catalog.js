@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createPriceRange(product) {
-    if (product.id === "afnan-supremacy-collectors-edition") {
+    if ((product.badges || []).includes("soldout")) {
       return "Нема на залиха";
     }
 
