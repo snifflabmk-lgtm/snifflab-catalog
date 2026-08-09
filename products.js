@@ -183,7 +183,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: { 3: 300, 5: 450, 10: 650, 20: 1200 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -693,7 +693,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: { 3: 300, 5: 450, 10: 650, 20: 1100 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -1123,7 +1123,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["new", "top"],
     prices: {
       3: 250,
       5: 400,
