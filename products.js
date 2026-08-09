@@ -480,7 +480,7 @@ window.products = [
     categorySlug: "dizajnerski",
     gender: "Машки",
     badges: ["top"],
-    prices: { 3: 450, 5: 750, 10: 1200, 20: null },
+    prices: { 3: 450, 5: 750, 10: null, 20: null },
     seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Грејпфрут",
@@ -1030,7 +1030,7 @@ window.products = [
       3: 400,
       5: 550,
       10: 750,
-      20: 1350
+      20: null
     },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -1168,7 +1168,7 @@ window.products = [
       3: 300,
       5: 500,
       10: 750,
-      20: 1250
+      20: null
     },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -1203,7 +1203,7 @@ window.products = [
       3: 250,
       5: 400,
       10: 600,
-      20: 1050
+      20: null
     },
     seasons: [
       "Пролет",
