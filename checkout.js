@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function waitForOrderResult(
     orderId
   ) {
-    const maximumAttempts = 60;
+    const maximumAttempts = 5;
 
     for (
       let attempt = 0;
