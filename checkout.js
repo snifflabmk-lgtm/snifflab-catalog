@@ -525,10 +525,11 @@ document.addEventListener("DOMContentLoaded", () => {
          value: orderData.total,
           currency: "MKD"
         });
-        setTimeout(() => {
-          window.location.href =
-            "index.html";
-        }, 5000);
+        /*
+          Остануваме на оваа страница за
+          испраќањето во позадина да може
+          целосно да заврши.
+        */
 
       } catch (error) {
         console.error(error);
