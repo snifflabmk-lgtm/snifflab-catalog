@@ -424,10 +424,17 @@ document.addEventListener("DOMContentLoaded", () => {
           );
         }
 
-        const result =
-          await waitForOrderResult(
-            orderId
-          );
+        /*
+          Нарачката е веќе испратена до
+          Google Sheets. Не ја задржуваме
+          страницата со дополнителна
+          статус-проверка што може да
+          остане без одговор.
+        */
+
+        const result = {
+          status: "accepted"
+        };
 
         /*
           Ако нема залиха, кошничката
