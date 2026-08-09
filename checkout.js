@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     items: cart.map((item) => ({
       name: item.name,
-      size: `${item.size} ml`,
+      size: Number(item.size),
       price: Number(item.price),
       quantity: Number(item.quantity),
       image: item.image
