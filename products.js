@@ -1015,6 +1015,33 @@ window.products = [
       "Посебни моменти"
     ]
   },
+  {
+  id: "lattafa-khamrah-dukhan",
+  name: "Lattafa Khamrah Dukhan",
+  stockName: "Lattafa - Khamrah Dukhan",
+  brand: "Lattafa",
+  image: "lattafa-khamrah-dukhan.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: { 3: 200, 5: 300, 10: 500, 20: 850 },
+  seasons: ["Есен", "Зима"],
+  notes: [
+    "Зачинети ноти",
+    "Пралина",
+    "Тутун",
+    "Темјан",
+    "Пименто",
+    "Килибар"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Специјални пригоди",
+    "Свечени настани"
+  ]
+},
 
   {
     id: "lattafa-khamrah-waha",
