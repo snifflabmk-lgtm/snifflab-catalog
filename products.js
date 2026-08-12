@@ -1333,6 +1333,44 @@ window.products = [
       "Елегантни вечери"
     ]
   },
+  {
+  id: "swiss-arabian-musk-01",
+  name: "Swiss Arabian Musk 01",
+  stockName: "Swiss Arabian - Musk 01",
+  brand: "Swiss Arabian",
+  image: "swiss-arabian-musk-01.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: {
+    3: 500,
+    5: 900,
+    10: 1800,
+    20: null
+  },
+  seasons: [
+    "Пролет",
+    "Лето",
+    "Есен"
+  ],
+  notes: [
+    "Цвет од портокал",
+    "Мошус",
+    "Крин",
+    "Бергамот",
+    "Сандалово дрво",
+    "Ванила"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Работа и канцеларија",
+    "Деловни состаноци",
+    "Елегантни пригоди",
+    "Романтичен состанок",
+    "Формални настани"
+  ]
+},
 
   {
     id: "tiziana-terenzi-kirke",
