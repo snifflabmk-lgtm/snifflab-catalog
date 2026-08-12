@@ -297,7 +297,47 @@ window.products = [
       "Специјални пригоди"
     ]
   },
-
+  
+{
+  id: "armaf-club-de-nuit-intense-overdose",
+  name: "Armaf Club de Nuit Intense Overdose",
+  stockName: "Armaf - Club de Nuit Intense Overdose",
+  brand: "Armaf",
+  image: "armaf-club-de-nuit-intense-overdose.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: {
+    3: 250,
+    5: 400,
+    10: 650,
+    20: 1350
+  },
+  seasons: [
+    "Пролет",
+    "Лето",
+    "Есен",
+    "Зима"
+  ],
+  notes: [
+    "Ананас",
+    "Син кристал",
+    "Бел прав",
+    "Дабов мов",
+    "Пачули",
+    "Ванила"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Ноќен живот",
+    "Забави",
+    "Прослави",
+    "Специјални пригоди"
+  ]
+},
+  
   {
     id: "armaf-dubai-chocolate",
     name: "Armaf Dubai Chocolate",
