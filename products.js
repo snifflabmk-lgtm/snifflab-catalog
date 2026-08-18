@@ -1161,7 +1161,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["new", "top"],
     prices: { 3: 650, 5: 1100, 10: 1900, 20: 3650 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
