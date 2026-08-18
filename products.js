@@ -307,7 +307,7 @@ window.products = [
   category: "Арапски",
   categorySlug: "arapski",
   gender: "Машки",
-  badges: ["new"],
+  badges: ["new", "top"],
   prices: {
     3: 250,
     5: 400,
@@ -992,7 +992,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: {
       3: 250,
       5: 350,
