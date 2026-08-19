@@ -56,37 +56,37 @@ window.products = [
   },
 
   {
-  id: "afnan-9pm-rebel",
-  name: "Afnan 9PM Rebel",
-  stockName: "Afnan - 9pm Rebel",
-  brand: "Afnan",
-  image: "afnan-9pm-rebel.png",
-  category: "Арапски",
-  categorySlug: "arapski",
-  gender: "Машки",
-  badges: ["soldout"],
-  prices: {
-    3: null,
-    5: null,
-    10: null,
-    20: null
+    id: "afnan-9pm-rebel",
+    name: "Afnan 9PM Rebel",
+    stockName: "Afnan - 9pm Rebel",
+    brand: "Afnan",
+    image: "afnan-9pm-rebel.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["soldout"],
+    prices: {
+      3: null,
+      5: null,
+      10: null,
+      20: null
+    },
+    seasons: ["Пролет", "Лето", "Есен", "Зима"],
+    notes: [
+      "Ананас",
+      "Суво дрво",
+      "Дабов мов",
+      "Сива амбра",
+      "Карамел",
+      "Кедар"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Забава",
+      "Клуб"
+    ]
   },
-  seasons: ["Пролет", "Лето", "Есен", "Зима"],
-  notes: [
-    "Ананас",
-    "Суво дрво",
-    "Дабов мов",
-    "Сива амбра",
-    "Карамел",
-    "Кедар"
-  ],
-  occasions: [
-    "Вечерни излегувања",
-    "Романтичен состанок",
-    "Забава",
-    "Клуб"
-  ]
-},
 
   {
     id: "afnan-supremacy-collectors-edition",
@@ -297,47 +297,47 @@ window.products = [
       "Специјални пригоди"
     ]
   },
-  
-{
-  id: "armaf-club-de-nuit-intense-overdose",
-  name: "Armaf Club de Nuit Intense Overdose",
-  stockName: "Armaf - Club de Nuit Intense Overdose",
-  brand: "Armaf",
-  image: "armaf-club-de-nuit-intense-overdose.png",
-  category: "Арапски",
-  categorySlug: "arapski",
-  gender: "Машки",
-  badges: ["new", "top"],
-  prices: {
-    3: 250,
-    5: 400,
-    10: 650,
-    20: 1350
+
+  {
+    id: "armaf-club-de-nuit-intense-overdose",
+    name: "Armaf Club de Nuit Intense Overdose",
+    stockName: "Armaf - Club de Nuit Intense Overdose",
+    brand: "Armaf",
+    image: "armaf-club-de-nuit-intense-overdose.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new", "top"],
+    prices: {
+      3: 250,
+      5: 400,
+      10: 650,
+      20: 1350
+    },
+    seasons: [
+      "Пролет",
+      "Лето",
+      "Есен",
+      "Зима"
+    ],
+    notes: [
+      "Ананас",
+      "Син кристал",
+      "Бел прав",
+      "Дабов мов",
+      "Пачули",
+      "Ванила"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Ноќен живот",
+      "Забави",
+      "Прослави",
+      "Специјални пригоди"
+    ]
   },
-  seasons: [
-    "Пролет",
-    "Лето",
-    "Есен",
-    "Зима"
-  ],
-  notes: [
-    "Ананас",
-    "Син кристал",
-    "Бел прав",
-    "Дабов мов",
-    "Пачули",
-    "Ванила"
-  ],
-  occasions: [
-    "Вечерни излегувања",
-    "Романтичен состанок",
-    "Ноќен живот",
-    "Забави",
-    "Прослави",
-    "Специјални пригоди"
-  ]
-},
-  
+
   {
     id: "armaf-dubai-chocolate",
     name: "Armaf Dubai Chocolate",
@@ -538,8 +538,7 @@ window.products = [
       "Специјални пригоди",
       "Вечерни излегувања"
     ]
-  }
-,
+  },
 
   {
     id: "davidoff-cool-water-edt",
@@ -569,8 +568,7 @@ window.products = [
       "Дневни прошетки",
       "Спорт"
     ]
-  }
-,
+  },
 
   {
     id: "dior-sauvage-edt",
@@ -600,8 +598,7 @@ window.products = [
       "Вечерни излегувања",
       "Специјални пригоди"
     ]
-  }
-,
+  },
 
   {
     id: "dior-sauvage-elixir",
@@ -630,8 +627,7 @@ window.products = [
       "Формални настани",
       "Прослави"
     ]
-  }
-,
+  },
 
   {
     id: "french-avenue-atlantis-extrait",
@@ -661,8 +657,7 @@ window.products = [
       "Летни излегувања",
       "Вечерни прошетки"
     ]
-  }
-,
+  },
 
   {
     id: "french-avenue-liquid-brun",
@@ -691,8 +686,7 @@ window.products = [
       "Формални настани",
       "Прослави"
     ]
-  }
-,
+  },
 
   {
     id: "french-avenue-spectre-ghost",
@@ -721,8 +715,7 @@ window.products = [
       "Забави",
       "Елегантни настани"
     ]
-  }
-,
+  },
 
   {
     id: "french-avenue-vulcan-feu",
@@ -751,8 +744,8 @@ window.products = [
       "Забави",
       "Елегантни настани"
     ]
-  }
-,
+  },
+
   {
     id: "gisada-ambassador-men",
     name: "Gisada Ambassador Men",
@@ -790,6 +783,7 @@ window.products = [
       "Патувања"
     ]
   },
+
   {
     id: "gucci-guilty-elixir",
     name: "Gucci Guilty Elixir",
@@ -864,8 +858,7 @@ window.products = [
       "Летни излегувања",
       "Дневни прошетки"
     ]
-  }
-,
+  },
 
   {
     id: "khadlaj-island-dreams",
@@ -876,7 +869,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["top","soldout"],
+    badges: ["top", "soldout"],
     prices: {
       3: null,
       5: null,
@@ -902,8 +895,37 @@ window.products = [
       "Зајдисонце",
       "Летни излегувања"
     ]
-  }
-,
+  },
+
+  {
+    id: "khadlaj-shiyaaka-sky",
+    name: "Khadlaj Shiyaaka Sky",
+    stockName: "Khadlaj - Shiyaaka Sky",
+    brand: "Khadlaj",
+    image: "khadlaj-shiyaaka-sky.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 250, 5: 400, 10: 650, 20: 1200 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Мошус",
+      "Зелени ноти",
+      "Нероли",
+      "Цвет од портокал",
+      "Бергамот",
+      "Амброксан"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Дневни излегувања",
+      "Кафе и дружење",
+      "Летни забави",
+      "Одмор и патувања",
+      "Date"
+    ]
+  },
 
   {
     id: "lattafa-asad",
@@ -941,8 +963,37 @@ window.products = [
       "Романтичен состанок",
       "Оставање силен впечаток"
     ]
-  }
-,
+  },
+
+  {
+    id: "lattafa-asad-bourbon",
+    name: "Lattafa Asad Bourbon",
+    stockName: "Lattafa - Asad Bourbon",
+    brand: "Lattafa",
+    image: "lattafa-asad-bourbon.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 250, 5: 350, 10: 550, 20: 950 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Ванила",
+      "Мешунка од какао",
+      "Лаванда",
+      "Килибар",
+      "Морско оревче",
+      "Мирабел"
+    ],
+    occasions: [
+      "Date night",
+      "Вечерни излегувања",
+      "Lounge bar",
+      "Романтична вечера",
+      "Прослави",
+      "Зимски пригоди"
+    ]
+  },
 
   {
     id: "lattafa-atlas",
@@ -980,8 +1031,7 @@ window.products = [
       "Дневно носење",
       "Топли денови"
     ]
-  }
-,
+  },
 
   {
     id: "lattafa-dynasty",
@@ -1055,33 +1105,34 @@ window.products = [
       "Посебни моменти"
     ]
   },
+
   {
-  id: "lattafa-khamrah-dukhan",
-  name: "Lattafa Khamrah Dukhan",
-  stockName: "Lattafa - Khamrah Dukhan",
-  brand: "Lattafa",
-  image: "lattafa-khamrah-dukhan.png",
-  category: "Арапски",
-  categorySlug: "arapski",
-  gender: "Машки",
-  badges: ["new"],
-  prices: { 3: 200, 5: 300, 10: 500, 20: 850 },
-  seasons: ["Есен", "Зима"],
-  notes: [
-    "Зачинети ноти",
-    "Пралина",
-    "Тутун",
-    "Темјан",
-    "Пименто",
-    "Килибар"
-  ],
-  occasions: [
-    "Вечерни излегувања",
-    "Романтичен состанок",
-    "Специјални пригоди",
-    "Свечени настани"
-  ]
-},
+    id: "lattafa-khamrah-dukhan",
+    name: "Lattafa Khamrah Dukhan",
+    stockName: "Lattafa - Khamrah Dukhan",
+    brand: "Lattafa",
+    image: "lattafa-khamrah-dukhan.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 200, 5: 300, 10: 500, 20: 850 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Зачинети ноти",
+      "Пралина",
+      "Тутун",
+      "Темјан",
+      "Пименто",
+      "Килибар"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Свечени настани"
+    ]
+  },
 
   {
     id: "lattafa-khamrah-waha",
@@ -1152,6 +1203,7 @@ window.products = [
       "Посебни моменти"
     ]
   },
+
   {
     id: "nishane-hacivat",
     name: "Nishane Hacivat",
@@ -1221,6 +1273,7 @@ window.products = [
       "Casual"
     ]
   },
+
   {
     id: "rasasi-hawas-tropical",
     name: "Rasasi Hawas Tropical",
@@ -1230,7 +1283,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-  badges: ["top", "soldout"],
+    badges: ["top", "soldout"],
     prices: {
       3: null,
       5: null,
@@ -1292,7 +1345,7 @@ window.products = [
       "Патувања",
       "Прошетки"
     ]
-   },
+  },
 
   {
     id: "rochas-moustache-edp",
@@ -1333,44 +1386,45 @@ window.products = [
       "Елегантни вечери"
     ]
   },
+
   {
-  id: "swiss-arabian-musk-01",
-  name: "Swiss Arabian Musk 01",
-  stockName: "Swiss Arabian - Musk 01",
-  brand: "Swiss Arabian",
-  image: "swiss-arabian-musk-01.png",
-  category: "Арапски",
-  categorySlug: "arapski",
-  gender: "Машки",
-  badges: ["new"],
-  prices: {
-    3: 500,
-    5: 900,
-    10: 1800,
-    20: null
+    id: "swiss-arabian-musk-01",
+    name: "Swiss Arabian Musk 01",
+    stockName: "Swiss Arabian - Musk 01",
+    brand: "Swiss Arabian",
+    image: "swiss-arabian-musk-01.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: {
+      3: 500,
+      5: 900,
+      10: 1800,
+      20: null
+    },
+    seasons: [
+      "Пролет",
+      "Лето",
+      "Есен"
+    ],
+    notes: [
+      "Цвет од портокал",
+      "Мошус",
+      "Крин",
+      "Бергамот",
+      "Сандалово дрво",
+      "Ванила"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа и канцеларија",
+      "Деловни состаноци",
+      "Елегантни пригоди",
+      "Романтичен состанок",
+      "Формални настани"
+    ]
   },
-  seasons: [
-    "Пролет",
-    "Лето",
-    "Есен"
-  ],
-  notes: [
-    "Цвет од портокал",
-    "Мошус",
-    "Крин",
-    "Бергамот",
-    "Сандалово дрво",
-    "Ванила"
-  ],
-  occasions: [
-    "Секојдневно носење",
-    "Работа и канцеларија",
-    "Деловни состаноци",
-    "Елегантни пригоди",
-    "Романтичен состанок",
-    "Формални настани"
-  ]
-},
 
   {
     id: "tiziana-terenzi-kirke",
@@ -1410,7 +1464,7 @@ window.products = [
       "Летни вечери",
       "Прослави"
     ]
-    },
+  },
 
   {
     id: "versace-dylan-blue",
@@ -1490,7 +1544,7 @@ window.products = [
       "Викенд-забави",
       "Посебен впечаток"
     ]
-    },
+  },
 
   {
     id: "viktor-rolf-spicebomb-extreme",
