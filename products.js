@@ -519,8 +519,8 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["top"],
-    prices: { 3: 450, 5: 750, 10: null, 20: null },
+    badges: ["top", "soldout"],
+    prices: { 3: null, 5: null, 10: null, 20: null },
     seasons: ["Пролет", "Лето", "Есен", "Зима"],
     notes: [
       "Грејпфрут",
