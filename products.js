@@ -1582,7 +1582,7 @@ window.products = [
       "Празнични прослави",
       "Ноќни излегувања"
     ]
-  }
+  },
   {
     id: "xerjoff-naxos",
     name: "Xerjoff Naxos",
