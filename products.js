@@ -1232,6 +1232,36 @@ window.products = [
       "Специјални пригоди"
     ]
   },
+  {
+    id: "xerjoff-naxos",
+    name: "Xerjoff Naxos",
+    stockName: "Xerjoff - Naxos",
+    brand: "Xerjoff",
+    image: "xerjoff-naxos.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 650, 5: 1100, 10: 1900, 20: 3700 },
+    seasons: ["Пролет", "Есен", "Зима"],
+    notes: [
+      "Мед",
+      "Тутун",
+      "Лаванда",
+      "Ванила",
+      "Тонка грав",
+      "Цимет"
+    ],
+    occasions: [
+      "Елегантни вечери",
+      "Романтичен состанок",
+      "Луксузни настани",
+      "Вечера во ресторан",
+      "Свечени пригоди",
+      "Посебни моменти"
+    ]
+  },
+
 
   {
     id: "rasasi-hawas-ice",
@@ -1273,37 +1303,7 @@ window.products = [
       "Casual"
     ]
   },
-    {
-    id: "xerjoff-naxos",
-    name: "Xerjoff Naxos",
-    stockName: "Xerjoff - Naxos",
-    brand: "Xerjoff",
-    image: "xerjoff-naxos.png",
-    category: "Ниш",
-    categorySlug: "nish",
-    gender: "Машки",
-    badges: ["new"],
-    prices: { 3: 650, 5: 1100, 10: 1900, 20: 3700 },
-    seasons: ["Пролет", "Есен", "Зима"],
-    notes: [
-      "Мед",
-      "Тутун",
-      "Лаванда",
-      "Ванила",
-      "Тонка грав",
-      "Цимет"
-    ],
-    occasions: [
-      "Елегантни вечери",
-      "Романтичен состанок",
-      "Луксузни настани",
-      "Вечера во ресторан",
-      "Свечени пригоди",
-      "Посебни моменти"
-    ]
-  },
-
-
+    
   {
     id: "rasasi-hawas-tropical",
     name: "Rasasi Hawas Tropical",
