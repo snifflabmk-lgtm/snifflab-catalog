@@ -1242,11 +1242,11 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new", "top"],
+    badges: ["new", "top", "soldout"],
     prices: {
-      3: 250,
-      5: 400,
-      10: 650,
+      3: null,
+      5: null,
+      10: null,
       20: null
     },
     seasons: [
