@@ -1348,9 +1348,9 @@ window.products = [
   },
     {
     id: "riiffs-freeze-in-flames",
-    name: "RiiFFS Freeze in Flames",
-    stockName: "RiiFFS - Freeze in Flames",
-    brand: "RiiFFS",
+    name: "Riiffs Freeze in Flames",
+    stockName: "Riiffs - Freeze in Flames",
+    brand: "Riiffs",
     image: "riiffs-freeze-in-flames.png",
     category: "Арапски",
     categorySlug: "arapski",
