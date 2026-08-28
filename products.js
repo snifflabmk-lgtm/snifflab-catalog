@@ -1346,6 +1346,39 @@ window.products = [
       "Прошетки"
     ]
   },
+    {
+    id: "riiffs-freeze-in-flames",
+    name: "RiiFFS Freeze in Flames",
+    stockName: "RiiFFS - Freeze in Flames",
+    brand: "RiiFFS",
+    image: "riiffs-freeze-in-flames.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 300, 5: 500, 10: 750, 20: 1400 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Малина",
+      "Маракуја",
+      "Црвено јаболко",
+      "Нане",
+      "Бергамот",
+      "Лаванда",
+      "Чај",
+      "Жалфија",
+      "Муск",
+      "Кедар"
+    ],
+    occasions: [
+      "Летни забави",
+      "Кафе на отворено",
+      "Прошетки покрај море",
+      "Дневни излегувања",
+      "Опуштени состаноци",
+      "Одмор и патувања"
+    ]
+  },
 
   {
     id: "rochas-moustache-edp",
