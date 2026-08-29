@@ -1346,40 +1346,40 @@ window.products = [
       "Прошетки"
     ]
   },
-    {
-    id: "riiffs-freeze-in-flames",
-    name: "Riiffs Freeze in Flames",
-    stockName: "Riiffs - Freeze in Flames",
-    brand: "Riiffs",
-    image: "riiffs-freeze-in-flames.png",
-    category: "Арапски",
-    categorySlug: "arapski",
-    gender: "Машки",
-    badges: ["new"],
-    prices: { 3: 300, 5: 500, 10: 750, 20: 1400 },
-    seasons: ["Пролет", "Лето"],
-    notes: [
-      "Малина",
-      "Маракуја",
-      "Црвено јаболко",
-      "Нане",
-      "Бергамот",
-      "Лаванда",
-      "Чај",
-      "Жалфија",
-      "Муск",
-      "Кедар"
-    ],
-    occasions: [
-      "Летни забави",
-      "Кафе на отворено",
-      "Прошетки покрај море",
-      "Дневни излегувања",
-      "Опуштени состаноци",
-      "Одмор и патувања"
-    ]
-  },
-
+   {
+  id: "riiffs-freeze-in-flames",
+  name: "Riiffs Freeze in Flames",
+  stockName: "Riiffs - Freeze in Flames",
+  brand: "Riiffs",
+  image: "riiffs-freeze-in-flames.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: { 3: 270, 5: 450, 10: 675, 20: 1260 },
+  oldPrices: { 3: 300, 5: 500, 10: 750, 20: 1400 },
+  seasons: ["Пролет", "Лето"],
+  notes: [
+    "Малина",
+    "Маракуја",
+    "Црвено јаболко",
+    "Нане",
+    "Бергамот",
+    "Лаванда",
+    "Чај",
+    "Жалфија",
+    "Муск",
+    "Кедар"
+  ],
+  occasions: [
+    "Летни забави",
+    "Кафе на отворено",
+    "Прошетки покрај море",
+    "Дневни излегувања",
+    "Опуштени состаноци",
+    "Одмор и патувања"
+  ]
+},
   {
     id: "rochas-moustache-edp",
     name: "Rochas Moustache EDP",
