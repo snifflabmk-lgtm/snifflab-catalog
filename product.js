@@ -65,6 +65,29 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatchEvent(new Event("sniffLabCartUpdated"));
   }
 
+  function getOldPrice(size) {
+    if (!product.oldPrices) {
+      return null;
+    }
+
+    const oldPrice = product.oldPrices[size];
+
+    return isAvailablePrice(oldPrice) ? Number(oldPrice) : null;
+  }
+
+  function getPriceMarkup(size, price) {
+    const oldPrice = getOldPrice(size);
+
+    if (oldPrice && oldPrice > Number(price)) {
+      return `
+        <span class="old-price">${oldPrice} денари</span>
+        <span class="sale-price">${price} денари</span>
+      `;
+    }
+
+    return `${price} денари`;
+  }
+
   function renderProduct() {
     const sortedPrices = Object.entries(product.prices).sort(
       (first, second) => Number(first[0]) - Number(second[0])
@@ -118,7 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .join(" | ");
 
     const initialPriceText = firstAvailablePrice
-      ? `${firstAvailablePrice[1]} денари`
+      ? getPriceMarkup(
+          firstAvailablePrice[0],
+          firstAvailablePrice[1]
+        )
       : "Нема достапна милилитража";
 
     const hasAvailableSizes = availablePrices.length > 0;
@@ -260,7 +286,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sizeInputs.forEach((input) => {
       input.addEventListener("change", () => {
-        currentPrice.textContent = `${input.dataset.price} денари`;
+        currentPrice.innerHTML = getPriceMarkup(
+          input.value,
+          input.dataset.price
+        );
         updateQuantityOptions();
       });
     });
