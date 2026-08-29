@@ -346,3 +346,38 @@
 .quantity-wrapper {
   margin-top: 0;
 }
+/* Промотивна цена */
+
+#current-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#current-price .old-price {
+  color: #a89480;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+#current-price .sale-price {
+  color: #f0c34f;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  #current-price {
+    gap: 7px;
+  }
+
+  #current-price .old-price {
+    font-size: 13px;
+  }
+
+  #current-price .sale-price {
+    font-size: 18px;
+  }
+}
