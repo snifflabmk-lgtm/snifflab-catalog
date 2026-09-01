@@ -236,6 +236,64 @@ window.products = [
       "Casual"
     ]
   },
+    {
+    id: "armaf-odyssey-go-mango",
+    name: "Armaf Odyssey Go Mango",
+    stockName: "Armaf - Odyssey Go Mango",
+    brand: "Armaf",
+    image: "armaf-odyssey-go-mango.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 200, 5: 300, 10: 450, 20: 750 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Манго",
+      "Лимон",
+      "Ѓумбир",
+      "Розов пипер",
+      "Тонка грав",
+      "Ванила"
+    ],
+    occasions: [
+      "Летни излегувања",
+      "Дневни прошетки",
+      "Плажа",
+      "Кафе и дружење",
+      "Одмор и патувања",
+      "Опуштени состаноци"
+    ]
+  },
+    {
+    id: "armaf-odyssey-mega",
+    name: "Armaf Odyssey Mega",
+    stockName: "Armaf - Odyssey Mega",
+    brand: "Armaf",
+    image: "armaf-odyssey-mega.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 200, 5: 300, 10: 450, 20: 750 },
+    seasons: ["Пролет", "Лето"],
+    notes: [
+      "Бергамот",
+      "Ѓумбир",
+      "Лимон",
+      "Нане",
+      "Ананас",
+      "Кедар"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Канцеларија",
+      "Дневни излегувања",
+      "Кафе и дружење",
+      "Патувања",
+      "Опуштени состаноци"
+    ]
+  },
 
   {
     id: "armaf-ba-ha-mas",
