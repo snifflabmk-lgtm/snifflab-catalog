@@ -455,6 +455,36 @@ window.products = [
   },
 
   {
+    id: "armani-acqua-di-gio-profondo-edp",
+    name: "Armani Acqua di Giò Profondo EDP",
+    stockName: "Armani - Acqua di Gio Profondo EDP",
+    brand: "Armani",
+    image: "armani-acqua-di-gio-profondo-edp.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 550, 10: 900, 20: 1700 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Морски ноти",
+      "Зелена мандарина",
+      "Лаванда",
+      "Рузмарин",
+      "Кедар",
+      "Пачули"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа",
+      "Дневни излегувања",
+      "Летен одмор",
+      "Романтичен состанок",
+      "Патување"
+    ]
+  },
+
+  {
     id: "armani-stronger-with-you-intensely",
     name: "Armani Stronger With You Intensely",
     stockName: "Armani - Stronger With You Intensely",
@@ -565,6 +595,35 @@ window.products = [
       "Специјални пригоди",
       "Забави",
       "Формални настани"
+    ]
+  },
+
+  {
+    id: "bvlgari-man-in-black-edp",
+    name: "Bvlgari Man in Black EDP",
+    stockName: "Bvlgari - Man in Black EDP",
+    brand: "Bvlgari",
+    image: "bvlgari-man-in-black-edp.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 550, 10: 900, 20: 1700 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Зачини",
+      "Килибарен рум",
+      "Тубероза",
+      "Кожа",
+      "Бензоин",
+      "Гвајаково дрво"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Формални настани",
+      "Свечени пригоди",
+      "Зимски вечери"
     ]
   },
 
@@ -877,6 +936,34 @@ window.products = [
       "Гала настани",
       "Формални пригоди",
       "Посебни моменти"
+    ]
+  },
+
+  {
+    id: "jpg-le-male-le-parfum",
+    name: "Jean Paul Gaultier Le Male Le Parfum",
+    stockName: "JPG - Le Male Le Parfum",
+    brand: "Jean Paul Gaultier",
+    image: "jpg-le-male-le-parfum.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 500, 10: 850, 20: 1600 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Кардамон",
+      "Лаванда",
+      "Ирис",
+      "Ванила",
+      "Дрвенести ноти"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Свечени пригоди",
+      "Забави",
+      "Формални настани"
     ]
   },
 
@@ -1228,6 +1315,37 @@ window.products = [
   },
 
   {
+    id: "mancera-aoud-lemon-mint",
+    name: "Mancera Aoud Lemon Mint",
+    stockName: "Mancera - Aoud Lemon Mint",
+    brand: "Mancera",
+    image: "mancera-aoud-lemon-mint.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 550, 10: 900, 20: 1700 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Лимон",
+      "Коријандер",
+      "Црн пипер",
+      "Бадем",
+      "Уд",
+      "Нане",
+      "Кожа",
+      "Ванила"
+    ],
+    occasions: [
+      "Дневни излегувања",
+      "Романтичен состанок",
+      "Летни вечери",
+      "Специјални пригоди",
+      "Патување"
+    ]
+  },
+
+  {
     id: "mancera-instant-crush",
     name: "Mancera Instant Crush",
     stockName: "Mancera - Instant Crush",
@@ -1291,6 +1409,36 @@ window.products = [
     ]
   },
   
+  {
+    id: "rabanne-invictus-victory-elixir",
+    name: "Rabanne Invictus Victory Elixir",
+    stockName: "Rabanne - Invictus Victory Elixir",
+    brand: "Rabanne",
+    image: "rabanne-invictus-victory-elixir.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 500, 10: 850, 20: 1700 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Лаванда",
+      "Кардамон",
+      "Црн пипер",
+      "Темјан",
+      "Пачули",
+      "Ванила",
+      "Тонка грав"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Ноќен живот",
+      "Забави",
+      "Специјални пригоди"
+    ]
+  },
+
   {
     id: "rasasi-hawas-ice",
     name: "Rasasi Hawas Ice",
@@ -1637,6 +1785,39 @@ window.products = [
   },
 
   {
+    id: "versace-eros-energy",
+    name: "Versace Eros Energy",
+    stockName: "Versace - Eros Energy",
+    brand: "Versace",
+    image: "versace-eros-energy.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 300, 5: 500, 10: 850, 20: 1650 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Бергамот",
+      "Црвен портокал",
+      "Лимета",
+      "Лимон",
+      "Грејпфрут",
+      "Мандарина",
+      "Розов пипер",
+      "Црна рибизла",
+      "Пачули"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Летни излегувања",
+      "Одмор",
+      "Плажа",
+      "Дневни прошетки",
+      "Романтичен состанок"
+    ]
+  },
+
+  {
     id: "viktor-rolf-spicebomb-extreme",
     name: "Viktor & Rolf Spicebomb Extreme",
     stockName: "Viktor & Rolf - Spicebomb Extreme",
@@ -1703,4 +1884,3 @@ window.products = [
     ]
   },
 ];
-
