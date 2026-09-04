@@ -399,42 +399,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "loading"
       );
 
-      let orderId =
-        getCheckoutOrderId();
+      const orderId =
+        createOrderId();
 
-      let orderData =
+      const orderData =
         createOrderData(
           currentCart,
           orderId
         );
-
-      const orderFingerprint =
-        createOrderFingerprint(orderData);
-
-      const previousFingerprint =
-        localStorage.getItem(
-          "sniffLabPendingFingerprint"
-        );
-
-      if (
-        previousFingerprint &&
-        previousFingerprint !== orderFingerprint
-      ) {
-        localStorage.removeItem(
-          "sniffLabCheckoutOrderId"
-        );
-
-        orderId = getCheckoutOrderId();
-        orderData = createOrderData(
-          currentCart,
-          orderId
-        );
-      }
-
-      localStorage.setItem(
-        "sniffLabPendingFingerprint",
-        createOrderFingerprint(orderData)
-      );
 
       localStorage.setItem(
         "sniffLabPendingOrder",
