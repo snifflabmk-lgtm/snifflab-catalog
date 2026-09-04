@@ -218,7 +218,10 @@ document.addEventListener("DOMContentLoaded", () => {
         : "170 денари",
 
     items: cart.map((item) => ({
-      name: item.name,
+      // Use the exact ERP inventory name when it is available.
+      // Public product names can differ (for example, "Jean Paul
+      // Gaultier" on the site versus "JPG" in Google Sheets).
+      name: item.stockName || item.name,
       size: Number(item.size),
       price: Number(item.price),
       quantity: Number(item.quantity),
@@ -288,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function waitForOrderResult(
     orderId
   ) {
-    const maximumAttempts = 5;
+    const maximumAttempts = 8;
 
     for (
       let attempt = 0;
@@ -411,20 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
             не создаде дупликат.
           */
 
-          localStorage.setItem(
-            submissionKey,
-            "true"
-          );
-
-          /*
-            Google Apps Script понекогаш
-            го задржува HTTP одговорот иако
-            нарачката е веќе примена.
-            Испраќаме во позадина и не ја
-            блокираме страницата.
-          */
-
-          fetch(WEB_APP_URL, {
+          await fetch(WEB_APP_URL, {
             method: "POST",
             mode: "no-cors",
             keepalive: true,
@@ -436,22 +426,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             body:
               JSON.stringify(orderData)
-          }).catch((error) => {
-            console.error(error);
           });
+
+          localStorage.setItem(
+            submissionKey,
+            "true"
+          );
         }
 
-        /*
-          Нарачката е веќе испратена до
-          Google Sheets. Не ја задржуваме
-          страницата со дополнителна
-          статус-проверка што може да
-          остане без одговор.
-        */
-
-        const result = {
-          status: "accepted"
-        };
+        const result =
+          await waitForOrderResult(orderId);
 
         /*
           Ако нема залиха, кошничката
