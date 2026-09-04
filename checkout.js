@@ -72,6 +72,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return orderId;
   }
 
+  function createOrderFingerprint(order) {
+    return JSON.stringify({
+      firstName: order.firstName,
+      lastName: order.lastName,
+      phone: order.phone,
+      email: order.email,
+      city: order.city,
+      address: order.address,
+      items: order.items,
+      subtotal: order.subtotal,
+      total: order.total
+    });
+  }
+
   function renderOrderSummary(cart) {
   const subtotal =
     calculateSubtotal(cart);
@@ -152,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 }
 
- function createOrderData(
+  function createOrderData(
   cart,
   orderId
 ) {
@@ -291,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function waitForOrderResult(
     orderId
   ) {
-    const maximumAttempts = 8;
+    const maximumAttempts = 4;
 
     for (
       let attempt = 0;
@@ -385,14 +399,42 @@ document.addEventListener("DOMContentLoaded", () => {
         "loading"
       );
 
-      const orderId =
+      let orderId =
         getCheckoutOrderId();
 
-      const orderData =
+      let orderData =
         createOrderData(
           currentCart,
           orderId
         );
+
+      const orderFingerprint =
+        createOrderFingerprint(orderData);
+
+      const previousFingerprint =
+        localStorage.getItem(
+          "sniffLabPendingFingerprint"
+        );
+
+      if (
+        previousFingerprint &&
+        previousFingerprint !== orderFingerprint
+      ) {
+        localStorage.removeItem(
+          "sniffLabCheckoutOrderId"
+        );
+
+        orderId = getCheckoutOrderId();
+        orderData = createOrderData(
+          currentCart,
+          orderId
+        );
+      }
+
+      localStorage.setItem(
+        "sniffLabPendingFingerprint",
+        createOrderFingerprint(orderData)
+      );
 
       localStorage.setItem(
         "sniffLabPendingOrder",
@@ -414,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
             не создаде дупликат.
           */
 
-          await fetch(WEB_APP_URL, {
+          fetch(WEB_APP_URL, {
             method: "POST",
             mode: "no-cors",
             keepalive: true,
@@ -426,6 +468,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             body:
               JSON.stringify(orderData)
+          }).catch((error) => {
+            console.error(error);
           });
 
           localStorage.setItem(
@@ -449,6 +493,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           localStorage.removeItem(
             "sniffLabCheckoutOrderId"
+          );
+
+          localStorage.removeItem(
+            "sniffLabPendingFingerprint"
           );
 
           localStorage.removeItem(
@@ -487,6 +535,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.removeItem(
           "sniffLabCheckoutOrderId"
+        );
+
+        localStorage.removeItem(
+          "sniffLabPendingFingerprint"
         );
 
         localStorage.removeItem(
