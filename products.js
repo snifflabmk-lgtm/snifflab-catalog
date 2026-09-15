@@ -940,6 +940,93 @@ window.products = [
   },
 
   {
+    id: "guerlain-lhomme-ideal-extreme",
+    name: "Guerlain L’Homme Idéal Extrême",
+    stockName: "Guerlain - L'Homme Idéal Extrême",
+    brand: "Guerlain",
+    image: "guerlain-lhomme-ideal-extreme.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 600, 10: 1050, 20: 2000 },
+    seasons: ["Пролет", "Есен", "Зима"],
+    notes: [
+      "Бадем",
+      "Слива",
+      "Тутун",
+      "Цимет",
+      "Кожа",
+      "Пачули"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Елегантни настани",
+      "Вечера во ресторан",
+      "Специјални пригоди"
+    ]
+  },
+
+  {
+    id: "hugo-boss-bottled-absolu",
+    name: "Hugo Boss Bottled Absolu",
+    stockName: "Hugo Boss - Bottled Absolu",
+    brand: "Hugo Boss",
+    image: "hugo-boss-bottled-absolu.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 600, 10: 1050, 20: 2000 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Темјан",
+      "Кожа",
+      "Смирна",
+      "Пачули",
+      "Кедар",
+      "Давана"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Елегантни настани",
+      "Деловни средби",
+      "Специјални пригоди"
+    ]
+  },
+
+  {
+    id: "jpg-le-beau-le-parfum",
+    name: "JPG Le Beau Le Parfum",
+    stockName: "JPG - Le Beau Le Parfum",
+    brand: "Jean Paul Gaultier",
+    image: "jpg-le-beau-le-parfum.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 400, 5: 650, 10: 1100, 20: 2100 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Кокос",
+      "Ананас",
+      "Ирис",
+      "Килибар",
+      "Тонка грав",
+      "Сандалово дрво"
+    ],
+    occasions: [
+      "Романтичен состанок",
+      "Летни вечери",
+      "Одмор",
+      "Вечерни излегувања",
+      "Забава"
+    ]
+  },
+
+  {
     id: "jpg-le-male-le-parfum",
     name: "Jean Paul Gaultier Le Male Le Parfum",
     stockName: "JPG - Le Male Le Parfum",
@@ -1069,6 +1156,33 @@ window.products = [
       "Летни забави",
       "Одмор и патувања",
       "Date"
+    ]
+  },
+
+  {
+    id: "lalique-encre-noire",
+    name: "Lalique Encre Noire",
+    stockName: "Lalique - Encre Noire",
+    brand: "Lalique",
+    image: "lalique-encre-noire.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 200, 5: 350, 10: 550, 20: 1000 },
+    seasons: ["Пролет", "Есен", "Зима"],
+    notes: [
+      "Чемпрес",
+      "Ветивер",
+      "Кашмирско дрво",
+      "Мошус"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Канцеларија",
+      "Деловни средби",
+      "Вечерни излегувања",
+      "Формални пригоди"
     ]
   },
 
@@ -1512,6 +1626,35 @@ window.products = [
       "Прошетки на зајдисонце",
       "Летни забави",
       "Излети"
+    ]
+  },
+
+  {
+    id: "ralph-lauren-polo-67-edp",
+    name: "Ralph Lauren Polo 67 EDP",
+    stockName: "Ralph Lauren - Polo 67 EDP",
+    brand: "Ralph Lauren",
+    image: "ralph-lauren-polo-67-edp.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 300, 5: 500, 10: 900, 20: 1700 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Ананас",
+      "Цитруси",
+      "Кардамон",
+      "Кедар",
+      "Бензоин"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Канцеларија",
+      "Спорт",
+      "Дневни излегувања",
+      "Романтичен состанок",
+      "Одмор"
     ]
   },
 
