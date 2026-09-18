@@ -541,6 +541,35 @@ window.products = [
       "Елегантни настани"
     ]
   },
+    {
+    id: "aromatix-french-avenue-magnetiq",
+    name: "Aromatix x French Avenue Magnetiq",
+    stockName: "Aromatix x French Avenue - Magnetiq",
+    brand: "Aromatix x French Avenue",
+    image: "aromatix-french-avenue-magnetiq.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Унисекс",
+    badges: ["new"],
+    prices: { 3: 300, 5: 450, 10: 650, 20: 1250 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Бергамот",
+      "Розов пипер",
+      "Лаванда",
+      "Цвет од портокал",
+      "Ирис",
+      "Сандалово дрво"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа",
+      "Романтичен состанок",
+      "Вечерни излегувања",
+      "Специјални пригоди",
+      "Деловни средби"
+    ]
+  },
 
   {
     id: "aromatix-french-avenue-platine-blanc",
@@ -1456,6 +1485,35 @@ window.products = [
       "Летни вечери",
       "Специјални пригоди",
       "Патување"
+    ]
+  },
+    {
+    id: "mancera-jardin-exclusif",
+    name: "Mancera Jardin Exclusif",
+    stockName: "Mancera - Jardin Exclusif",
+    brand: "Mancera",
+    image: "mancera-jardin-exclusif.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Унисекс",
+    badges: ["new"],
+    prices: { 3: 350, 5: 500, 10: 850, 20: 1700 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Круша",
+      "Праска",
+      "Лимон",
+      "Црна рибизла",
+      "Карамела",
+      "Ванила"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Дневни излегувања",
+      "Летни вечери",
+      "Специјални пригоди",
+      "Одмор"
     ]
   },
 
