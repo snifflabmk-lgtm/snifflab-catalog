@@ -1435,7 +1435,7 @@ window.products = [
     prices: {
       3: 400,
       5: 550,
-      10: 750,
+      10: null,
       20: null
     },
     seasons: ["Пролет", "Лето"],
