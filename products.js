@@ -125,7 +125,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: ["bestseller"],
     prices: { 3: 250, 5: 350, 10: 550, 20: 950 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -183,7 +183,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["top"],
+    badges: ["bestseller"],
     prices: { 3: 300, 5: 450, 10: 650, 20: 1200 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -365,7 +365,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new", "top"],
+    badges: ["bestseller"],
     prices: {
       3: 250,
       5: 400,
@@ -1094,7 +1094,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["bestseller"],
     prices: { 3: 350, 5: 500, 10: 850, 20: 1600 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -1197,7 +1197,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 250, 5: 400, 10: 650, 20: 1200 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -1292,7 +1292,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["top"],
     prices: { 3: 250, 5: 350, 10: 550, 20: 950 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -1433,7 +1433,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 200, 5: 300, 10: 500, 20: 850 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -1591,7 +1591,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Машки",
-    badges: ["new", "top"],
+    badges: ["bestseller"],
     prices: { 3: 650, 5: 1100, 10: 1900, 20: 3650 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -1650,7 +1650,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new", "top", "soldout"],
+    badges: ["bestseller", "soldout"],
     prices: {
       3: null,
       5: null,
@@ -1865,7 +1865,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: {
       3: 500,
       5: 900,
@@ -2094,7 +2094,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["top"],
     prices: { 3: 650, 5: 1100, 10: 1900, 20: 3700 },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
