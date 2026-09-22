@@ -626,6 +626,36 @@ window.products = [
       "Формални настани"
     ]
   },
+    {
+    id: "bujairami-hectic",
+    name: "Bujairami Hectic",
+    stockName: "Bujairami - Hectic",
+    brand: "Bujairami",
+    image: "bujairami-hectic.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 250, 5: 400, 10: 750, 20: 1350 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Цитрон",
+      "Бергамот",
+      "Ѓумбир",
+      "Нероли",
+      "Цимет",
+      "Црн чај",
+      "Амброксан"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Работа",
+      "Дневни излегувања",
+      "Кафе и дружење",
+      "Патување",
+      "Летни вечери"
+    ]
+  },
 
   {
     id: "bvlgari-man-in-black-edp",
