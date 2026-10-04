@@ -354,13 +354,13 @@ document.addEventListener("DOMContentLoaded", () => {
           </span>
 
           <h2>${product.name}</h2>
-          <p>${product.gender} парфем</p>
+          <p>${window.getProductGenderLabel(product.gender, activeGender)}</p>
           <p class="product-price-range">
             ${createPriceRange(product)}
           </p>
 
           <a
-            href="product.html?id=${product.id}"
+            href="product.html?id=${product.id}${activeGender === "site" ? "" : `&gender=${activeGender}`}"
             class="details-button"
           >
             Детали

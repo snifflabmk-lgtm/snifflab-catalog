@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="700" viewBox="0 0 600 700">
+  <g fill="none" stroke="#d8b85c" stroke-width="3" opacity=".65">
+    <rect x="260" y="150" width="80" height="48" rx="8"/>
+    <path d="M275 198v35h-60c-22 0-40 18-40 40v245c0 22 18 40 40 40h170c22 0 40-18 40-40V273c0-22-18-40-40-40h-60v-35"/>
+    <rect x="210" y="320" width="180" height="110" rx="4"/>
+  </g>
+  <text x="300" y="368" fill="#d8b85c" text-anchor="middle" font-family="Georgia,serif" font-size="25">SNIFF LAB</text>
+  <text x="300" y="400" fill="#d8b85c" text-anchor="middle" font-family="Georgia,serif" font-size="14" letter-spacing="4">DECANTS</text>
+  <text x="300" y="610" fill="#cbbca7" text-anchor="middle" font-family="Arial,sans-serif" font-size="18">Фотографија наскоро</text>
+</svg>

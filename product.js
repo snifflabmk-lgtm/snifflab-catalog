@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageTitle = document.querySelector("title");
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
+  const collectionGender = ["men", "women", "unisex"].includes(params.get("gender"))
+    ? params.get("gender") : "site";
+  const catalogUrl = collectionGender === "site"
+    ? "catalog.html" : `catalog.html?gender=${collectionGender}`;
   const product = window.products.find((item) => item.id === productId);
 
   const seasonIcons = {
@@ -157,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="details-content">
           <p class="eyebrow">
-            ${product.category} · ${product.gender} парфем
+            ${product.category} · ${window.getProductGenderLabel(product.gender, collectionGender)}
           </p>
 
           <h1>${product.name}</h1>
@@ -224,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ></p>
           </section>
 
-          <a href="catalog.html" class="back-button">
+          <a href="${catalogUrl}" class="back-button">
             Назад кон каталогот
           </a>
         </div>

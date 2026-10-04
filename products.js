@@ -806,6 +806,43 @@ window.products = [
   },
 
   {
+    "id": "dolce-gabbana-devotion-edp",
+    "name": "Dolce & Gabbana Devotion EDP",
+    "stockName": "Dolce & Gabbana - Devotion EDP",
+    "brand": "Dolce & Gabbana",
+    "image": "perfume-photo-pending.svg",
+    "category": "Дизајнерски",
+    "categorySlug": "dizajnerski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 400,
+      "5": 600,
+      "10": 950,
+      "20": 1800
+    },
+    "seasons": [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Кандиран лимон",
+      "Панакота",
+      "Цвет од портокал",
+      "Рум",
+      "Ванила"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
     "id": "fragrance-world-barakkat-satin-oud",
     "name": "Fragrance World Barakkat Satin Oud",
     "stockName": "Fragrance World - Barakkat Satin Oud",
@@ -1036,6 +1073,47 @@ window.products = [
   },
 
   {
+    "id": "gucci-guilty-elixir-pour-femme",
+    "name": "Gucci Guilty Elixir Pour Femme",
+    "stockName": "Gucci - Guilty Elixir Pour Femme",
+    "brand": "Gucci",
+    "image": "perfume-photo-pending.svg",
+    "category": "Дизајнерски",
+    "categorySlug": "dizajnerski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 550,
+      "5": 1000,
+      "10": 1600,
+      "20": 3000
+    },
+    "seasons": [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Виолетка",
+      "Мандора",
+      "Бергамот",
+      "Глицинија",
+      "Роза",
+      "Османтус",
+      "Тонка грав",
+      "Ванила",
+      "Пачули"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
     id: "guerlain-lhomme-ideal-extreme",
     name: "Guerlain L’Homme Idéal Extrême",
     stockName: "Guerlain - L'Homme Idéal Extrême",
@@ -1189,6 +1267,45 @@ window.products = [
   },
 
   {
+    "id": "khadlaj-cream-velvet",
+    "name": "Khadlaj Cream Velvet",
+    "stockName": "Lattafa - Cream Velvet",
+    "brand": "Khadlaj",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Унисекс",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 200,
+      "5": 300,
+      "10": 500,
+      "20": 900
+    },
+    "seasons": [
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Карамел",
+      "Путер",
+      "Тонка грав",
+      "Мед",
+      "Јасмин",
+      "Ванила",
+      "Мошус",
+      "Амбер"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
     id: "khadlaj-island",
     name: "Khadlaj Island",
     stockName: "Khadlaj - Island",
@@ -1321,6 +1438,48 @@ window.products = [
   },
 
   {
+    "id": "lattafa-angham",
+    "name": "Lattafa Angham",
+    "stockName": "Lattafa - Angham",
+    "brand": "Lattafa",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Унисекс",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 200,
+      "5": 300,
+      "10": 500,
+      "20": 900
+    },
+    "seasons": [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Ѓумбир",
+      "Мандарина",
+      "Розов пипер",
+      "Лаванда",
+      "Пралини",
+      "Какао",
+      "Јасмин",
+      "Ванила",
+      "Амбер",
+      "Мошус"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
     id: "lattafa-asad",
     name: "Lattafa Asad",
     stockName: "Lattafa - Asad",
@@ -1427,6 +1586,44 @@ window.products = [
   },
 
   {
+    "id": "lattafa-noble-blush",
+    "name": "Lattafa Bade'e Al Oud Noble Blush",
+    "stockName": "Lattafa - Bade'e Al Oud Noble Blush",
+    "brand": "Lattafa",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 200,
+      "5": 300,
+      "10": 500,
+      "20": 900
+    },
+    "seasons": [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Млеко од роза",
+      "Меренга",
+      "Бадем",
+      "Ванила",
+      "Мошус",
+      "Сандалово дрво"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
     id: "lattafa-dynasty",
     name: "Lattafa Dynasty",
     stockName: "Lattafa - Dynasty",
@@ -1462,6 +1659,90 @@ window.products = [
       "Прослави",
       "Патувања",
       "Вечерни прошетки"
+    ]
+  },
+
+  {
+    "id": "lattafa-eclaire",
+    "name": "Lattafa Eclaire",
+    "stockName": "Lattafa - Eclaire",
+    "brand": "Lattafa",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 200,
+      "5": 300,
+      "10": 550,
+      "20": 1000
+    },
+    "seasons": [
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Карамел",
+      "Млеко",
+      "Шеќер",
+      "Мед",
+      "Бели цветови",
+      "Ванила",
+      "Пралини",
+      "Мошус"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
+    "id": "lattafa-fakhar-rose",
+    "name": "Lattafa Fakhar Rose",
+    "stockName": "Lattafa - Fakhar Rose",
+    "brand": "Lattafa",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 150,
+      "5": 250,
+      "10": 450,
+      "20": 800
+    },
+    "seasons": [
+      "Пролет",
+      "Лето",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Овошје",
+      "Лилјан",
+      "Калинка",
+      "Алдехиди",
+      "Тубероза",
+      "Јасмин",
+      "Гарденија",
+      "Роза",
+      "Ванила",
+      "Бел мошус",
+      "Сандалово дрво",
+      "Амброксан"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
     ]
   },
 
@@ -1602,6 +1883,87 @@ window.products = [
   },
 
   {
+    "id": "lattafa-yara",
+    "name": "Lattafa Yara",
+    "stockName": "Lattafa - Yara",
+    "brand": "Lattafa",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 150,
+      "5": 250,
+      "10": 400,
+      "20": 700
+    },
+    "seasons": [
+      "Пролет",
+      "Лето",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Орхидеја",
+      "Хелиотроп",
+      "Мандарина",
+      "Гурмански акорд",
+      "Тропско овошје",
+      "Ванила",
+      "Мошус",
+      "Сандалово дрво"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
+    "id": "lattafa-yara-candy",
+    "name": "Lattafa Yara Candy",
+    "stockName": "Lattafa - Yara Candy",
+    "brand": "Lattafa",
+    "image": "perfume-photo-pending.svg",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 150,
+      "5": 250,
+      "10": 400,
+      "20": 700
+    },
+    "seasons": [
+      "Пролет",
+      "Лето",
+      "Есен"
+    ],
+    "notes": [
+      "Црна рибизла",
+      "Зелена мандарина",
+      "Бонбони од јагода",
+      "Гарденија",
+      "Ванила",
+      "Мошус",
+      "Амбер",
+      "Сандалово дрво"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
+  {
     id: "mancera-aoud-lemon-mint",
     name: "Mancera Aoud Lemon Mint",
     stockName: "Mancera - Aoud Lemon Mint",
@@ -1693,6 +2055,45 @@ window.products = [
       "Гала вечери",
       "Ноќен град",
       "Посебни моменти"
+    ]
+  },
+
+  {
+    "id": "narciso-rodriguez-for-her-edp",
+    "name": "Narciso Rodriguez For Her EDP",
+    "stockName": "Narciso Rodriguez - For Her EDP",
+    "brand": "Narciso Rodriguez",
+    "image": "perfume-photo-pending.svg",
+    "category": "Дизајнерски",
+    "categorySlug": "dizajnerski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 400,
+      "5": 600,
+      "10": 950,
+      "20": 1800
+    },
+    "seasons": [
+      "Пролет",
+      "Лето",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Роза",
+      "Праска",
+      "Мошус",
+      "Амбер",
+      "Пачули",
+      "Сандалово дрво"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
     ]
   },
 
@@ -2228,4 +2629,53 @@ window.products = [
       "Посебни моменти"
     ]
   },
+  {
+    "id": "zadig-voltaire-this-is-her-edp",
+    "name": "Zadig & Voltaire This Is Her! EDP",
+    "stockName": "Zadig & Voltaire - This Is Her! EDP",
+    "brand": "Zadig & Voltaire",
+    "image": "perfume-photo-pending.svg",
+    "category": "Дизајнерски",
+    "categorySlug": "dizajnerski",
+    "gender": "Женски",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 350,
+      "5": 500,
+      "10": 850,
+      "20": 1600
+    },
+    "seasons": [
+      "Пролет",
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Розов пипер",
+      "Јасмин самбак",
+      "Цвет од албиција",
+      "Шлаг",
+      "Ванила",
+      "Костен",
+      "Сандалово дрво",
+      "Кашмирско дрво"
+    ],
+    "occasions": [
+      "Секојдневно носење",
+      "Романтичен состанок",
+      "Излегувања"
+    ]
+  },
+
 ];
+
+// A unisex perfume keeps its official classification; its visible label follows the selected collection.
+window.getProductGenderLabel = function (productGender, collectionGender = "site") {
+  if (productGender === "Унисекс") {
+    if (collectionGender === "men") return "Машки, унисекс парфем";
+    if (collectionGender === "women") return "Женски, унисекс парфем";
+  }
+  return `${productGender} парфем`;
+};
