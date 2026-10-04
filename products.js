@@ -806,6 +806,43 @@ window.products = [
   },
 
   {
+    "id": "fragrance-world-barakkat-satin-oud",
+    "name": "Fragrance World Barakkat Satin Oud",
+    "stockName": "Fragrance World - Barakkat Satin Oud",
+    "brand": "Fragrance World",
+    "image": "fragrance-world-barakkat-satin-oud.webp",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Унисекс",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 100,
+      "5": 200,
+      "10": 350,
+      "20": 500
+    },
+    "seasons": [
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Роза",
+      "Уд",
+      "Ванила",
+      "Темјанушка",
+      "Амбер",
+      "Бензоин"
+    ],
+    "occasions": [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди"
+    ]
+  },
+
+  {
     id: "french-avenue-atlantis-extrait",
     name: "French Avenue Atlantis Extrait",
     stockName: "French Avenue - Atlantis Extrait",
@@ -1052,6 +1089,44 @@ window.products = [
       "Романтичен состанок",
       "Елегантни настани",
       "Деловни средби",
+      "Специјални пригоди"
+    ]
+  },
+
+  {
+    "id": "initio-side-effect",
+    "name": "Initio Side Effect",
+    "stockName": "Initio - Side Effect",
+    "brand": "Initio",
+    "image": "initio-side-effect.webp",
+    "category": "Ниш",
+    "categorySlug": "nish",
+    "gender": "Унисекс",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 850,
+      "5": 1400,
+      "10": 2400,
+      "20": 4600
+    },
+    "seasons": [
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Рум",
+      "Тутун",
+      "Ванила",
+      "Цимет",
+      "Шафран",
+      "Сандалово дрво"
+    ],
+    "occasions": [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Елегантни вечери",
       "Специјални пригоди"
     ]
   },
@@ -1449,6 +1524,45 @@ window.products = [
       "Романтичен состанок",
       "Специјални пригоди",
       "Свечени настани"
+    ]
+  },
+
+  {
+    "id": "lattafa-khamrah-qahwa",
+    "name": "Lattafa Khamrah Qahwa",
+    "stockName": "Lattafa - Khamrah Qahwa",
+    "brand": "Lattafa",
+    "image": "lattafa-khamrah-qahwa.webp",
+    "category": "Арапски",
+    "categorySlug": "arapski",
+    "gender": "Унисекс",
+    "badges": [
+      "new"
+    ],
+    "prices": {
+      "3": 200,
+      "5": 300,
+      "10": 500,
+      "20": 900
+    },
+    "seasons": [
+      "Есен",
+      "Зима"
+    ],
+    "notes": [
+      "Кафе",
+      "Ванила",
+      "Цимет",
+      "Кардамон",
+      "Ѓумбир",
+      "Пралина",
+      "Тонка грав"
+    ],
+    "occasions": [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Кафе и дружење",
+      "Секојдневно носење"
     ]
   },
 
