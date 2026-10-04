@@ -483,3 +483,45 @@ body.menu-active {
     width: 38px;
   }
 }
+
+/* Категории под Каталог */
+.catalog-menu-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(225, 185, 77, 0.19);
+}
+.catalog-menu-row > a {
+  flex: 1;
+  padding: 18px 5px;
+  color: #f5e8d8;
+  font: 17px Arial, sans-serif;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.catalog-menu-row > a:hover,
+.catalog-menu-row > a.active { color: #e1b94d; }
+.catalog-menu-toggle {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #e1b94d;
+  font-size: 25px;
+  cursor: pointer;
+}
+.catalog-menu-toggle:hover { background: rgba(225, 185, 77, 0.1); }
+.catalog-menu-toggle[aria-expanded="true"] span { display: inline-block; transform: rotate(180deg); }
+.catalog-submenu:not([hidden]) { display: flex; flex-direction: column; padding: 4px 0 8px 18px; }
+.catalog-submenu a {
+  padding: 12px 10px;
+  color: #f5e8d8;
+  font: 16px Arial, sans-serif;
+  text-decoration: none;
+  border-left: 1px solid rgba(225, 185, 77, 0.35);
+}
+.catalog-submenu a:hover { color: #e1b94d; background: rgba(225, 185, 77, 0.06); }
+.catalog-menu-toggle:focus-visible,
+.catalog-submenu a:focus-visible,
+.catalog-menu-row a:focus-visible { outline: 2px solid #e1b94d; outline-offset: 2px; }

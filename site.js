@@ -9,7 +9,7 @@ if (
     document.createElement("link");
 
   mobileMenuStyles.rel = "stylesheet";
-  mobileMenuStyles.href = "mobile-menu.css?v=2";
+  mobileMenuStyles.href = "mobile-menu.css?v=3";
 
   document.head.appendChild(mobileMenuStyles);
 }
@@ -93,6 +93,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const navigation = document.querySelector(
     ".navigation"
   );
+
+  // Каталог: подмени со категории, достапно со курсор, тастатура и допир.
+  const catalogLink = navigation?.querySelector('a[href="catalog.html"]');
+  let catalogToggle;
+  let setCatalogExpanded;
+  if (catalogLink) {
+    const catalogGroup = document.createElement("div");
+    catalogGroup.className = "catalog-menu-group";
+    catalogLink.before(catalogGroup);
+    const catalogRow = document.createElement("div");
+    catalogRow.className = "catalog-menu-row";
+    catalogRow.appendChild(catalogLink);
+    catalogToggle = document.createElement("button");
+    catalogToggle.type = "button";
+    catalogToggle.className = "catalog-menu-toggle";
+    catalogToggle.setAttribute("aria-label", "Категории во каталогот");
+    catalogToggle.setAttribute("aria-expanded", "false");
+    catalogToggle.setAttribute("aria-controls", "catalog-submenu");
+    catalogToggle.innerHTML = '<span aria-hidden="true">⌄</span>';
+    catalogRow.appendChild(catalogToggle);
+    const submenu = document.createElement("div");
+    submenu.id = "catalog-submenu";
+    submenu.className = "catalog-submenu";
+    submenu.hidden = true;
+    submenu.innerHTML = `
+      <a href="catalog.html?gender=men">Машки</a>
+      <a href="catalog.html?gender=women">Женски</a>
+      <a href="catalog.html?gender=unisex">Унисекс</a>
+    `;
+    catalogGroup.append(catalogRow, submenu);
+    setCatalogExpanded = (expanded) => {
+      submenu.hidden = !expanded;
+      catalogToggle.setAttribute("aria-expanded", String(expanded));
+    };
+    catalogToggle.addEventListener("click", () => setCatalogExpanded(submenu.hidden));
+    catalogGroup.addEventListener("mouseenter", () => {
+      if (window.matchMedia("(hover: hover)").matches) setCatalogExpanded(true);
+    });
+    catalogGroup.addEventListener("mouseleave", () => {
+      if (!catalogGroup.contains(document.activeElement)) setCatalogExpanded(false);
+    });
+    catalogGroup.addEventListener("focusin", (event) => {
+      if (event.target !== catalogToggle) setCatalogExpanded(true);
+    });
+    catalogGroup.addEventListener("focusout", (event) => {
+      if (!catalogGroup.contains(event.relatedTarget)) setCatalogExpanded(false);
+    });
+  }
 
   const originalSearchToggle =
     document.querySelector("#search-toggle") ||
@@ -521,6 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closeMenu() {
+    setCatalogExpanded?.(false);
     if (!navigation || !overlay) {
       return;
     }

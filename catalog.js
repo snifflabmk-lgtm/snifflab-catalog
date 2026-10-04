@@ -45,6 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "#active-filter-count"
   );
 
+  const genderButtons = document.querySelectorAll("[data-gender]");
+  const genderLabels = {men: "Машки", women: "Женски", unisex: "Унисекс"};
+  const requestedGender = new URLSearchParams(window.location.search).get("gender");
+  let activeGender = Object.hasOwn(genderLabels, requestedGender) ? requestedGender : "site";
   const productsPerPage = 8;
 
   let activeCategory = "site";
@@ -76,6 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updatePageInUrl() {
     const pageUrl = new URL(window.location.href);
+
+    if (activeGender === "site") pageUrl.searchParams.delete("gender");
+    else pageUrl.searchParams.set("gender", activeGender);
 
     if (currentPage === 1) {
       pageUrl.searchParams.delete("page");
@@ -152,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
       return (
+        (activeGender === "site" || product.gender === genderLabels[activeGender]) &&
         matchesCategory &&
         matchesSeason &&
         matchesBadge &&
@@ -415,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateActiveFilterCount() {
-    let count = 0;
+    let count = activeGender === "site" ? 0 : 1;
 
     if (activeCategory !== "site") {
       count += 1;
@@ -483,6 +491,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const filteredProducts = getFilteredProducts();
 
     updateActiveFilterCount();
+    document.querySelector(".collection-heading h1").textContent = activeGender === "site"
+      ? "Види ја колекцијата" : `${genderLabels[activeGender]} парфеми`;
+    genderButtons.forEach(button => {
+      const selected = button.dataset.gender === activeGender;
+      button.classList.toggle("active-filter", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
 
     if (filteredProducts.length === 0) {
       currentPage = 1;
@@ -555,6 +570,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function clearAllFilters() {
+    activeGender = "site";
     activeCategory = "site";
     activeSeason = "site";
     activeBadge = "site";
@@ -640,6 +656,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   }
+
+  genderButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      activeGender = button.dataset.gender;
+      currentPage = 1;
+      renderProducts();
+    });
+  });
 
   categoryButtons.forEach((button) => {
     button.addEventListener("click", () => {
