@@ -1212,7 +1212,7 @@ window.products = [
   {
     id: "jpg-le-beau-le-parfum",
     name: "JPG Le Beau Le Parfum",
-    stockName: "JPG - Le Beau Le Parfum",
+    stockName: "Jean Paul Gaultier - Le Beau Le Parfum",
     brand: "Jean Paul Gaultier",
     image: "jpg-le-beau-le-parfum.png",
     category: "Дизајнерски",
@@ -2678,4 +2678,24 @@ window.getProductGenderLabel = function (productGender, collectionGender = "site
     if (collectionGender === "women") return "Женски, унисекс парфем";
   }
   return `${productGender} парфем`;
+};
+
+// Resolve the current ERP name even when a cart was saved before a catalog update.
+window.getProductStockName = function (item) {
+  const byId = window.products.find(product => product.id === item.productId);
+  if (byId) return byId.stockName || byId.name;
+
+  const normalize = name => String(name || "")
+    .toLocaleLowerCase("mk-MK")
+    .replace(/[’']/g, "")
+    .replace(/&/g, "and")
+    .replace(/[^a-zа-ш0-9]+/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const names = [item.stockName, item.name].filter(Boolean).map(normalize);
+  const matches = window.products.filter(product =>
+    names.includes(normalize(product.stockName)) || names.includes(normalize(product.name))
+  );
+  if (matches.length === 1) return matches[0].stockName || matches[0].name;
+  return item.stockName || item.name;
 };

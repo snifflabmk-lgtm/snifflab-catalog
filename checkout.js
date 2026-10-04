@@ -232,10 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
         : "170 денари",
 
     items: cart.map((item) => ({
-      // Use the exact ERP inventory name when it is available.
-      // Public product names can differ (for example, "Jean Paul
-      // Gaultier" on the site versus "JPG" in Google Sheets).
-      name: item.stockName || item.name,
+      // Cart stock checks and the submitted order use the same current ERP name.
+      name: window.getProductStockName(item),
       size: Number(item.size),
       price: Number(item.price),
       quantity: Number(item.quantity),

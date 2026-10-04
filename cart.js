@@ -49,26 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getStockName(item) {
-    if (item.productId === "riiffs-freeze") {
-      return "Riiffs - Freeze";
-    }
-
-    if (item.stockName) {
-      return item.stockName;
-    }
-
-    if (Array.isArray(window.products)) {
-      const product = window.products.find(
-        (candidate) =>
-          candidate.id === item.productId
-      );
-
-      if (product) {
-        return product.stockName || product.name;
-      }
-    }
-
-    return item.name;
+    return window.getProductStockName(item);
   }
 
   async function requestJsonp(parameters) {

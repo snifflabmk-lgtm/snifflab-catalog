@@ -328,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (existingItem) {
+        existingItem.stockName = product.stockName || product.name;
         existingItem.quantity += quantity;
       } else {
         savedCart.push({
