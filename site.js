@@ -127,7 +127,10 @@ document.addEventListener("DOMContentLoaded", () => {
       submenu.hidden = !expanded;
       catalogToggle.setAttribute("aria-expanded", String(expanded));
     };
-    catalogToggle.addEventListener("click", () => setCatalogExpanded(submenu.hidden));
+    catalogToggle.addEventListener("click", (event) => {
+      const pointerHover = event.detail > 0 && window.matchMedia("(hover: hover)").matches;
+      setCatalogExpanded(pointerHover || submenu.hidden);
+    });
     catalogGroup.addEventListener("mouseenter", () => {
       if (window.matchMedia("(hover: hover)").matches) setCatalogExpanded(true);
     });
