@@ -1,3 +1,12 @@
+// Унисекс парфемите се прикажуваат и во машката и во женската колекција.
+function matchesCatalogGender(productGender, filter) {
+  if (filter === "site") return true;
+  if (filter === "unisex") return productGender === "Унисекс";
+  if (filter === "men") return productGender === "Машки" || productGender === "Унисекс";
+  if (filter === "women") return productGender === "Женски" || productGender === "Унисекс";
+  return false;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const productGrid = document.querySelector("#product-grid");
   const searchInput = document.querySelector("#product-search");
@@ -159,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
       return (
-        (activeGender === "site" || product.gender === genderLabels[activeGender]) &&
+        matchesCatalogGender(product.gender, activeGender) &&
         matchesCategory &&
         matchesSeason &&
         matchesBadge &&

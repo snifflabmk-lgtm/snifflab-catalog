@@ -1,0 +1,420 @@
+{
+  "source": "Fragrantica fragrance profile classification (not user gender votes)",
+  "checkedOn": "2026-10-04",
+  "products": [
+    {
+      "id": "afnan-9pm",
+      "name": "Afnan 9PM",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Afnan/9pm-65414.html"
+    },
+    {
+      "id": "afnan-9pm-nightout",
+      "name": "Afnan 9PM Night Out",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Afnan/9-PM-Night-Out-123313.html"
+    },
+    {
+      "id": "afnan-9pm-rebel",
+      "name": "Afnan 9PM Rebel",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Afnan/9-PM-Rebel-99238.html"
+    },
+    {
+      "id": "afnan-supremacy-collectors-edition",
+      "name": "Afnan Supremacy Collector's Edition",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Afnan/Supremacy-Collector-s-Edition-Pour-Homme-98689.html"
+    },
+    {
+      "id": "afnan-turathi-blue",
+      "name": "Afnan Turathi Blue",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Afnan/Turathi-Blue-70839.html"
+    },
+    {
+      "id": "al-haramain-amber-oud-aqua-dubai",
+      "name": "Al Haramain Amber Oud Aqua Dubai",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Al-Haramain/Amber-Oud-Aqua-Dubai-96482.html"
+    },
+    {
+      "id": "arabiyat-prestige-marwa",
+      "name": "Arabiyat Prestige Marwa",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Arabiyat%20Prestige/Marwa-107084.html"
+    },
+    {
+      "id": "armaf-odyssey-aqua",
+      "name": "Armaf Odyssey Aqua",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Armaf/Armaf-Odyssey-Aqua-Edition-83134.html"
+    },
+    {
+      "id": "armaf-odyssey-go-mango",
+      "name": "Armaf Odyssey Go Mango",
+      "gender": "Унисекс",
+      "source": "https://beta.fragrantica.com/perfume/Armaf/Odyssey-Go-Mango-115130.html"
+    },
+    {
+      "id": "armaf-odyssey-mega",
+      "name": "Armaf Odyssey Mega",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Armaf/Odyssey-Mega-Man-83133.html"
+    },
+    {
+      "id": "armaf-ba-ha-mas",
+      "name": "Armaf Ba Ha Mas",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/p/115127"
+    },
+    {
+      "id": "armaf-club-de-nuit-intense-man-parfum",
+      "name": "Armaf Club de Nuit Intense Man Parfum",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Armaf/Armaf-Club-de-Nuit-Intense-Man-Parfum-72842.html"
+    },
+    {
+      "id": "armaf-club-de-nuit-intense-overdose",
+      "name": "Armaf Club de Nuit Intense Overdose",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Armaf/Club-De-Nuit-Intense-Overdose-136770.html"
+    },
+    {
+      "id": "armaf-dubai-chocolate",
+      "name": "Armaf Dubai Chocolate",
+      "gender": "Унисекс",
+      "source": "https://beta.fragrantica.com/perfume/Armaf/Odyssey-Dubai-Chocolat-102117.html"
+    },
+    {
+      "id": "armaf-mandarin-sky",
+      "name": "Armaf Mandarin Sky",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Armaf/Odyssey-Mandarin-Sky-83132.html"
+    },
+    {
+      "id": "armani-acqua-di-gio-profondo-edp",
+      "name": "Armani Acqua di Giò Profondo EDP",
+      "gender": "Машки",
+      "source": "https://beta.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-Profondo-Eau-de-Parfum-2024-105624.html"
+    },
+    {
+      "id": "armani-stronger-with-you-intensely",
+      "name": "Armani Stronger With You Intensely",
+      "gender": "Машки",
+      "source": "https://beta.fragrantica.com/perfume/Giorgio-Armani/Emporio-Armani-Stronger-With-You-Intensely-52802.html"
+    },
+    {
+      "id": "aromatix-french-avenue-forbidden-fruit",
+      "name": "Aromatix x French Avenue Forbidden Fruit",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Aromatix-X-French-Avenue/Forbidden-Fruit-117531.html"
+    },
+    {
+      "id": "aromatix-french-avenue-magnetiq",
+      "name": "Aromatix x French Avenue Magnetiq",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Aromatix-X-French-Avenue/Magnetiq-117529.html"
+    },
+    {
+      "id": "aromatix-french-avenue-platine-blanc",
+      "name": "Aromatix x French Avenue Platine Blanc",
+      "gender": "Унисекс",
+      "source": "https://beta.fragrantica.com/perfume/Aromatix-X-French-Avenue/Platine-Blanc-106068.html"
+    },
+    {
+      "id": "azzaro-the-most-wanted",
+      "name": "Azzaro The Most Wanted",
+      "gender": "Машки",
+      "source": "https://beta.fragrantica.com/perfume/Azzaro/The-Most-Wanted-66826.html"
+    },
+    {
+      "id": "bujairami-hectic",
+      "name": "Bujairami Hectic",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Bujairami/Hectic-117823.html"
+    },
+    {
+      "id": "bvlgari-man-in-black-edp",
+      "name": "Bvlgari Man in Black EDP",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Bvlgari/Bvlgari-Man-In-Black-26358.html"
+    },
+    {
+      "id": "chanel-bleu-de-chanel-edp",
+      "name": "Chanel Bleu de Chanel EDP",
+      "gender": "Машки",
+      "source": "https://beta.fragrantica.com/news/www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-Eau-de-Parfum-25967.html"
+    },
+    {
+      "id": "davidoff-cool-water-edt",
+      "name": "Davidoff Cool Water EDT",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Davidoff/Cool-Water-507.html"
+    },
+    {
+      "id": "dior-sauvage-edt",
+      "name": "Dior Sauvage EDT",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/dior/sauvage-31861.html"
+    },
+    {
+      "id": "dior-sauvage-elixir",
+      "name": "Dior Sauvage Elixir",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/p/68415"
+    },
+    {
+      "id": "fragrance-world-barakkat-satin-oud",
+      "name": "Fragrance World Barakkat Satin Oud",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/p/107711"
+    },
+    {
+      "id": "french-avenue-atlantis-extrait",
+      "name": "French Avenue Atlantis Extrait",
+      "gender": "Унисекс",
+      "source": "https://beta.fragrantica.com/perfume/French-Avenue/Atlantis-Extrait-113595.html"
+    },
+    {
+      "id": "french-avenue-liquid-brun",
+      "name": "French Avenue Liquid Brun",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/French-Avenue/Liquid-Brun-94713.html"
+    },
+    {
+      "id": "french-avenue-spectre-ghost",
+      "name": "French Avenue Spectre Ghost",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Fragrance-World/Spectre-Ghost-94697.html"
+    },
+    {
+      "id": "french-avenue-vulcan-feu",
+      "name": "French Avenue Vulcan Feu",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/p/105520"
+    },
+    {
+      "id": "gisada-ambassador-men",
+      "name": "Gisada Ambassador Men",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Gisada/Ambassador-Men-58226.html"
+    },
+    {
+      "id": "gucci-guilty-elixir",
+      "name": "Gucci Guilty Elixir",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/news/www.fragrantica.com/perfume/Gucci/Guilty-Elixir-de-Parfum-pour-Homme-84547.html"
+    },
+    {
+      "id": "guerlain-lhomme-ideal-extreme",
+      "name": "Guerlain L’Homme Idéal Extrême",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Guerlain/L-Homme-Id-al-Extr-me-60284.html"
+    },
+    {
+      "id": "hugo-boss-bottled-absolu",
+      "name": "Hugo Boss Bottled Absolu",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Hugo-Boss/Bottled-Absolu-96246.html"
+    },
+    {
+      "id": "initio-side-effect",
+      "name": "Initio Side Effect",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Side-Effect-42260.html"
+    },
+    {
+      "id": "jpg-le-beau-le-parfum",
+      "name": "JPG Le Beau Le Parfum",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Jean-Paul-Gaultier/Le-Beau-Le-Parfum-72158.html"
+    },
+    {
+      "id": "jpg-le-male-le-parfum",
+      "name": "Jean Paul Gaultier Le Male Le Parfum",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Jean-Paul-Gaultier/Le-Male-Le-Parfum-61856.html"
+    },
+    {
+      "id": "khadlaj-island",
+      "name": "Khadlaj Island",
+      "gender": "Унисекс",
+      "source": "https://beta.fragrantica.com/perfume/Khadlaj-Perfumes/Island-102362.html"
+    },
+    {
+      "id": "khadlaj-island-dreams",
+      "name": "Khadlaj Island Dreams",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/p/113593"
+    },
+    {
+      "id": "khadlaj-shiyaaka-sky",
+      "name": "Khadlaj Shiyaaka Sky",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/p/137096"
+    },
+    {
+      "id": "lalique-encre-noire",
+      "name": "Lalique Encre Noire",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/news/www.fragrantica.com/perfume/Lalique/Encre-Noire-1834.html"
+    },
+    {
+      "id": "lattafa-asad",
+      "name": "Lattafa Asad",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfumy/Lattafa-Perfumes/Asad-72821.html"
+    },
+    {
+      "id": "lattafa-asad-bourbon",
+      "name": "Lattafa Asad Bourbon",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Lattafa%20Perfumes/Asad-Bourbon-101124.html"
+    },
+    {
+      "id": "lattafa-atlas",
+      "name": "Lattafa Atlas",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Lattafa-Perfumes/Atlas-89765.html"
+    },
+    {
+      "id": "lattafa-dynasty",
+      "name": "Lattafa Dynasty",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Lattafa-Perfumes/Dynasty-112859.html"
+    },
+    {
+      "id": "lattafa-khamrah",
+      "name": "Lattafa Khamrah",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Lattafa-Perfumes/Khamrah-75805.html"
+    },
+    {
+      "id": "lattafa-khamrah-dukhan",
+      "name": "Lattafa Khamrah Dukhan",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Lattafa-Perfumes/Khamrah-Dukhan-104529.html"
+    },
+    {
+      "id": "lattafa-khamrah-qahwa",
+      "name": "Lattafa Khamrah Qahwa",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/p/88175"
+    },
+    {
+      "id": "lattafa-khamrah-waha",
+      "name": "Lattafa Khamrah Waha",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/p/132409"
+    },
+    {
+      "id": "mancera-aoud-lemon-mint",
+      "name": "Mancera Aoud Lemon Mint",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Mancera/Aoud-Lemon-Mint-39181.html"
+    },
+    {
+      "id": "mancera-jardin-exclusif",
+      "name": "Mancera Jardin Exclusif",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Mancera/Jardin-Exclusif-51490.html"
+    },
+    {
+      "id": "mancera-instant-crush",
+      "name": "Mancera Instant Crush",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Mancera/Instant-Crush-54885.html"
+    },
+    {
+      "id": "nishane-hacivat",
+      "name": "Nishane Hacivat",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Nishane/Hacivat-44174.html"
+    },
+    {
+      "id": "rabanne-invictus-victory-elixir",
+      "name": "Rabanne Invictus Victory Elixir",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Paco-Rabanne/Invictus-Victory-Elixir-78575.html"
+    },
+    {
+      "id": "rasasi-hawas-ice",
+      "name": "Rasasi Hawas Ice",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Rasasi/Hawas-Ice-89050.html"
+    },
+    {
+      "id": "rasasi-hawas-tropical",
+      "name": "Rasasi Hawas Tropical",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Rasasi/Hawas-Tropical-108054.html"
+    },
+    {
+      "id": "ralph-lauren-polo-67-edp",
+      "name": "Ralph Lauren Polo 67 EDP",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Ralph-Lauren/Polo-67-Eau-de-Parfum-108720.html"
+    },
+    {
+      "id": "riiffs-freeze",
+      "name": "Riiffs Freeze",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/news/www.fragrantica.com/perfume/Riiffs-Perfumes/Freeze-118093.html"
+    },
+    {
+      "id": "riiffs-freeze-in-flames",
+      "name": "Riiffs Freeze in Flames",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Riiffs%20Perfumes/Freeze-in-flames-140063.html"
+    },
+    {
+      "id": "rochas-moustache-edp",
+      "name": "Rochas Moustache EDP",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Rochas/Moustache-Eau-de-Parfum-52350.html"
+    },
+    {
+      "id": "swiss-arabian-musk-01",
+      "name": "Swiss Arabian Musk 01",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Swiss-Arabian/Musk-01-72629.html"
+    },
+    {
+      "id": "tiziana-terenzi-kirke",
+      "name": "Tiziana Terenzi Kirke",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Tiziana-Terenzi/Kirke-32172.html"
+    },
+    {
+      "id": "versace-dylan-blue",
+      "name": "Versace Dylan Blue",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/p/40031"
+    },
+    {
+      "id": "versace-eros-edp",
+      "name": "Versace Eros EDP",
+      "gender": "Машки",
+      "source": "https://beta.fragrantica.com/perfume/Versace/Eros-Eau-de-Parfum-62762.html"
+    },
+    {
+      "id": "versace-eros-energy",
+      "name": "Versace Eros Energy",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Versace/Eros-Energy-92647.html"
+    },
+    {
+      "id": "viktor-rolf-spicebomb-extreme",
+      "name": "Viktor & Rolf Spicebomb Extreme",
+      "gender": "Машки",
+      "source": "https://www.fragrantica.com/perfume/Viktor-Rolf/Spicebomb-Extreme-30499.html"
+    },
+    {
+      "id": "xerjoff-naxos",
+      "name": "Xerjoff Naxos",
+      "gender": "Унисекс",
+      "source": "https://www.fragrantica.com/perfume/Xerjoff/XJ-1861-Naxos-30529.html"
+    }
+  ]
+}
