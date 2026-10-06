@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       calculateSubtotal(cart);
 
     const deliveryPrice =
-      subtotal >= 2000 ? 0 : 170;
+      subtotal >= 2000 ? 0 : 150;
 
     const total =
       subtotal + deliveryPrice;
