@@ -626,6 +626,38 @@ window.products = [
       "Формални настани"
     ]
   },
+  
+  {
+    id: "bujairami-dubai-crush",
+    name: "Bujairami Dubai Crush",
+    stockName: "Bujairami - Dubai Crush",
+    brand: "Bujairami",
+    image: "bujairami-dubai-crush.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Унисекс",
+    badges: ["new"],
+    prices: { 3: 250, 5: 350, 10: 600, 20: 1100 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Шафран",
+      "Црвени бобинки",
+      "Бергамот",
+      "Роза",
+      "Уд",
+      "Тонка грав",
+      "Бел мошус",
+      "Амбер"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди",
+      "Елегантни настани",
+      "Забави"
+    ]
+  },
+
     {
     id: "bujairami-hectic",
     name: "Bujairami Hectic",
