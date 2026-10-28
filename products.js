@@ -1384,7 +1384,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Унисекс",
-    badges: ["top", "soldout"],
+    badges: ["top"],
     prices: {
       3: 300,
       5: 400,
@@ -2302,7 +2302,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Унисекс",
-    badges: ["bestseller", "soldout"],
+    badges: ["bestseller"],
     prices: {
       3: 250,
       5: 400,
