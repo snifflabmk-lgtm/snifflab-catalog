@@ -1386,10 +1386,10 @@ window.products = [
     gender: "Унисекс",
     badges: ["top", "soldout"],
     prices: {
-      3: null,
-      5: null,
-      10: null,
-      20: null
+      3: 300,
+      5: 400,
+      10: 550,
+      20: 900,
     },
     seasons: [
       "Пролет",
@@ -2304,10 +2304,10 @@ window.products = [
     gender: "Унисекс",
     badges: ["bestseller", "soldout"],
     prices: {
-      3: null,
-      5: null,
-      10: null,
-      20: null
+      3: 250,
+      5: 400,
+      10: 600,
+      20: 1050,
     },
     seasons: [
       "Пролет",
