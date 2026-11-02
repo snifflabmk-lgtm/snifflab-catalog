@@ -2633,10 +2633,10 @@ window.products = [
     gender: "Машки",
     badges: ["top", "soldout"],
     prices: {
-      3: null,
-      5: null,
-      10: null,
-      20: null
+      3: 450,
+      5: 700,
+      10: 1100,
+      20: 2150
     },
     seasons: [
       "Есен",
