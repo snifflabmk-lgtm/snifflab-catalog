@@ -453,6 +453,33 @@ window.products = [
       "Летни излегувања"
     ]
   },
+    {
+    id: "armani-acqua-di-gio-parfum",
+    name: "Armani Acqua di Giò Parfum",
+    stockName: "Armani - Acqua di Gio Parfum",
+    brand: "Armani",
+    image: "armani-acqua-di-gio-parfum.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 350, 5: 550, 10: 1000, 20: 1950 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Бергамот",
+      "Морски ноти",
+      "Рузмарин",
+      "Жалфија",
+      "Пачули",
+      "Темјан"
+    ],
+    occasions: [
+      "Секојдневно",
+      "Работа",
+      "Романтичен состанок",
+      "Специјални пригоди"
+    ]
+  },
 
   {
     id: "armani-acqua-di-gio-profondo-edp",
@@ -2630,6 +2657,32 @@ window.products = [
       "Елегантни настани",
       "Празнични прослави",
       "Ноќни излегувања"
+    ]
+  },
+    {
+    id: "xerjoff-40-knots",
+    name: "Xerjoff 40 Knots",
+    stockName: "Xerjoff - 40 Knots",
+    brand: "Xerjoff",
+    image: "xerjoff-40-knots.png",
+    category: "Ниш",
+    categorySlug: "nish",
+    gender: "Унисекс",
+    badges: ["new"],
+    prices: { 3: 550, 5: 850, 10: 1550, 20: 2950 },
+    seasons: ["Пролет", "Лето", "Есен", "Зима"],
+    notes: [
+      "Дрвенести ноти",
+      "Кедар",
+      "Сол",
+      "Морска вода",
+      "Зелени ноти"
+    ],
+    occasions: [
+      "Секојдневно",
+      "Работа",
+      "Романтичен состанок",
+      "Специјални пригоди"
     ]
   },
   {
