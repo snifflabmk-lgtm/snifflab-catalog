@@ -2631,7 +2631,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["top", "soldout"],
+    badges: ["top"],
     prices: {
       3: 450,
       5: 700,
