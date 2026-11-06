@@ -8,7 +8,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: { 3: 250, 5: 350, 10: 500, 20: 900 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -64,7 +64,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Унисекс",
-    badges: [],
+    badges: ["top"],
     prices: {
       3: 300,
       5: 450,
@@ -245,7 +245,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Унисекс",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 200, 5: 300, 10: 450, 20: 750 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -274,7 +274,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 200, 5: 300, 10: 450, 20: 750 },
     seasons: ["Пролет", "Лето"],
     notes: [
@@ -433,7 +433,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: { 3: 200, 5: 300, 10: 450, 20: 750 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -490,7 +490,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 350, 5: 550, 10: 900, 20: 1700 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -577,7 +577,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Унисекс",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 300, 5: 450, 10: 650, 20: 1250 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -694,7 +694,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Унисекс",
-    badges: ["new"],
+    badges: ["top"],
     prices: { 3: 250, 5: 400, 10: 750, 20: 1350 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -725,7 +725,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 350, 5: 550, 10: 900, 20: 1700 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -873,9 +873,7 @@ window.products = [
     "category": "Дизајнерски",
     "categorySlug": "dizajnerski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": ["top"],
     "prices": {
       "3": 400,
       "5": 600,
@@ -910,9 +908,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Унисекс",
-    "badges": [
-      "new"
-    ],
+    "badges": ["top"],
     "prices": {
       "3": 100,
       "5": 200,
@@ -977,7 +973,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["top"],
+    badges: ["bestseller"],
     prices: { 3: 300, 5: 400, 10: 600, 20: 1050 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -1006,7 +1002,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: { 3: 300, 5: 400, 10: 650, 20: 1150 },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
@@ -1064,7 +1060,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: {
       3: 400,
       5: 550,
@@ -1102,7 +1098,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: [],
+    badges: ["top"],
     prices: {
       3: 650,
       5: 1100,
@@ -1140,9 +1136,7 @@ window.products = [
     "category": "Дизајнерски",
     "categorySlug": "dizajnerski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 550,
       "5": 1000,
@@ -1181,7 +1175,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 350, 5: 600, 10: 1050, 20: 2000 },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
@@ -1210,7 +1204,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["bestseller"],
     prices: { 3: 350, 5: 600, 10: 1050, 20: 2000 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -1239,9 +1233,7 @@ window.products = [
     "category": "Ниш",
     "categorySlug": "nish",
     "gender": "Унисекс",
-    "badges": [
-      "new"
-    ],
+    "badges": ["top"],
     "prices": {
       "3": 850,
       "5": 1400,
@@ -1277,7 +1269,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 400, 5: 650, 10: 1100, 20: 2100 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -1334,9 +1326,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Унисекс",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 200,
       "5": 300,
@@ -1411,7 +1401,7 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Унисекс",
-    badges: ["top"],
+    badges: ["bestseller"],
     prices: {
       3: 300,
       5: 400,
@@ -1511,7 +1501,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 200, 5: 350, 10: 550, 20: 1000 },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
@@ -1538,9 +1528,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Унисекс",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 200,
       "5": 300,
@@ -1686,9 +1674,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 200,
       "5": 300,
@@ -1763,9 +1749,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": ["top"],
     "prices": {
       "3": 200,
       "5": 300,
@@ -1802,9 +1786,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 150,
       "5": 250,
@@ -1909,9 +1891,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Унисекс",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 200,
       "5": 300,
@@ -2016,9 +1996,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 150,
       "5": 250,
@@ -2057,9 +2035,7 @@ window.products = [
     "category": "Арапски",
     "categorySlug": "arapski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 150,
       "5": 250,
@@ -2097,7 +2073,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Унисекс",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 350, 5: 550, 10: 900, 20: 1700 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -2127,7 +2103,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Унисекс",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 350, 5: 500, 10: 850, 20: 1700 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -2157,7 +2133,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Унисекс",
-    badges: [],
+    badges: ["top"],
     prices: {
       3: 450,
       5: 750,
@@ -2192,9 +2168,7 @@ window.products = [
     "category": "Дизајнерски",
     "categorySlug": "dizajnerski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 400,
       "5": 600,
@@ -2260,7 +2234,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: ["top"],
     prices: { 3: 350, 5: 500, 10: 850, 20: 1700 },
     seasons: ["Есен", "Зима"],
     notes: [
@@ -2366,7 +2340,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 300, 5: 500, 10: 900, 20: 1700 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -2432,7 +2406,7 @@ window.products = [
   category: "Арапски",
   categorySlug: "arapski",
   gender: "Унисекс",
-  badges: ["new"],
+  badges: [],
   prices: { 3: 300, 5: 500, 10: 750, 20: 1400 },
   seasons: ["Пролет", "Лето"],
   notes: [
@@ -2693,7 +2667,7 @@ window.products = [
     category: "Дизајнерски",
     categorySlug: "dizajnerski",
     gender: "Машки",
-    badges: ["new"],
+    badges: [],
     prices: { 3: 300, 5: 500, 10: 850, 20: 1650 },
     seasons: ["Пролет", "Лето", "Есен"],
     notes: [
@@ -2789,7 +2763,7 @@ window.products = [
     category: "Ниш",
     categorySlug: "nish",
     gender: "Унисекс",
-    badges: ["top"],
+    badges: ["bestseller"],
     prices: { 3: 650, 5: 1100, 10: 1900, 20: 3700 },
     seasons: ["Пролет", "Есен", "Зима"],
     notes: [
@@ -2818,9 +2792,7 @@ window.products = [
     "category": "Дизајнерски",
     "categorySlug": "dizajnerski",
     "gender": "Женски",
-    "badges": [
-      "new"
-    ],
+    "badges": [],
     "prices": {
       "3": 350,
       "5": 500,
