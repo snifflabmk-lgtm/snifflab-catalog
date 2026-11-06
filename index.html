@@ -78,6 +78,72 @@
 
   <link rel="stylesheet" href="style.css?v=6">
   <link rel="stylesheet" href="components.css?v=4">
+
+  <style>
+    .hero.hero-with-video {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
+      align-items: center;
+      gap: clamp(32px, 6vw, 100px);
+      padding: 64px max(24px, 7vw);
+      height: auto;
+      min-height: 680px;
+      box-sizing: border-box;
+    }
+
+    .hero-with-video .hero-content {
+      width: 100%;
+      max-width: 720px;
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .hero-with-video .hero-video {
+      width: 100%;
+      max-width: 315px;
+      justify-self: center;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      border-radius: 22px;
+      background: #100b08;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-with-video .hero-video video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 512 / 910;
+      object-fit: contain;
+      background: #100b08;
+    }
+
+    @media (max-width: 760px) {
+      .hero.hero-with-video {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        min-height: 0;
+        padding: 40px 22px;
+      }
+
+      .hero-with-video .hero-content {
+        text-align: center;
+        justify-self: center;
+      }
+
+      .hero-with-video .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-with-video .hero-video {
+        width: min(100%, 290px);
+        border-radius: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -147,7 +213,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero hero-with-video">
       <div class="hero-content">
         <p class="eyebrow">
           Добредојдовте во
@@ -167,6 +233,24 @@
         >
           Разгледај го каталогот
         </a>
+      </div>
+
+      <div class="hero-video">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+          preload="metadata"
+          aria-label="Погледнете како ги подготвуваме и пакуваме нарачките во Sniff Lab"
+        >
+          <source
+            src="sniff-lab-pakuvanje.mp4"
+            type="video/mp4"
+          >
+          Вашиот прелистувач не поддржува видео.
+        </video>
       </div>
     </section>
 
@@ -336,4 +420,3 @@
   <script src="site.js?v=6"></script>
 </body>
 </html>
-
