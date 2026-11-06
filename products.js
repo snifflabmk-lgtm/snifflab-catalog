@@ -1438,6 +1438,39 @@ window.products = [
       "Летни излегувања"
     ]
   },
+  {
+    id: "khadlaj-onyx-gold",
+    name: "Khadlaj Onyx Gold",
+    stockName: "Khadlaj - Onyx Gold",
+    brand: "Khadlaj",
+    image: "khadlaj-onyx-gold.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Унисекс",
+    badges: ["new"],
+    prices: { 3: 250, 5: 400, 10: 650, 20: 1200 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Рум",
+      "Кардамом",
+      "Горчлив портокал",
+      "Ѓумбир",
+      "Суво овошје",
+      "Бели цветови",
+      "Сандалово дрво",
+      "Османтус",
+      "Тонка грав",
+      "Миро",
+      "Ванила",
+      "Пачули",
+      "Лабданум"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди"
+    ]
+  },
 
   {
     id: "khadlaj-shiyaaka-sky",
@@ -1940,6 +1973,39 @@ window.products = [
       "Вечерни прошетки"
     ]
   },
+  {
+    id: "lattafa-musamam-black-intense",
+    name: "Lattafa Musamam Black Intense",
+    stockName: "Lattafa - Musamam Black Intense",
+    brand: "Lattafa",
+    image: "lattafa-musamam-black-intense.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Машки",
+    badges: ["new"],
+    prices: { 3: 300, 5: 450, 10: 700, 20: 1300 },
+    seasons: ["Пролет", "Есен", "Зима"],
+    notes: [
+      "Лаванда",
+      "Мускатно оревче",
+      "Бергамот",
+      "Жалфија",
+      "Гераниум",
+      "Розифолија",
+      "Махонијал",
+      "Кедар",
+      "Јаворово дрво",
+      "Пачули",
+      "Тонка грав",
+      "Cocoapulse",
+      "Ambrofix"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди"
+    ]
+  },
 
   {
     "id": "lattafa-yara",
@@ -2390,6 +2456,35 @@ window.products = [
     "Одмор и патувања"
   ]
 },
+  {
+    id: "riiffs-momento",
+    name: "Riiffs Momento",
+    stockName: "Riiffs - Momento",
+    brand: "Riiffs",
+    image: "riiffs-momento.png",
+    category: "Арапски",
+    categorySlug: "arapski",
+    gender: "Унисекс",
+    badges: ["new"],
+    prices: { 3: 200, 5: 300, 10: 450, 20: 800 },
+    seasons: ["Есен", "Зима"],
+    notes: [
+      "Шафран",
+      "Мандарина",
+      "Шеќер",
+      "Тонка грав",
+      "Дамаска роза",
+      "Уд",
+      "Кедар",
+      "Амберово дрво",
+      "Карамел"
+    ],
+    occasions: [
+      "Вечерни излегувања",
+      "Романтичен состанок",
+      "Специјални пригоди"
+    ]
+  },
   {
     id: "rochas-moustache-edp",
     name: "Rochas Moustache EDP",
