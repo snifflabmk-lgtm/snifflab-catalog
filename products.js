@@ -2360,6 +2360,32 @@ window.products = [
     ]
   },
 
+{
+  id: "rayhaan-vantage",
+  name: "Rayhaan Vantage",
+  stockName: "Rayhaan - Vantage",
+  brand: "Rayhaan",
+  image: "rayhaan-vantage.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: { 3: 250, 5: 400, 10: 650, 20: 1200 },
+  seasons: ["Есен", "Зима"],
+  notes: [
+    "Амбер",
+    "Зачински ноти",
+    "Дрвенести ноти",
+    "Ароматични ноти"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Специјални пригоди",
+    "Секојдневно носење"
+  ]
+},
+
   {
     id: "riiffs-freeze",
     name: "Riiffs Freeze",
