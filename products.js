@@ -2264,12 +2264,12 @@ window.products = [
     category: "Арапски",
     categorySlug: "arapski",
     gender: "Машки",
-    badges: ["bestseller", "soldout"],
+    badges: ["bestseller"],
     prices: {
-      3: null,
-      5: null,
-      10: null,
-      20: null
+      3: 250,
+      5: 400,
+      10: 650,
+      20: 1200
     },
     seasons: [
       "Пролет",
@@ -2359,7 +2359,51 @@ window.products = [
       "Одмор"
     ]
   },
-
+{
+  id: "rayhaan-aquatica",
+  name: "Rayhaan Aquatica",
+  stockName: "Rayhaan - Aquatica",
+  brand: "Rayhaan",
+  image: "rayhaan-aquatica.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: {
+    3: 200,
+    5: 300,
+    10: 450,
+    20: 800
+  },
+  seasons: [
+    "Пролет",
+    "Лето"
+  ],
+  notes: [
+    "Лајм",
+    "Кокосово млеко",
+    "Бергамот",
+    "Мандарина",
+    "Шеќерна трска",
+    "Јасмин",
+    "Хибискус",
+    "Гарденија",
+    "Мошус",
+    "Рум",
+    "Тонка",
+    "Пачули"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Летни излегувања",
+    "Плажа",
+    "Одмор",
+    "Кафе",
+    "Прошетки",
+    "Патување",
+    "Casual"
+  ]
+},
 {
   id: "rayhaan-vantage",
   name: "Rayhaan Vantage",
