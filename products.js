@@ -744,7 +744,35 @@ window.products = [
       "Зимски вечери"
     ]
   },
-
+{
+  id: "carolina-herrera-212-men-edt",
+  name: "Carolina Herrera 212 Men EDT",
+  stockName: "Carolina Herrera - 212 Men EDT",
+  brand: "Carolina Herrera",
+  image: "carolina-herrera-212-men-edt.png",
+  category: "Дизајнерски",
+  categorySlug: "dizajnerski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: { 3: 250, 5: 400, 10: 650, 20: 1200 },
+  seasons: ["Пролет", "Лето", "Есен"],
+  notes: [
+    "Зелени ноти",
+    "Грејпфрут",
+    "Бергамот",
+    "Ѓумбир",
+    "Мошус",
+    "Сандалово дрво"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Канцеларија",
+    "Деловни состаноци",
+    "Кафе",
+    "Прошетки",
+    "Casual"
+  ]
+},
   {
     id: "chanel-bleu-de-chanel-edp",
     name: "Chanel Bleu de Chanel EDP",
@@ -804,7 +832,34 @@ window.products = [
       "Спорт"
     ]
   },
-
+{
+  id: "diesel-fuel-for-life",
+  name: "Diesel Fuel for Life Femme",
+  stockName: "Diesel - Fuel for Life",
+  brand: "Diesel",
+  image: "diesel-fuel-for-life.png",
+  category: "Дизајнерски",
+  categorySlug: "dizajnerski",
+  gender: "Женски",
+  badges: ["new"],
+  prices: { 3: 300, 5: 450, 10: 850, 20: null },
+  seasons: ["Пролет", "Есен", "Зима"],
+  notes: [
+    "Розов пипер",
+    "Мандарина",
+    "Црна рибизла",
+    "Јасмин",
+    "Пачули",
+    "Мошус"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Забави",
+    "Вечера во ресторан",
+    "Специјални пригоди"
+  ]
+},
   {
     id: "dior-sauvage-edt",
     name: "Dior Sauvage EDT",
@@ -1165,7 +1220,35 @@ window.products = [
       "Излегувања"
     ]
   },
-
+{
+  id: "guerlain-mandarine-basilic",
+  name: "Guerlain Aqua Allegoria Mandarine Basilic",
+  stockName: "Guerlain - Aqua Allegoria Mandarine Basilic",
+  brand: "Guerlain",
+  image: "guerlain-mandarine-basilic.png",
+  category: "Дизајнерски",
+  categorySlug: "dizajnerski",
+  gender: "Женски",
+  badges: ["new"],
+  prices: { 3: 350, 5: 550, 10: 1000, 20: 1950 },
+  seasons: ["Пролет", "Лето"],
+  notes: [
+    "Мандарина",
+    "Босилек",
+    "Клементина",
+    "Зелен чај",
+    "Божур",
+    "Сандалово дрво"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Канцеларија",
+    "Дневен состанок",
+    "Летни прошетки",
+    "Кафе",
+    "Одмор"
+  ]
+},
   {
     id: "guerlain-lhomme-ideal-extreme",
     name: "Guerlain L’Homme Idéal Extrême",
@@ -2224,7 +2307,35 @@ window.products = [
       "Специјални пригоди"
     ]
   },
-  
+  {
+  id: "paris-corner-rifaaqat",
+  name: "Paris Corner Rifaaqat",
+  stockName: "Paris Corner - Rifaaqat",
+  brand: "Paris Corner",
+  image: "paris-corner-rifaaqat.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Унисекс",
+  badges: ["new"],
+  prices: { 3: 150, 5: 200, 10: 350, 20: 600 },
+  seasons: ["Есен", "Зима"],
+  notes: [
+    "Бурбон ванила",
+    "Црн пипер",
+    "Розов пипер",
+    "Темјан",
+    "Шафран",
+    "Велур"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Елегантни вечери",
+    "Lounge bar",
+    "Специјални пригоди",
+    "Зимски прослави"
+  ]
+},
   {
     id: "rabanne-invictus-victory-elixir",
     name: "Rabanne Invictus Victory Elixir",
@@ -2254,7 +2365,60 @@ window.products = [
       "Специјални пригоди"
     ]
   },
-
+  {
+  id: "ralph-lauren-big-pony-2",
+  name: "Ralph Lauren Big Pony 2 for Women",
+  stockName: "Ralph Lauren - Big Pony 2",
+  brand: "Ralph Lauren",
+  image: "ralph-lauren-big-pony-2.png",
+  category: "Дизајнерски",
+  categorySlug: "dizajnerski",
+  gender: "Женски",
+  badges: ["new"],
+  prices: { 3: 200, 5: 300, 10: 550, 20: null },
+  seasons: ["Пролет", "Лето"],
+  notes: [
+    "Брусница",
+    "Тонка грав",
+    "Цветни ноти"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Кафе",
+    "Дневен состанок",
+    "Дружење",
+    "Прошетки",
+    "Casual"
+  ]
+},
+ {
+    id: "ralph-lauren-polo-67-edp",
+    name: "Ralph Lauren Polo 67 EDP",
+    stockName: "Ralph Lauren - Polo 67 EDP",
+    brand: "Ralph Lauren",
+    image: "ralph-lauren-polo-67-edp.png",
+    category: "Дизајнерски",
+    categorySlug: "dizajnerski",
+    gender: "Машки",
+    badges: [],
+    prices: { 3: 300, 5: 500, 10: 900, 20: 1700 },
+    seasons: ["Пролет", "Лето", "Есен"],
+    notes: [
+      "Ананас",
+      "Цитруси",
+      "Кардамон",
+      "Кедар",
+      "Бензоин"
+    ],
+    occasions: [
+      "Секојдневно носење",
+      "Канцеларија",
+      "Спорт",
+      "Дневни излегувања",
+      "Романтичен состанок",
+      "Одмор"
+    ]
+  },
   {
     id: "rasasi-hawas-ice",
     name: "Rasasi Hawas Ice",
@@ -2331,34 +2495,7 @@ window.products = [
     ]
   },
 
-  {
-    id: "ralph-lauren-polo-67-edp",
-    name: "Ralph Lauren Polo 67 EDP",
-    stockName: "Ralph Lauren - Polo 67 EDP",
-    brand: "Ralph Lauren",
-    image: "ralph-lauren-polo-67-edp.png",
-    category: "Дизајнерски",
-    categorySlug: "dizajnerski",
-    gender: "Машки",
-    badges: [],
-    prices: { 3: 300, 5: 500, 10: 900, 20: 1700 },
-    seasons: ["Пролет", "Лето", "Есен"],
-    notes: [
-      "Ананас",
-      "Цитруси",
-      "Кардамон",
-      "Кедар",
-      "Бензоин"
-    ],
-    occasions: [
-      "Секојдневно носење",
-      "Канцеларија",
-      "Спорт",
-      "Дневни излегувања",
-      "Романтичен состанок",
-      "Одмор"
-    ]
-  },
+ 
 {
   id: "rayhaan-aquatica",
   name: "Rayhaan Aquatica",
@@ -2402,6 +2539,35 @@ window.products = [
     "Прошетки",
     "Патување",
     "Casual"
+  ]
+},
+  {
+  id: "rayhaan-terra",
+  name: "Rayhaan Terra",
+  stockName: "Rayhaan - Terra",
+  brand: "Rayhaan",
+  image: "rayhaan-terra.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Машки",
+  badges: ["new"],
+  prices: { 3: 250, 5: 400, 10: 650, 20: 1200 },
+  seasons: ["Есен", "Зима"],
+  notes: [
+    "Темјан",
+    "Кардамон",
+    "Ванила",
+    "Килибар",
+    "Уд",
+    "Пачули"
+  ],
+  occasions: [
+    "Вечерни излегувања",
+    "Романтичен состанок",
+    "Елегантни вечери",
+    "Специјални пригоди",
+    "Формални настани",
+    "Зимски прослави"
   ]
 },
 {
@@ -2568,7 +2734,35 @@ window.products = [
       "Елегантни вечери"
     ]
   },
-
+{
+  id: "sabrina-carpenter-sweet-tooth",
+  name: "Sabrina Carpenter Sweet Tooth",
+  stockName: "Sabrina Carpenter - Sweet Tooth",
+  brand: "Sabrina Carpenter",
+  image: "sabrina-carpenter-sweet-tooth.png",
+  category: "Дизајнерски",
+  categorySlug: "dizajnerski",
+  gender: "Женски",
+  badges: ["new"],
+  prices: { 3: 200, 5: 300, 10: 550, 20: 1050 },
+  seasons: ["Пролет", "Есен", "Зима"],
+  notes: [
+    "Маршмелоу",
+    "Чоколадо",
+    "Ванила",
+    "Кокосово млеко",
+    "Шлаг",
+    "Зашеќерен ѓумбир"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Романтичен состанок",
+    "Кафе",
+    "Дружење",
+    "Вечерни излегувања",
+    "Casual"
+  ]
+},
   {
     id: "swiss-arabian-musk-01",
     name: "Swiss Arabian Musk 01",
@@ -2890,7 +3084,35 @@ window.products = [
       "Излегувања"
     ]
   },
-
+{
+  id: "zimaya-fatima",
+  name: "Zimaya Fatima",
+  stockName: "Zimaya - Fatima",
+  brand: "Zimaya",
+  image: "zimaya-fatima.png",
+  category: "Арапски",
+  categorySlug: "arapski",
+  gender: "Женски",
+  badges: ["new"],
+  prices: { 3: 150, 5: 250, 10: 400, 20: 750 },
+  seasons: ["Пролет", "Лето", "Есен"],
+  notes: [
+    "Роза",
+    "Рабарбара",
+    "Бергамот",
+    "Јасмин",
+    "Ванила",
+    "Мошус"
+  ],
+  occasions: [
+    "Секојдневно носење",
+    "Романтичен состанок",
+    "Елегантни излегувања",
+    "Кафе",
+    "Прослави",
+    "Дневни прошетки"
+  ]
+},
 ];
 
 // A unisex perfume keeps its official classification; its visible label follows the selected collection.
