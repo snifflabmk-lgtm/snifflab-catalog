@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       calculateSubtotal(cart);
 
     const deliveryPrice =
-      subtotal >= 2000 ? 0 : 150;
+      subtotal >= 2000 ? 0 : 180;
 
     const total =
       subtotal + deliveryPrice;
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       calculateSubtotal(cart);
 
     const deliveryPrice =
-      subtotal >= 2000 ? 0 : 150;
+     subtotal >= 2000 ? 0 : 180;
 
     const total =
       subtotal + deliveryPrice;
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
       delivery:
         deliveryPrice === 0
           ? "Бесплатна"
-          : "150 денари",
+          : "180 денари",
 
       items: cart.map((item) => ({
         // Cart stock checks and the submitted order use the same current ERP name.
