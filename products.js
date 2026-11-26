@@ -2366,6 +2366,26 @@ window.products = [
     ]
   },
   {
+  id: "rabanne-paco-rose",
+  name: "Paco Rosé EDT",
+  stockName: "Rabanne - Paco Rosé EDT",
+  brand: "Rabanne",
+  image: "rabanne-paco-rose.png",
+  category: "Дизајнерски",
+  categorySlug: "dizajnerski",
+  gender: "Женски",
+  badges: ["new"],
+  prices: {
+    3: 200,
+    5: 300,
+    10: 450,
+    20: 800
+  },
+  seasons: ["Пролет", "Лето"],
+  notes: ["Црна рибизла", "Цитруси", "Роза", "Мошус"],
+  occasions: ["Секојдневно", "Дневни излегувања"]
+},
+  {
   id: "ralph-lauren-big-pony-2",
   name: "Ralph Lauren Big Pony 2 for Women",
   stockName: "Ralph Lauren - Big Pony 2",
